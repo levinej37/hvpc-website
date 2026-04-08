@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ROCOR By-Laws (Ustav) — Holy Virgin Protection Church</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+:root{
+  --navy:#1B2240;--navy-deep:#0F1428;--navy-mid:#242D52;
+  --gold:#C9A84C;--gold-lt:#E2C97A;--gold-dk:#8A6E30;
+  --crimson:#8B1520;--parch:#F5F0E4;--parch-mid:#EDE6D4;
+  --cream:#FAF8F3;--text:#2C2416;--muted:#6B5F4A;
+  --border:rgba(201,168,76,0.25);
+}
+body{font-family:'Lato',sans-serif;background:var(--parch);color:var(--text);font-size:16px;line-height:1.7;overflow-x:hidden}
+
+.topbar{background:var(--navy-deep);border-bottom:1px solid var(--border);padding:6px 2rem;display:flex;justify-content:space-between;align-items:center;font-size:12px;color:rgba(255,255,255,0.45)}
+.topbar a{color:var(--gold);text-decoration:none;font-weight:700}
+.topbar a:hover{color:var(--gold-lt)}
+.topbar-links{display:flex;gap:20px}
+
+#nav{position:sticky;top:0;z-index:999;background:var(--navy);border-bottom:2px solid var(--gold)}
+.nav-inner{max-width:1280px;margin:0 auto;display:flex;align-items:stretch;justify-content:space-between}
+.nav-brand{display:flex;align-items:center;gap:14px;text-decoration:none;padding:10px 0;flex-shrink:0}
+.nav-brand img{width:44px;height:auto;filter:drop-shadow(0 0 6px rgba(201,168,76,0.4))}
+.nav-brand-name{font-family:'IM Fell English',serif;font-size:14px;color:var(--gold-lt);display:block}
+.nav-brand-sub{font-size:10px;color:rgba(255,255,255,0.4);letter-spacing:0.12em;text-transform:uppercase}
+.nav-menu{display:flex;list-style:none;align-items:stretch}
+.nav-menu>li{position:relative}
+.nav-menu>li>a{display:flex;align-items:center;padding:0 14px;height:100%;min-height:58px;color:rgba(255,255,255,0.75);text-decoration:none;font-size:12px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;transition:color .2s;border-bottom:2px solid transparent;margin-bottom:-2px;white-space:nowrap;gap:4px}
+.nav-menu>li>a:hover,.nav-menu>li:hover>a,.nav-menu>li>a.active{color:var(--gold-lt);border-bottom-color:var(--gold)}
+.caret{font-size:9px;opacity:0.6}
+.dropdown{display:none;position:absolute;top:100%;left:0;background:var(--navy-deep);border:1px solid var(--border);border-top:2px solid var(--gold);min-width:220px;padding:8px 0;z-index:100;box-shadow:0 8px 32px rgba(0,0,0,0.5)}
+.nav-menu>li:hover .dropdown{display:block}
+.dropdown a{display:block;padding:9px 20px;color:rgba(255,255,255,0.65);text-decoration:none;font-size:12px;transition:color .15s,background .15s}
+.dropdown a:hover,.dropdown a.active{color:var(--gold-lt);background:rgba(201,168,76,0.07)}
+.dropdown-hr{height:1px;background:var(--border);margin:6px 0}
+.has-sub{position:relative}
+.sub-dropdown{display:none;position:absolute;left:100%;top:0;background:var(--navy-deep);border:1px solid var(--border);border-top:2px solid var(--gold);min-width:200px;padding:8px 0;box-shadow:0 8px 32px rgba(0,0,0,0.5)}
+.has-sub:hover .sub-dropdown{display:block}
+.nav-donate{background:var(--crimson)!important;color:#fff!important;padding:16px 20px!important}
+.nav-donate:hover{background:#a01828!important;border-bottom-color:transparent!important}
+
+/* HERO */
+.page-hero{background:var(--navy);border-bottom:2px solid var(--gold);padding:3.5rem 2rem 3rem}
+.page-hero-inner{max-width:1280px;margin:0 auto}
+.breadcrumb{font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-bottom:1rem}
+.breadcrumb a{color:var(--gold);text-decoration:none}
+.breadcrumb a:hover{color:var(--gold-lt)}
+.page-title{font-family:'IM Fell English',serif;font-size:clamp(28px,4vw,52px);font-weight:400;color:#fff;line-height:1.1}
+.page-title span{color:var(--gold-lt);font-style:italic}
+.page-subtitle{font-family:'IM Fell English',serif;font-style:italic;font-size:17px;color:rgba(255,255,255,0.45);margin-top:.6rem}
+
+/* LANGUAGE TOGGLE */
+.lang-bar{background:var(--navy-mid);border-bottom:1px solid var(--border);padding:0 2rem;display:flex;align-items:center;gap:0}
+.lang-bar-inner{max-width:1280px;margin:0 auto;display:flex;gap:0}
+.lang-btn{
+  padding:13px 24px;font-size:11px;font-weight:700;letter-spacing:0.12em;
+  text-transform:uppercase;color:rgba(255,255,255,0.5);
+  background:none;border:none;cursor:pointer;
+  border-bottom:2px solid transparent;margin-bottom:-1px;
+  font-family:'Lato',sans-serif;transition:color .2s,border-color .2s;
+}
+.lang-btn.active{color:var(--gold-lt);border-bottom-color:var(--gold)}
+.lang-btn:hover{color:var(--gold-lt)}
+
+/* TOC */
+.toc-wrap{max-width:1280px;margin:0 auto;padding:2.5rem 2rem 0}
+.toc{background:#fff;border:1px solid var(--parch-mid);padding:1.5rem 1.8rem;display:flex;gap:2rem;flex-wrap:wrap;align-items:flex-start}
+.toc-label{font-size:10px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold-dk);white-space:nowrap;margin-top:2px}
+.toc-links{display:flex;flex-wrap:wrap;gap:8px}
+.toc-link{
+  padding:5px 12px;font-size:11px;font-weight:700;letter-spacing:0.08em;
+  text-transform:uppercase;color:var(--navy);border:1px solid var(--parch-mid);
+  text-decoration:none;background:var(--parch);transition:all .2s;
+}
+.toc-link:hover{background:var(--navy);color:#fff;border-color:var(--navy)}
+
+/* BODY */
+.bylaws-wrap{max-width:1280px;margin:0 auto;padding:3rem 2rem 5rem}
+
+/* LANGUAGE PANELS */
+.lang-panel{display:none}
+.lang-panel.active{display:block}
+
+/* DOCUMENT HEADER */
+.doc-header{
+  background:var(--navy);color:#fff;
+  padding:2rem 2.5rem;margin-bottom:3rem;
+  border-top:3px solid var(--gold);
+}
+.doc-header-title{font-family:'IM Fell English',serif;font-size:22px;color:#fff;margin-bottom:.5rem}
+.doc-header-sub{font-size:13px;color:rgba(255,255,255,0.5);line-height:1.7;font-style:italic}
+.doc-header-auth{
+  margin-top:1rem;padding-top:1rem;border-top:1px solid rgba(201,168,76,0.2);
+  font-size:13px;color:rgba(255,255,255,0.45);line-height:1.65;
+}
+
+/* PART / SECTION HEADERS */
+.bylaws-part{
+  margin-bottom:3rem;scroll-margin-top:120px;
+}
+.part-header{
+  background:var(--navy);padding:1rem 1.5rem;
+  display:flex;align-items:baseline;gap:14px;
+  border-left:4px solid var(--gold);
+  margin-bottom:1.5rem;
+}
+.part-num{
+  font-size:10px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;
+  color:var(--gold);flex-shrink:0;
+}
+.part-title{font-family:'IM Fell English',serif;font-size:20px;color:#fff}
+.part-title-sub{font-size:13px;color:rgba(255,255,255,0.45);font-style:italic}
+
+.section-header{
+  font-family:'IM Fell English',serif;font-size:17px;color:var(--navy);
+  margin:2rem 0 1rem;padding-bottom:.4rem;
+  border-bottom:1px solid var(--parch-mid);
+  display:flex;align-items:baseline;gap:10px;
+}
+.section-header-sub{font-size:13px;color:var(--muted);font-family:'Lato',sans-serif;font-style:italic}
+
+/* PARAGRAPH ROWS */
+.bylaw{
+  display:grid;grid-template-columns:60px 1fr;gap:1rem;
+  padding:1rem 0;border-bottom:1px solid var(--parch-mid);
+  align-items:baseline;
+}
+.bylaw:last-child{border-bottom:none}
+.bylaw-num{
+  font-family:'IM Fell English',serif;font-size:17px;color:var(--gold-dk);
+  font-weight:400;flex-shrink:0;
+}
+.bylaw-text{font-size:15px;color:var(--text);line-height:1.8}
+.bylaw-text p{margin-bottom:.7rem}
+.bylaw-text p:last-child{margin-bottom:0}
+.bylaw-annotation{
+  margin-top:.7rem;padding:.7rem 1rem;
+  background:var(--parch-mid);border-left:2px solid var(--gold);
+  font-size:13.5px;color:var(--muted);line-height:1.75;font-style:italic;
+}
+.bylaw-annotation strong{font-style:normal;color:var(--text)}
+
+/* RUSSIAN — same structure but different font feel */
+.ru .bylaw-text{font-size:15px}
+.ru .part-title{font-family:'IM Fell English',serif}
+
+footer{background:var(--navy-deep);border-top:2px solid var(--gold);padding:2rem}
+.footer-inner{max-width:1280px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+.footer-copy{font-size:11px;color:rgba(255,255,255,0.2)}
+.footer-links{display:flex;gap:20px;flex-wrap:wrap}
+.footer-links a{font-size:12px;color:rgba(255,255,255,0.35);text-decoration:none;transition:color .2s}
+.footer-links a:hover{color:var(--gold)}
+
+@media(max-width:768px){.topbar{display:none}.nav-menu{display:none}.bylaw{grid-template-columns:44px 1fr}.toc{flex-direction:column}}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <span>38 South Mill Street, Nyack, NY 10960 &nbsp;&middot;&nbsp; <a href="tel:8453531155">845-353-1155</a></span>
+  <div class="topbar-links">
+    <a href="https://www.youtube.com/channel/UCAd-5xu1S1rHwHoadO2LSAQ" target="_blank">&#9654; Watch Live</a>
+    <a href="https://form.jotform.com/202454512119144" target="_blank">Candle Box</a>
+    <a href="donate.html">Donate</a>
+  </div>
+</div>
+
+<nav id="nav">
+  <div class="nav-inner">
+    <a class="nav-brand" href="index.html">
+      <img src="icon.png" alt="Holy Virgin Protection Church">
+      <div>
+        <span class="nav-brand-name">Holy Virgin Protection Church</span>
+        <span class="nav-brand-sub">Russian Orthodox &middot; Nyack, NY</span>
+      </div>
+    </a>
+    <ul class="nav-menu">
+      <li><a href="schedule.html">Schedule</a></li>
+      <li>
+        <a href="#" class="active">About <span class="caret">&#9660;</span></a>
+        <div class="dropdown">
+          <a href="bookstore1.html">Bookstore</a>
+          <a href="directions.html">Driving Directions</a>
+          <a href="feast_day1.html">Church Feast Day</a>
+          <div class="dropdown-hr"></div>
+          <div class="has-sub">
+            <a href="#">History &#9658;</a>
+            <div class="sub-dropdown">
+              <a href="parishhistory.html">Parish History</a>
+              <a href="photos.html">Photo Gallery</a>
+              <a href="churchinterioandgrounds.html">Church &amp; Grounds</a>
+              <a href="obituaries.html">Obituaries</a>
+            </div>
+          </div>
+          <div class="has-sub">
+            <a href="#" class="active">Resources &#9658;</a>
+            <div class="sub-dropdown">
+              <a href="about_orthodoxy.html">About Orthodoxy</a>
+              <a href="bylaws.html" class="active">ROCOR By-Laws (Ustav)</a>
+              <a href="application.html">Application</a>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li>
+        <a href="#">Contact <span class="caret">&#9660;</span></a>
+        <div class="dropdown">
+          <a href="administration.html">Administration</a>
+          <a href="contact2.html">Contact Us</a>
+          <a href="mailing1.html">Join Our Mailing List</a>
+        </div>
+      </li>
+      <li><a href="http://hall.holyvirginprotectionchurch.org" target="_blank">Hall Rental</a></li>
+      <li><a href="http://school.holyvirginprotectionchurch.org" target="_blank">Parish School</a></li>
+      <li><a href="donate.html" class="nav-donate">Donate</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <p class="breadcrumb"><a href="index.html">Home</a> &nbsp;/&nbsp; <a href="#">About</a> &nbsp;/&nbsp; <a href="#">Resources</a> &nbsp;/&nbsp; ROCOR By-Laws</p>
+    <h1 class="page-title">ROCOR By-Laws <span>(Ustav)</span></h1>
+    <p class="page-subtitle">Normal Parish By-Laws &nbsp;&middot;&nbsp; Нормальный Приходской Устав</p>
+  </div>
+</div>
+
+<!-- LANGUAGE TOGGLE -->
+<div class="lang-bar">
+  <div class="lang-bar-inner">
+    <button class="lang-btn active" onclick="switchLang('en')">English</button>
+    <button class="lang-btn" onclick="switchLang('ru')">Русский</button>
+  </div>
+</div>
+
+<!-- TOC -->
+<div class="toc-wrap">
+  <div class="toc">
+    <span class="toc-label">Jump to</span>
+    <div class="toc-links">
+      <a class="toc-link" href="#part1">Part I &mdash; Name &amp; Aims</a>
+      <a class="toc-link" href="#part2">Part II &mdash; General Provisions</a>
+      <a class="toc-link" href="#part3">Part III &mdash; Parish Members</a>
+      <a class="toc-link" href="#part4">Part IV &mdash; Management</a>
+      <a class="toc-link" href="#part5">Part V &mdash; Property</a>
+      <a class="toc-link" href="#part6">Part VI &mdash; Funds</a>
+      <a class="toc-link" href="#part7">Part VII &mdash; Amendments</a>
+      <a class="toc-link" href="#part8">Part VIII &mdash; Closing</a>
+    </div>
+  </div>
+</div>
+
+<div class="bylaws-wrap">
+
+<!-- ═══════════ ENGLISH ═══════════ -->
+<div class="lang-panel active" id="panel-en">
+
+  <div class="doc-header">
+    <p class="doc-header-title">Normal Parish By-Laws</p>
+    <p class="doc-header-sub">By-Laws of the Parish of the Diocese of the Russian Orthodox Church Outside of Russia</p>
+    <p class="doc-header-auth">Authorized by Resolution of the Synod of Bishops of the Russian Orthodox Church Outside of Russia on June 30/July 13, 1951, and April 15/28, 1955, and 14/27 September 1971.<br><em>Note: St. Job of Pochaev, Montreal, published the erroneous date of 11 March 1975 in several editions.</em></p>
+  </div>
+
+  <div class="bylaws-part" id="part1">
+    <div class="part-header">
+      <span class="part-num">Part I</span>
+      <span class="part-title">Name and Aims</span>
+    </div>
+    <div class="bylaw">
+      <span class="bylaw-num">1.</span>
+      <div class="bylaw-text">The parish shall bear the name of the parish. It constitutes a part of the Diocese of the Russian Orthodox Church Outside of Russia and it shall be subject to the canonical rule of its Diocesan Bishop and the immediate supervision of the pastor appointed by the latter.
+        <div class="bylaw-annotation"><strong>Annotation.</strong> Whereas pursuant to Par. 1 of the Normal Parish By-Laws the parishes are under the canonical jurisdiction of their Diocesan Bishop according to the holy canons, the Diocesan Bishop being the Head of the local Church (diocese), has the right to remove the clergymen of the Diocese from their positions in case of their serious crimes or misdeeds and transfer them to other positions for the good of the ministry. The Diocesan Bishop has also the right to remove from their positions any persons in the parish administration and also to exclude from membership of the parish persons who resist the Administration, or those who conduct disruptive work, or who are convicted of crimes or serious misdemeanors harmful to the peaceful life of the parish. The Diocesan Bishop also has the power to suspend clergymen and excommunicate laymen in cases of serious violation of Church order and discipline. Such decisions of the Diocesan Bishop are relayed to the clergymen directly or through deans and to laymen through Rectors according to Par. 14 of the Normal Parish By-Laws. (Enacted by the Council of Bishops 23 May/5 June 1967, Protocol No. 15).</div>
+      </div>
+    </div>
+    <div class="bylaw">
+      <span class="bylaw-num">2.</span>
+      <div class="bylaw-text">It shall be the aim of the parish to unite the believers around the parish church on the basis of the teachings, the canons, the traditions and the rules of the Russian Orthodox Church for the satisfaction of the religious needs and moral benefit of its members.</div>
+    </div>
+  </div>
+
+  <div class="bylaws-part" id="part2">
+    <div class="part-header">
+      <span class="part-num">Part II</span>
+      <span class="part-title">General Provisions <span class="part-title-sub">Jurisdiction &middot; Clergy</span></span>
+    </div>
+    <div class="bylaw"><span class="bylaw-num">3.</span><div class="bylaw-text">It shall be the object of the parish to mutually assist the believers, forming part thereof and united in the Faith in Christ our Savior, by means of prayers, Sacraments, Christian teaching and Church discipline, in attaining salvation through the participation in sacraments and Christian enlightenment, worthy life and Christian charity. Accordingly, the immediate aims of the parish shall embrace: (a) the care of the church and its adornment; (b) the maintenance of the clergy; (c) the economic prosperity of the parish and the care of the needs of the church, the clergy and all parish institutions, the diocesan and social needs; (d) charitable work, and (e) educational work in the spirit of the Orthodox Church.</div></div>
+    <div class="bylaw"><span class="bylaw-num">4.</span><div class="bylaw-text">In conjunction with the parish church there shall be a clergy of not less than two members, the pastor and the deacon, or the psalmist-precentor, who shall receive living accommodations and subsistence from the parish. The clergy shall be appointed by the diocesan authorities. The number of the members of the clergy may be increased or reduced by the Ruling Bishop in accordance with the capacity and needs of the parish.</div></div>
+    <div class="bylaw"><span class="bylaw-num">5.</span><div class="bylaw-text">The boundaries of the parish may be changed by the diocesan authorities pursuant to the request of the parishioners and subject to the consent of the clergy of that parish where such changes are to be effected.</div></div>
+    <div class="bylaw"><span class="bylaw-num">6.</span><div class="bylaw-text">The establishment of a new parish shall be effected pursuant to the request of the faithful with the permission and blessing, or by order of, the diocesan authorities.</div></div>
+    <div class="bylaw"><span class="bylaw-num">7.</span><div class="bylaw-text">A priest or a person in the service of the church, or a layman, who secedes from the Russian Orthodox Church Outside of Russia and refuses to recognize the authority of the Synod of Bishops of the Russian Orthodox Church Outside of Russia, shall not be permitted to occupy any office in the parish.</div></div>
+    <div class="bylaw"><span class="bylaw-num">8.</span><div class="bylaw-text">Priests and persons in the service of the church shall be considered lawfully appointed if they occupy their said offices by appointment and permission and with the blessing of the Ruling Bishop appointed to this office by the Synod of Bishops of the Russian Orthodox Church Outside of Russia.</div></div>
+    <div class="bylaw"><span class="bylaw-num">9.</span><div class="bylaw-text">The pastor shall be the immediate supervisor of the parish and he shall be held responsible for its welfare before the diocesan authorities.</div></div>
+    <div class="bylaw"><span class="bylaw-num">10.</span><div class="bylaw-text">The Ruling Bishop may, should he deem it necessary, appoint a second priest as assistant to the pastor. The question of the maintenance of such an assistant shall be settled by the diocesan authorities acting in agreement with the Parish Council.</div></div>
+  </div>
+
+  <div class="bylaws-part" id="part3">
+    <div class="part-header">
+      <span class="part-num">Part III</span>
+      <span class="part-title">Parishioners and Parish Members</span>
+    </div>
+    <div class="bylaw"><span class="bylaw-num">11.</span><div class="bylaw-text">All Orthodox Christians of both sexes, regardless of their nationality, who have reached the age of 21 years, who pay the established membership dues, who make their confession and take Holy Communion not less than once a year, and who tend to the moral and economic welfare of the parish may become parish members.
+      <div class="bylaw-annotation"><strong>Annotation 1.</strong> By decision of the Church Parish Council for persons of Orthodox faith who have not reached the age of 21, there may be organized, in conjunction with the parish, youth societies for their religious and moral upbringing.</div>
+      <div class="bylaw-annotation"><strong>Annotation 2.</strong> Persons who live in concubinage without Church marriage, or who are engaged in ignoble business, or who are convicted of criminal offences shall have no right to participate in the parish meetings or be elected to parish offices. Those convicted of criminal offences may be restored in their rights three years after they have served their term and after absolution by their father-confessor.</div>
+      <div class="bylaw-annotation"><strong>Annotation 3.</strong> Those who make confession to a priest outside of their parish must present to their Rector a certificate from that priest.</div>
+    </div></div>
+    <div class="bylaw"><span class="bylaw-num">12.</span><div class="bylaw-text">All parish members shall be recorded by the Secretary of the Church Parish Council in a special register. The membership enrollment shall be made by the Church Parish Council pursuant to written application.</div></div>
+    <div class="bylaw"><span class="bylaw-num">13.</span><div class="bylaw-text">All parish members, except those mentioned in Annotation 2 under paragraph 11, who regularly pay the membership dues and other obligatory dues fixed by the diocesan meetings, shall have the right to participate with a decisive vote in all parish meetings, to elect parish officials and to be elected to parish offices.
+      <div class="bylaw-annotation"><strong>Annotation 1.</strong> The newly admitted members of the parish shall acquire the right to vote and to be elected to parish offices upon the expiration of six months after their admission to parish membership. Persons coming from another parish in the jurisdiction of the Russian Orthodox Church Outside of Russia and who present a certificate from it, are accepted into a new parish with no time limit of their voting rights.</div>
+      <div class="bylaw-annotation"><strong>Annotation 2.</strong> Parish members who shall have failed to pay their membership dues during three months shall be deprived of their rights to vote and to be elected to parish offices pending the payment of such arrears. Parish members who have failed to pay their membership dues during twelve months shall be excluded from parish membership. However, should a parish member fail to pay his dues because of some valid reason (illness, unemployment, etc.) the question of his right to vote shall be determined by the Church Parish Council.</div>
+    </div></div>
+    <div class="bylaw"><span class="bylaw-num">14.</span><div class="bylaw-text">Parish members who shall be found disloyal to the Russian Orthodox Church Outside of Russia and to their parish; or who deliberately neglect Church rules and obstruct lawfully adopted resolutions of the parish meetings and the instructions of the Church Parish Council, as well as those who shall have violated the good order and decorum in the church or who shall be found engaged in some ignoble occupation may be excluded from parish membership by decision of the Church Parish Council, submitted by the latter for approval of the Ruling Bishop. The said persons may be restored in their rights by decision of the Church Parish Council provided they repent and prove by their ways of living and behavior their moral rectitude.</div></div>
+    <div class="bylaw"><span class="bylaw-num">15.</span><div class="bylaw-text">Persons who shall have rendered particularly valuable services to the parish may be elected trustees by the Annual Parish Meetings.</div></div>
+  </div>
+
+  <div class="bylaws-part" id="part4">
+    <div class="part-header">
+      <span class="part-num">Part IV</span>
+      <span class="part-title">Managing Organs and Officers</span>
+    </div>
+    <div class="bylaw"><span class="bylaw-num">16.</span><div class="bylaw-text">The following shall be the managing organs: A. The general meeting of the members of the parish, hereinafter called parish meetings; B. The Church Parish Council; C. The Auditing Committee.</div></div>
+
+    <h3 class="section-header">A. Parish Meetings <span class="section-header-sub">Annual and Extraordinary</span></h3>
+    <div class="bylaw"><span class="bylaw-num">17.</span><div class="bylaw-text">Parish meetings shall be: 1) Annual and 2) Extraordinary.</div></div>
+    <div class="bylaw"><span class="bylaw-num">18.</span><div class="bylaw-text">The time for the convening of the Annual Parish Meeting shall be fixed by the Church Parish Council. Not later than three weeks prior to the Annual Parish Meeting, the Church Parish Council shall mail notices on the convening thereof together with the agenda. In addition thereto, the pastor, prior to the Annual Parish Meeting, shall announce its convocation from the steps before the altar on three successive Sundays after the divine service.</div></div>
+    <div class="bylaw"><span class="bylaw-num">19.</span><div class="bylaw-text">The pastor, or in case of his absence or illness, a priest substituting for him, shall preside over the Annual Parish Meeting. The Vice-President shall be elected by the meeting from among the laymen. When a matter is deliberated upon which pertains to the pastor personally, and also when candidates to the members of the staff clergy are elected, it shall be obligatory that the dean, or another person appointed by the Ruling Bishop, preside over the meeting.</div></div>
+    <div class="bylaw"><span class="bylaw-num">20.</span><div class="bylaw-text">The following shall be within the competency of the Annual Parish Meeting: (a) the election of the Warden, the members of the Church Parish Council, the Auditing Committee and the trustees; (b) the examination of the report of the Church Parish Council on the activities of the parish during the expired year; (c) the examination and ratification of the Warden's and Treasurer's reports; (d) the examination and ratification of the report of the Auditing Committee and the budget for the forthcoming year; (e) the establishment of the amount of the membership dues and other items of self-taxation; (f) amendment of the By-Laws of the parish; (g) consideration of other matters, including the agenda of the Annual Parish Meetings.
+      <div class="bylaw-annotation"><strong>Annotation 1.</strong> Canonical matters as well as jurisdictional matters (1&ndash;10) shall not be within the competency of either the Annual or Extraordinary Parish Meetings.</div>
+      <div class="bylaw-annotation"><strong>Annotation 2.</strong> The Annual Parish Meeting may respond to general questions of Christian life and on current affairs which affect the Christian conscience of the faithful.</div>
+    </div></div>
+    <div class="bylaw"><span class="bylaw-num">21.</span><div class="bylaw-text">The Annual Parish Meeting shall be considered valid in the presence of a quorum of two thirds of the parish members.
+      <div class="bylaw-annotation"><strong>Annotation 1.</strong> If by the time scheduled for the meeting, the parish members present should fail to constitute the required quorum, another Annual Parish Meeting shall be convened one hour later on the same day which meeting shall be considered valid in the presence of any number of attending members. This provision should be included in the text of the notice convening the Annual Parish Meeting.</div>
+      <div class="bylaw-annotation"><strong>Annotation 2.</strong> The Parish Meeting checks the voting qualifications of its members. Each member of the Parish Meeting who has for some reason lost his right to participate in the Meeting must of his own accord remove himself from participation in the Meeting.</div>
+      <div class="bylaw-annotation"><strong>Annotation 3.</strong> Should the Annual Parish Meeting be called to order in the presence of the required quorum, but subsequently some members should quit the meeting and the number of those attending it should be less than the said quorum, the meeting shall nevertheless be considered valid.</div>
+      <div class="bylaw-annotation"><strong>Annotation 4.</strong> Personal attendance of the parish members at the Parish Meeting for voting purposes shall be obligatory. Voting by proxy shall not be permitted.</div>
+    </div></div>
+    <div class="bylaw"><span class="bylaw-num">22.</span><div class="bylaw-text">All matters shall be decided by simple and open majority vote. However, should any one of those present demand secret balloting, his request shall be honored. In case of a tie, the vote of the pastor or the person empowered by him to preside over the Annual Parish Meeting shall prevail.</div></div>
+    <div class="bylaw"><span class="bylaw-num">23.</span><div class="bylaw-text">The Secretary of the Church Parish Council shall keep the minutes of the Annual Parish Meeting and he shall record all the decisions adopted thereat together with the dissenting opinions, should any be expressed by the participants in the meeting.</div></div>
+    <div class="bylaw"><span class="bylaw-num">24.</span><div class="bylaw-text">The minutes of the Annual Parish Meetings, after having been adopted by an editing committee elected by the meeting, shall be submitted not later than seven days thereafter by the pastor of the parish to the Ruling Bishop for his ratification.</div></div>
+
+    <h3 class="section-header">Extraordinary Parish Meetings</h3>
+    <div class="bylaw"><span class="bylaw-num">25.</span><div class="bylaw-text">Extraordinary Parish Meetings, if necessary, may be convened: (a) by order of the Ruling Bishop; (b) by the pastor of the parish; (c) by the Church Parish Council; (d) at the request of the Auditing Committee; (e) pursuant to a written request of not less than one-third of the parish members submitted to the Church Parish Council.</div></div>
+    <div class="bylaw"><span class="bylaw-num">26.</span><div class="bylaw-text">All the provisions of the By-Laws pertaining to the convening of the Annual Parish Meetings (Par. 18) and the keeping of the minutes (PP. 23 and 24) shall be likewise applicable to the Extraordinary Parish Meetings.
+      <div class="bylaw-annotation"><strong>Annotation.</strong> In emergency cases, an Extraordinary Parish Meeting may be convened with eight days advance notice. The pastor shall announce such a meeting from ambo after a Sunday divine service, and, in addition, the Church Parish Council shall mail respective notices with a precise indication of the matter in connection with which the said meeting is being convened.</div>
+    </div></div>
+    <div class="bylaw"><span class="bylaw-num">27.</span><div class="bylaw-text">Only such matters shall be within the competency of an Extraordinary Parish Meeting as are specified in the notice convening same.</div></div>
+
+    <h3 class="section-header">B. The Church Parish Council</h3>
+    <div class="bylaw"><span class="bylaw-num">28.</span><div class="bylaw-text">The Church Parish Council shall be composed of: (a) the Pastor of the parish who by virtue of his office shall be the President of the Church Parish Council; (b) the Church Warden; (c) the President or the Sister Superior of the Sisterhood; (d) the Treasurer; (e) the Secretary; (f) Staff members of the clergy; (g) from two to five lay members of the parish.
+      <div class="bylaw-annotation"><strong>Annotation.</strong> In the United States and in Canada, in parishes incorporated pursuant to the civil laws on religious corporations, the trustees of the parish corporation (parish), elected pursuant to the said laws, shall have the right to participate in the meetings of the Church Parish Council and in the Parish Meetings with the rights of active members.</div>
+    </div></div>
+    <div class="bylaw"><span class="bylaw-num">29.</span><div class="bylaw-text">All the officials enumerated in Par. 28, with the exception of the Pastor and the staff members of the clergy appointed by the Ruling Bishop, as well as the Senior Sister of the Sisterhood selected by the latter, shall be elected by the Annual Parish Meeting for a term of one year, and, on recommendation of the Pastor, shall be approved in the respective offices by the Ruling Bishop. All the said officers, with the exception of the Pastor and the staff members of the clergy, shall perform their duties free of pay. The Church Warden shall be elected for a term of three years.</div></div>
+    <div class="bylaw"><span class="bylaw-num">30.</span><div class="bylaw-text">The following shall be within the competency of the Church Parish Council: (a) The adornment of the parish church and the care of the entire church property; (b) The maintenance of the clergy and their provision with living quarters; (c) The collection of membership dues and other forms of the members' self-taxation; (d) The keeping of the parish books and of the lists of those making confession; (e) The care of organizing the church choir under the direction of an experienced director; (f) The care of the educational and charitable work of the parish; (g) Representing the parish before civil authorities in connection with all matters involving the parish; (h) The maintenance of the diocesan and central church administrations in proportion to the parish resources.</div></div>
+
+    <h3 class="section-header">Parish Officers</h3>
+    <div class="bylaw"><span class="bylaw-num">31.</span><div class="bylaw-text"><strong>The Pastor</strong> of the parish shall: (a) Conduct divine services and ceremonies according to the Orthodox rite; (b) Instruct the parish members and those attending church on the rules of the Orthodox Faith and devotion; (c) Instruct children in catechism; (d) Endeavor to uplift the spiritual and moral level of the members of the parish; (e) Preside over all parish meetings and all meetings of the Church Parish Council; (f) Supervise, with the assistance of the Church Warden, the adornment of the parish church; (g) Have general supervision over the work of the Church Parish Council and that of the Church Warden; (h) Keep parish registers and issue copies of the records therefrom; (i) Communicate on behalf of the parish with the diocesan authorities in connection with all matters involving the parish; (j) Be responsible for the welfare of the parish; (k) Keep the church seal; (l) Supervise the execution of all decisions of the Annual and Extraordinary parish meetings and those of the Church Parish Council; (m) Ensure the accuracy of the minutes of the Church Parish Council meetings.</div></div>
+    <div class="bylaw"><span class="bylaw-num">32.</span><div class="bylaw-text"><strong>Members of the Clergy</strong>, being the immediate assistants of the Pastor in the performance of his religious duties and in his educational work among the parish members and those attending church, shall: (a) Participate in all the meetings of the Church Parish Council as well as in the Annual and Extraordinary parish meetings; (b) Perform special duties conferred on them by the Pastor.</div></div>
+    <div class="bylaw"><span class="bylaw-num">33.</span><div class="bylaw-text"><strong>The Church Warden</strong>, being the immediate assistant of the parish Pastor with respect to economic matters, shall be directly responsible for the safekeeping of the church property. In addition he shall: (a) See to it that good order be observed in the church during divine services; (b) Oversee the sale of candles; (c) Keep track of the monetary receipts and disbursements of the parish; (d) Take the duly prescribed oath when he is newly elected.</div></div>
+    <div class="bylaw"><span class="bylaw-num">34.</span><div class="bylaw-text"><strong>The Treasurer</strong> shall: (a) Keep the parish receipt and disbursement ledgers in the form prescribed by the diocesan authorities; (b) Keep the parish funds in a manner prescribed by the Church Parish Council; (c) Disburse, under the control of the Church Warden, the parish monetary sums; (d) Compile the budget and the annual financial report for submission to the Church Parish Council and the Annual Parish Meeting; (e) Submit the entire monetary accounting to the Auditing Committee.</div></div>
+    <div class="bylaw"><span class="bylaw-num">35.</span><div class="bylaw-text"><strong>The Secretary</strong> shall: (a) Handle all correspondence on behalf of the Church Parish Council under the direction of the Pastor; (b) Keep the minutes of the Annual and Extraordinary Parish Meetings as well as those of the Church Parish Council; (c) Mail notices convening all parish meetings and the meetings of the Church Parish Council; (d) Keep the lists and addresses of the parish members; (e) Prepare, under the supervision of the Pastor, the reports to the Annual and Extraordinary parish meetings.
+      <div class="bylaw-annotation"><strong>Annotation.</strong> All the records and books shall be kept in accordance with the forms devised by the diocesan authorities.</div>
+    </div></div>
+    <div class="bylaw"><span class="bylaw-num">36.</span><div class="bylaw-text"><strong>Members of the Church Parish Council</strong> shall: (a) Participate in all the meetings of the Church Parish Council; (b) Assist the Pastor and the Church Warden; (c) Perform special duties conferred on them by the Pastor and by the Church Parish Council; (d) In case of illness or temporary absence of some officer, they shall, by order of the Pastor, perform the duties of the absent officer.</div></div>
+
+    <h3 class="section-header">Meetings of the Church Parish Council</h3>
+    <div class="bylaw"><span class="bylaw-num">37.</span><div class="bylaw-text">The meetings of the Church Parish Council shall be convened by the order of the Pastor not less than once a month.</div></div>
+    <div class="bylaw"><span class="bylaw-num">38.</span><div class="bylaw-text">At the meetings of the Church Parish Council all matters shall be decided by simple majority vote while in case of a tie, the vote of the Pastor, or the person presiding over the meeting pursuant to his instruction, shall prevail.</div></div>
+    <div class="bylaw"><span class="bylaw-num">39.</span><div class="bylaw-text">The Secretary of the Church Parish Council shall keep the minutes of its meetings (Par. 35b) and he shall record them in a special book therefor.</div></div>
+
+    <h3 class="section-header">C. The Auditing Committee</h3>
+    <div class="bylaw"><span class="bylaw-num">40.</span><div class="bylaw-text">The Auditing Committee shall be comprised of three members elected by the Annual Parish Meeting (Par. 20a) for a term of one year.
+      <div class="bylaw-annotation"><strong>Annotation.</strong> The Members of the Church Parish Council shall not be eligible as members of the Auditing Committee, and the members of the latter cannot be members of the Church Parish Council.</div>
+    </div></div>
+    <div class="bylaw"><span class="bylaw-num">41.</span><div class="bylaw-text">By order of the Pastor, the Auditing Committee shall begin its work not later than two weeks prior to the date scheduled for the Annual Parish Meeting.</div></div>
+    <div class="bylaw"><span class="bylaw-num">42.</span><div class="bylaw-text">The following shall be the duties of the Auditing Committee: (a) The verification of all areas of the Treasurer's accounting and of the report compiled by him on the status thereof to the Annual Parish Meeting and the Church Parish Council (Par. 34d); (b) The preparation of a report on the findings of the accounting audit; (c) The submission of these findings to the Annual Parish Meeting; (d) The recommendation to the Annual Parish Meeting regarding any desirable changes in the method of the keeping of the Treasurer's accounting.</div></div>
+    <div class="bylaw"><span class="bylaw-num">43.</span><div class="bylaw-text"><strong>The Sisterhood.</strong> In conjunction with the parish, a Sisterhood may be established. Its Chairman or Sister Superior, guided in her work by the instructions of the Pastor and by the Statute on Sisterhoods ratified by the diocesan authorities, shall: (a) Together with the other sisters, tend to the cleanliness of the church, the vestments and other objects in the sacristy; (b) Closely participate in the organization of the charitable work of the parish; (c) Manage the luncheons (trapezas) and the refectory; (d) Guide and coordinate the work of the members forming part of the Sisterhood.</div></div>
+  </div>
+
+  <div class="bylaws-part" id="part5">
+    <div class="part-header">
+      <span class="part-num">Part V</span>
+      <span class="part-title">Church and Parish Property</span>
+    </div>
+    <div class="bylaw"><span class="bylaw-num">44.</span><div class="bylaw-text">The following shall be a part of the property of the church: (a) The church building with all its appurtenances as well as churches, oratories and chapels annexed to the parish church; (b) Everything that is donated to the church and brought to God's altar, for instance: articles needed for church use; (c) Personal and real property donated for the adornment of the church; (d) Monies received by the church from different sources, i.e., candle-sale profits, jug and plate monies, residues of profits, income derived from estate and quitrent, and from the sale of plots in parish cemeteries and various sundry incomes; (e) Personal and real property and capital funds specifically donated or bequeathed to the church for its benefit or to its ownership, even those with a special designation for charitable and educational needs of the parish or the maintenance of the clergy.</div></div>
+    <div class="bylaw"><span class="bylaw-num">45.</span><div class="bylaw-text">Parish property shall consist of every kind of personal and real property and capital funds received for the satisfaction of the religious and educational as well as charitable needs of the parish. These shall include: (a) Voluntary donations; (b) Plate collections within the boundaries of the parish; (c) Voluntary collections under subscription lists; (d) Voluntary donations in kind by the parishioners; (e) Incomes from real estate owned by the parish; (f) Incomes from quitrent; (g) Collections made by decision of the general Parish Meetings.</div></div>
+    <div class="bylaw"><span class="bylaw-num">46.</span><div class="bylaw-text">The management of the church and parish property and capital shall be vested in the Church Parish Council.</div></div>
+    <div class="bylaw"><span class="bylaw-num">47.</span><div class="bylaw-text">Church real estate may be purchased or otherwise acquired out of church funds with the permission of the diocesan authorities, by decision adopted either by the Annual Parish Meeting or the Extraordinary Parish Meeting especially convened therefor. The sale of church real estate, its alienation, exchange or cession for building purposes, shall be effected subject to the authorization of the Synod of Bishops.</div></div>
+    <div class="bylaw"><span class="bylaw-num">48.</span><div class="bylaw-text">Monetary funds, incomes and receipts belonging to the church shall be disbursed in accordance with the budget adopted by the Annual Church Parish Meeting and ratified by the diocesan authorities.</div></div>
+    <div class="bylaw"><span class="bylaw-num">49.</span><div class="bylaw-text">Parish property of every kind may be acquired, sold, alienated, exchanged, mortgaged, leased and ceded for building purposes by the decision of the Annual Church Parish Meeting.</div></div>
+    <div class="bylaw"><span class="bylaw-num">50.</span><div class="bylaw-text">Reports on the expenditures of parish property and capital funds shall be submitted in due manner by the Church Parish Council to the diocesan authorities for its information.</div></div>
+  </div>
+
+  <div class="bylaws-part" id="part6">
+    <div class="part-header">
+      <span class="part-num">Part VI</span>
+      <span class="part-title">Monetary Parish Funds</span>
+    </div>
+    <div class="bylaw"><span class="bylaw-num">51.</span><div class="bylaw-text">All church parish sums, as they are received, shall be deposited by the Treasurer to the current account of the parish with a bank pursuant to the direction of the Church Parish Council.</div></div>
+    <div class="bylaw"><span class="bylaw-num">52.</span><div class="bylaw-text">By decision of the Church Parish Council, for meeting current expenses, the Treasurer may be allowed to keep a certain amount of money in the form of an advance subject to accounting, the sum of which shall be determined by the Church Parish Council.</div></div>
+    <div class="bylaw"><span class="bylaw-num">53.</span><div class="bylaw-text">All checks shall be signed by at least two persons: the Pastor and the Church Warden, or the Treasurer, or in the absence of one of them, by the Secretary. The Church Parish Council shall authorize the signing of the checks by the said persons, and notice to this effect shall be provided to the bank. The church seal shall be affixed to the checks.</div></div>
+  </div>
+
+  <div class="bylaws-part" id="part7">
+    <div class="part-header">
+      <span class="part-num">Part VII</span>
+      <span class="part-title">Amendment of the Parish By-Laws</span>
+    </div>
+    <div class="bylaw"><span class="bylaw-num">54.</span><div class="bylaw-text">Amendments of these By-Laws may be made, if warranted by local conditions, only with the consent of 2/3 of the parish members at a lawfully-convened Annual Meeting, subject to the approval of the Diocesan Bishop, and on condition that such amendment in the By-Laws be ratified by the Synod of Bishops.</div></div>
+    <div class="bylaw"><span class="bylaw-num">55.</span><div class="bylaw-text">The suggested text of the paragraphs of the By-Laws, which it is proposed to amend, shall be incorporated into the notices convening the respective Annual Meeting.</div></div>
+  </div>
+
+  <div class="bylaws-part" id="part8">
+    <div class="part-header">
+      <span class="part-num">Part VIII</span>
+      <span class="part-title">Closing of the Parish</span>
+    </div>
+    <div class="bylaw"><span class="bylaw-num">56.</span><div class="bylaw-text">The closing of the parish can take place not otherwise than subject to the method set forth in Par. 54 of these By-Laws, while the entire personal and real estate of the parish shall be turned over to the direct management and disposition of the diocesan authorities as per the direction of the Ruling Bishop.</div></div>
+  </div>
+
+</div><!-- end panel-en -->
+
+<!-- ═══════════ RUSSIAN ═══════════ -->
+<div class="lang-panel ru" id="panel-ru">
+
+  <div class="doc-header">
+    <p class="doc-header-title">Нормальный Приходской Устав</p>
+    <p class="doc-header-sub">УСТАВ прихода, епархии, юрисдикции Архиерейского Синода Русской Православной Церкви заграницей</p>
+    <p class="doc-header-auth">Утвержденный Определениями Архиерейского Синода Русской Православной Церкви заграницей 30 июня/13 июля 1951 г., 15/28 апреля 1955 г. и 14/27 сент. 1971 г.<br><em>Примечание: В изданиях Братства Иова Почаевского, г. Монреаль, указана неверная дата &mdash; 11 марта 1975 г.</em></p>
+  </div>
+
+  <div class="bylaws-part" id="ru-part1">
+    <div class="part-header">
+      <span class="part-num">Раздел 1</span>
+      <span class="part-title">Название и цель</span>
+    </div>
+    <div class="bylaw"><span class="bylaw-num">№ 1.</span><div class="bylaw-text">Приход носит название прихода. Он является составной частью епархии Русской Православной Церкви заграницей и находится в каноническом управлении своего епархиального Архиерея, под непосредственным руководством поставленного последним настоятеля.
+      <div class="bylaw-annotation"><strong>Примечание:</strong> В виду того, что, согласно 1-го параграфа Нормального Приходского Устава, приходы находятся в каноническом управлении епархиального Архиерея, согласно священных канонов, которыми руководствуются православные приходы, как основными священными законами своего бытия, епархиальному Архиерею, как предстоятелю местной Церкви (епархии), принадлежит право, в случае серьезных со стороны священнослужителей епархии преступлений или проступков, отрешение их от занимаемых ими должностей или перевод их, для пользы церковной службы, на другие места. (Принято Архиерейским Собором 23 мая/5 июня 1967 года, Протокол № 15).</div>
+    </div></div>
+    <div class="bylaw"><span class="bylaw-num">№ 2.</span><div class="bylaw-text">Целью прихода является объединение верующих вокруг приходского храма на основе учения, преданий и правил Русской Православной Церкви для удовлетворения религиозных потребностей и нравственного усовершенствования его членов.</div></div>
+  </div>
+
+  <div class="bylaws-part" id="ru-part2">
+    <div class="part-header">
+      <span class="part-num">Раздел 2</span>
+      <span class="part-title">Общие положения <span class="part-title-sub">Юрисдикция &middot; Причт</span></span>
+    </div>
+    <div class="bylaw"><span class="bylaw-num">№ 3.</span><div class="bylaw-text">Назначение прихода состоит в том, чтобы входящие в состав его верующие, объединенные единством веры во Христа Спасителя, молитвами, таинствами, христианским учением и церковной дисциплиной, содействовали друг другу в достижении вечного спасения через участие в Таинствах, христианское просвещение, добрую жизнь и дела христианского благотворения.</div></div>
+    <div class="bylaw"><span class="bylaw-num">№ 4.</span><div class="bylaw-text">При церкви прихода должен быть причт, состоящий не менее чем из двух лиц: настоятеля и диакона или псаломщика-регента, которые пользуются квартирами и содержанием от прихода. Причт назначается епархиальной властью. Число членов причта может быть увеличиваемо или сокращено правящим Архиереем в соответствии с возможностями и нуждами прихода.</div></div>
+    <div class="bylaw"><span class="bylaw-num">№ 5.</span><div class="bylaw-text">Пределы прихода могут быть изменяемы епархиальной властью по ходатайству прихожан и с согласия причтов приходов, в пределах коих вводятся изменения.</div></div>
+    <div class="bylaw"><span class="bylaw-num">№ 6.</span><div class="bylaw-text">Открытие нового прихода совершается по просьбе верующих с разрешения и благословения епархиальной власти или по определению последней.</div></div>
+    <div class="bylaw"><span class="bylaw-num">№ 7.</span><div class="bylaw-text">Священно- или церковно-служитель, а равно и мирское лицо, отколовшиеся от Русской Православной Зарубежной Церкви и не признающее над собой власти Русского Православного Зарубежного Архиерейского Синода, не могут занимать никакой должности в приходе.</div></div>
+    <div class="bylaw"><span class="bylaw-num">№ 8.</span><div class="bylaw-text">Законно поставленными священно- и церковно-служителями являются лица, занимающие соответствующие должности по назначению, с разрешения и благословения правящего Архиерея, назначенного на эту должность Архиерейским Синодом Русской Православной Церкви заграницей.</div></div>
+    <div class="bylaw"><span class="bylaw-num">№ 9.</span><div class="bylaw-text">Непосредственным руководителем прихода, ответственным перед епархиальной властью за его благоустроение, является настоятель.</div></div>
+    <div class="bylaw"><span class="bylaw-num">№ 10.</span><div class="bylaw-text">Правящий Архиерей может, если признает нужным, назначить в помощь настоятелю другого священника. Вопрос о содержании его разрешается по соглашению епархиальной власти с Приходским Советом.</div></div>
+  </div>
+
+  <div class="bylaws-part" id="ru-part3">
+    <div class="part-header">
+      <span class="part-num">Раздел 3</span>
+      <span class="part-title">Прихожане и члены прихода</span>
+    </div>
+    <div class="bylaw"><span class="bylaw-num">№ 11.</span><div class="bylaw-text">Членами прихода могут быть все лица Православного вероисповедания обоего пола, достигшие 21-летнего возраста, платящие установленные членские взносы, исповедающиеся и причащающиеся Св. Таин не менее одного раза в год и ревнующие о нравственном и материальном благополучии прихода.
+      <div class="bylaw-annotation"><strong>Примечание 1.</strong> Для лиц Православного вероисповедания, не достигших 21-го года, при приходе могут быть образованы, постановлением Церковно-Приходского Совета, общества молодежи для религиозно-нравственного воспитания.</div>
+      <div class="bylaw-annotation"><strong>Примечание 2.</strong> Члены прихода, состоящие в сожителестве без церковного брака, имеющие предосудительное занятие или осужденные по суду за уголовные преступления, не могут участвовать в Приходском Собрании или быть избираемы на приходскую должность.</div>
+    </div></div>
+    <div class="bylaw"><span class="bylaw-num">№ 12.</span><div class="bylaw-text">Все члены прихода вносятся секретарем Церковно-Приходского Совета в особую приходскую книгу. Прием в члены прихода производится Церковно-Приходским Советом по письменным заявлениям.</div></div>
+    <div class="bylaw"><span class="bylaw-num">№ 13.</span><div class="bylaw-text">Все члены прихода, за исключением указанных в примеч. 2 к № 11, исправно платящие членские взносы, имеют право участвовать с решающим голосом во всех приходских собраниях, избирать должностных лиц прихода и быть избираемыми на приходские должности.</div></div>
+    <div class="bylaw"><span class="bylaw-num">№ 14.</span><div class="bylaw-text">Члены прихода, уличённые в нелояльности по отношению к Русской Православной Церкви заграницей и приходу, в умышленном пренебрежении церковными правилами и противодействии законно состоявшимся решениям Приходских Собраний, могут быть исключаемы из членов прихода постановлением Церковно-Приходского Собрания, по представлению Приходского Совета, с утверждения епархиального Архиерея.</div></div>
+    <div class="bylaw"><span class="bylaw-num">№ 15.</span><div class="bylaw-text">Лица, оказавшие особо выдающиеся заслуги перед приходом, могут быть избраны Попечителями на годовом приходском собрании.</div></div>
+  </div>
+
+  <div class="bylaws-part" id="ru-part4">
+    <div class="part-header">
+      <span class="part-num">Раздел 4</span>
+      <span class="part-title">Органы управления и должностные лица</span>
+    </div>
+    <div class="bylaw"><span class="bylaw-num">№ 16.</span><div class="bylaw-text">Органами управления прихода являются: А. Общее Собрание членов прихода, именуемое Приходским Собранием. Б. Церковно-Приходской Совет. В. Ревизионная Комиссия.</div></div>
+
+    <h3 class="section-header">А. Приходские Собрания</h3>
+    <div class="bylaw"><span class="bylaw-num">№ 17.</span><div class="bylaw-text">Приходские Собрания бывают: 1) Годовые и 2) Чрезвычайные.</div></div>
+    <div class="bylaw"><span class="bylaw-num">№ 18.</span><div class="bylaw-text">Время созыва Годового Приходского Собрания назначает Церковно-Приходской Совет. Не позже, как за 3 недели до дня Годового Приходского Собрания, Церковно-Приходской Совет рассылает повестки о созыве такового с указанием предметов, подлежащих обсуждению.</div></div>
+    <div class="bylaw"><span class="bylaw-num">№ 19.</span><div class="bylaw-text">На Приходском Собрании председательствует настоятель прихода или заменяющий его, в случае болезни или отсутствия, священник. Товарищ председателя избирается Собранием из мирян.</div></div>
+    <div class="bylaw"><span class="bylaw-num">№ 20.</span><div class="bylaw-text">Ведению Годового Приходского Собрания подлежат: а) Избрание Церковного Старосты, Церковно-Приходского Совета, Ревизионной Комиссии и Попечителей. б) Рассмотрение отчета Церковно-Приходского Совета о деятельности прихода за истекший год. в) Рассмотрение и утверждение отчета Старосты и Казначея. г) Рассмотрение и утверждение отчета Ревизионной Комиссии и сметы на будущий год. д) Установление размера членских взносов и других видов самообложения. е) Изменение Устава прихода.</div></div>
+    <div class="bylaw"><span class="bylaw-num">№ 21.</span><div class="bylaw-text">Годовое Приходское Собрание считается законно состоявшимся при наличии на нем двух третей членов прихода.</div></div>
+    <div class="bylaw"><span class="bylaw-num">№ 22.</span><div class="bylaw-text">Все вопросы решаются простым большинством голосов и открытым голосованием. При равенстве голосов голос настоятеля, или лица по его уполномочию председательствующего, имеет перевес.</div></div>
+    <div class="bylaw"><span class="bylaw-num">№ 23.</span><div class="bylaw-text">Секретарь Церковно-Приходского Совета ведет протокол Годового Приходского Собрания и записывает все вынесенные последним постановления с занесением особых мнений, если таковые были заявлены участниками собрания.</div></div>
+    <div class="bylaw"><span class="bylaw-num">№ 24.</span><div class="bylaw-text">Протоколы Годовых Приходских Собраний, по утверждении их избранной на Собрании Редакционной Комиссией, представляются настоятелем прихода правящему Архиерею на утверждение не позже, как через семь дней.</div></div>
+
+    <h3 class="section-header">Чрезвычайные Приходские Собрания</h3>
+    <div class="bylaw"><span class="bylaw-num">№ 25.</span><div class="bylaw-text">Чрезвычайные Приходские Собрания, в случае надобности, могут быть созываемы а) По предложению правящего Архиерея, б) Настоятелем прихода, в) Церковно-Приходским Советом, г) По требованию Ревизионной Комиссии, д) По письменному требованию не менее одной трети членов прихода.</div></div>
+    <div class="bylaw"><span class="bylaw-num">№ 26&ndash;27.</span><div class="bylaw-text">Все постановления Устава, касающиеся созыва Годовых Приходских Собраний, кворума и ведения протоколов в равной мере распространяются и на Чрезвычайные Приходские Собрания. Ведению Чрезвычайного Приходского Собрания подлежит лишь тот вопрос, который указан в повестке о созыве такового.</div></div>
+
+    <h3 class="section-header">Б. Церковно-Приходской Совет</h3>
+    <div class="bylaw"><span class="bylaw-num">№ 28.</span><div class="bylaw-text">Церковно-Приходской Совет состоит из: а) Настоятеля прихода, который по своей должности является Председателем Церковно-Приходского Совета, б) Церковного Старосты, в) Председателя или Старшей Сестры Сестричества, г) Казначея, д) Секретаря, е) Штатных членов причта, ж) От двух до пяти членов Совета.</div></div>
+    <div class="bylaw"><span class="bylaw-num">№ 29.</span><div class="bylaw-text">Все означенные в № 28 должностные лица, за исключением Настоятеля и штатных членов причта, избираются Годовым Приходским Собранием из числа членов прихода сроком на один год. Церковный Староста избирается сроком на три года. Все указанные должностные лица, за исключением Настоятеля и членов причта, исполняют свои обязанности безвозмездно.</div></div>
+    <div class="bylaw"><span class="bylaw-num">№ 30.</span><div class="bylaw-text">К предметам ведения Церковно-Приходского Совета относятся: а) Забота о благолепии приходского храма и благосостоянии всего церковного имущества, б) Забота о содержании причта и об обеспечении ему надлежащего жилищного помещения, в) Сбор членских взносов, г) Ведение приходских книг и списков исповедников, д) Забота об образовании церковного хора, е) Забота о просветительной и благотворительной деятельности прихода, ж) Сношения от имени прихода с гражданскими властями, з) Соразмерные средствам прихода заботы о содержании епархиального и центрального церковных управлений.</div></div>
+
+    <h3 class="section-header">Должностные лица прихода</h3>
+    <div class="bylaw"><span class="bylaw-num">№ 31.</span><div class="bylaw-text"><strong>Настоятель прихода:</strong> 1) Совершает богослужения и требы по Православному чину, 2) Наставляет членов прихода в правилах Православной Веры и благочестия, 3) Обучает детей Закону Божьему, 4) Председательствует на всех Приходских Собраниях и заседаниях Церковно-Приходского Совета, 5) Наблюдает за благолепием приходского храма, 6) Ведет метрические книги, 7) Хранит церковную печать, 8) Наблюдает за исполнением всех постановлений Приходских Собраний и Церковно-Приходского Совета.</div></div>
+    <div class="bylaw"><span class="bylaw-num">№ 32.</span><div class="bylaw-text"><strong>Члены причта</strong> являются ближайшими помощниками Настоятеля в исполнении его религиозных обязанностей и в его нравственно-просветительной работе среди членов прихода.</div></div>
+    <div class="bylaw"><span class="bylaw-num">№ 33.</span><div class="bylaw-text"><strong>Церковный Староста</strong>, являясь ближайшим помощником Настоятеля прихода по хозяйственной части, непосредственно ответственен за сохранность церковного имущества. Он следит за внешним порядком в храме во время богослужений, заведует продажей свечей и наблюдает за денежными поступлениями и расходами Прихода.</div></div>
+    <div class="bylaw"><span class="bylaw-num">№ 34.</span><div class="bylaw-text"><strong>Казначей</strong> ведет приходо-расходные книги Прихода, хранит денежные суммы прихода, расходует их под контролем Церковного Старосты, составляет денежные сметы и годовой финансовый отчет.</div></div>
+    <div class="bylaw"><span class="bylaw-num">№ 35.</span><div class="bylaw-text"><strong>Секретарь</strong> ведет всю переписку от имени Церковно-Приходского Совета, ведет протоколы Собраний и заседаний, рассылает повестки, хранит список и адреса членов прихода.</div></div>
+    <div class="bylaw"><span class="bylaw-num">№ 36&ndash;39.</span><div class="bylaw-text"><strong>Члены Церковно-Приходского Совета</strong> участвуют во всех заседаниях Совета, являются помощниками Настоятеля и Церковного Старосты. Заседания Церковно-Приходского Совета созываются распоряжением Настоятеля не менее одного раза в месяц. Все вопросы решаются простым большинством голосов.</div></div>
+
+    <h3 class="section-header">В. Ревизионная Комиссия</h3>
+    <div class="bylaw"><span class="bylaw-num">№ 40&ndash;42.</span><div class="bylaw-text">Ревизионная Комиссия состоит из трех членов, избранных Годовым Приходским Собранием сроком на один год. Ревизия производится не менее двух раз в году. К обязанностям Ревизионной Комиссии относятся: проверка всей казначейской отчетности и представление заключения Годовому Приходскому Собранию.</div></div>
+
+    <h3 class="section-header">Г. Церковное Сестричество</h3>
+    <div class="bylaw"><span class="bylaw-num">№ 43.</span><div class="bylaw-text">При приходе может состоять сестричество. Председательница или Старшая Сестра Сестричества заботится совместно с сестрами о чистоте в храме, об облачениях и прочих вещах в ризнице, принимает ближайшее участие в организации благотворительной деятельности Прихода, заведует устройством трапез.</div></div>
+  </div>
+
+  <div class="bylaws-part" id="ru-part5">
+    <div class="part-header">
+      <span class="part-num">Раздел 5</span>
+      <span class="part-title">Храмовое и приходское имущество</span>
+    </div>
+    <div class="bylaw"><span class="bylaw-num">№ 44&ndash;50.</span><div class="bylaw-text">К имуществу храма относятся здание храма со всеми его принадлежностями, все, что жертвуется в пользу храма, движимое и недвижимое имущество, пожертвованное на благоустроение храма, деньги, поступающие в храм из разных источников. Управление и распоряжение храмовым и приходским имуществом и капиталами возлагается на Приходское Собрание и Приходской Совет. Недвижимое храмовое имущество может быть приобретаемо по постановлению Приходского Собрания с разрешения епархиальной власти. Продажа недвижимого храмового имущества, отчуждение его, обмен, отдача под залог — производится с разрешения Архиерейского Синода.</div></div>
+  </div>
+
+  <div class="bylaws-part" id="ru-part6">
+    <div class="part-header">
+      <span class="part-num">Раздел 6</span>
+      <span class="part-title">Денежные суммы прихода</span>
+    </div>
+    <div class="bylaw"><span class="bylaw-num">№ 51&ndash;53.</span><div class="bylaw-text">Все церковно-приходские суммы, по мере их поступления, вносятся Казначеем на текущий счет в банк, по указанию Церковно-Приходского Совета. Все чеки подписываются не менее, чем двумя лицами, а именно: Настоятелем и Церковным Старостой или Казначеем, а в случае отсутствия одного из них — Секретарем. К чекам прикладывается церковная печать.</div></div>
+  </div>
+
+  <div class="bylaws-part" id="ru-part7">
+    <div class="part-header">
+      <span class="part-num">Раздел 7</span>
+      <span class="part-title">Изменение Устава Прихода</span>
+    </div>
+    <div class="bylaw"><span class="bylaw-num">№ 54&ndash;55.</span><div class="bylaw-text">В настоящем Уставе могут быть допущены изменения, если того требуют местные условия, не иначе, как с согласия 2/3 прихожан, присутствующих на законно созванном Годовом Приходском Собрании, с согласия епархиального Архиерея и утверждения произведенных в Уставе изменений Архиерейским Синодом.</div></div>
+  </div>
+
+  <div class="bylaws-part" id="ru-part8">
+    <div class="part-header">
+      <span class="part-num">Раздел 8</span>
+      <span class="part-title">Закрытие Прихода</span>
+    </div>
+    <div class="bylaw"><span class="bylaw-num">№ 56.</span><div class="bylaw-text">Закрытие прихода может состояться не иначе, как в порядке, указанном в № 54 сего Устава, при чем все движимое и недвижимое имущество переходит в непосредственное распоряжение и управление епархиального начальства, по указанию правящего Архиерея.</div></div>
+  </div>
+
+</div><!-- end panel-ru -->
+
+</div><!-- end bylaws-wrap -->
+
+<footer>
+  <div class="footer-inner">
+    <p class="footer-copy">&copy; 2026 Holy Virgin Protection Russian Orthodox Church &middot; Nyack, NY</p>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="about_orthodoxy.html">About Orthodoxy</a>
+      <a href="application.html">Application</a>
+      <a href="contact2.html">Contact</a>
+      <a href="donate.html">Donate</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+function switchLang(lang){
+  document.querySelectorAll('.lang-btn').forEach(b=>b.classList.remove('active'));
+  document.querySelectorAll('.lang-panel').forEach(p=>p.classList.remove('active'));
+  event.target.classList.add('active');
+  document.getElementById('panel-'+lang).classList.add('active');
+  // scroll back to top of document body
+  document.querySelector('.bylaws-wrap').scrollIntoView({behavior:'smooth'});
+}
+</script>
+</body>
+</html>

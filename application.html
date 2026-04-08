@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Membership Application — Holy Virgin Protection Church</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+:root{
+  --navy:#1B2240;--navy-deep:#0F1428;--navy-mid:#242D52;
+  --gold:#C9A84C;--gold-lt:#E2C97A;--gold-dk:#8A6E30;
+  --crimson:#8B1520;--parch:#F5F0E4;--parch-mid:#EDE6D4;
+  --cream:#FAF8F3;--text:#2C2416;--muted:#6B5F4A;
+  --border:rgba(201,168,76,0.25);
+}
+body{font-family:'Lato',sans-serif;background:var(--parch);color:var(--text);font-size:16px;line-height:1.7;overflow-x:hidden}
+
+.topbar{background:var(--navy-deep);border-bottom:1px solid var(--border);padding:6px 2rem;display:flex;justify-content:space-between;align-items:center;font-size:12px;color:rgba(255,255,255,0.45)}
+.topbar a{color:var(--gold);text-decoration:none;font-weight:700}
+.topbar a:hover{color:var(--gold-lt)}
+.topbar-links{display:flex;gap:20px}
+
+#nav{position:sticky;top:0;z-index:999;background:var(--navy);border-bottom:2px solid var(--gold)}
+.nav-inner{max-width:1280px;margin:0 auto;display:flex;align-items:stretch;justify-content:space-between}
+.nav-brand{display:flex;align-items:center;gap:14px;text-decoration:none;padding:10px 0;flex-shrink:0}
+.nav-brand img{width:44px;height:auto;filter:drop-shadow(0 0 6px rgba(201,168,76,0.4))}
+.nav-brand-name{font-family:'IM Fell English',serif;font-size:14px;color:var(--gold-lt);display:block}
+.nav-brand-sub{font-size:10px;color:rgba(255,255,255,0.4);letter-spacing:0.12em;text-transform:uppercase}
+.nav-menu{display:flex;list-style:none;align-items:stretch}
+.nav-menu>li{position:relative}
+.nav-menu>li>a{display:flex;align-items:center;padding:0 14px;height:100%;min-height:58px;color:rgba(255,255,255,0.75);text-decoration:none;font-size:12px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;transition:color .2s;border-bottom:2px solid transparent;margin-bottom:-2px;white-space:nowrap;gap:4px}
+.nav-menu>li>a:hover,.nav-menu>li:hover>a,.nav-menu>li>a.active{color:var(--gold-lt);border-bottom-color:var(--gold)}
+.caret{font-size:9px;opacity:0.6}
+.dropdown{display:none;position:absolute;top:100%;left:0;background:var(--navy-deep);border:1px solid var(--border);border-top:2px solid var(--gold);min-width:220px;padding:8px 0;z-index:100;box-shadow:0 8px 32px rgba(0,0,0,0.5)}
+.nav-menu>li:hover .dropdown{display:block}
+.dropdown a{display:block;padding:9px 20px;color:rgba(255,255,255,0.65);text-decoration:none;font-size:12px;transition:color .15s,background .15s}
+.dropdown a:hover,.dropdown a.active{color:var(--gold-lt);background:rgba(201,168,76,0.07)}
+.dropdown-hr{height:1px;background:var(--border);margin:6px 0}
+.has-sub{position:relative}
+.sub-dropdown{display:none;position:absolute;left:100%;top:0;background:var(--navy-deep);border:1px solid var(--border);border-top:2px solid var(--gold);min-width:200px;padding:8px 0;box-shadow:0 8px 32px rgba(0,0,0,0.5)}
+.has-sub:hover .sub-dropdown{display:block}
+.nav-donate{background:var(--crimson)!important;color:#fff!important;padding:16px 20px!important}
+.nav-donate:hover{background:#a01828!important;border-bottom-color:transparent!important}
+
+/* HERO */
+.page-hero{background:var(--navy);border-bottom:2px solid var(--gold);padding:3.5rem 2rem 3rem}
+.page-hero-inner{max-width:1280px;margin:0 auto}
+.breadcrumb{font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-bottom:1rem}
+.breadcrumb a{color:var(--gold);text-decoration:none}
+.breadcrumb a:hover{color:var(--gold-lt)}
+.page-title{font-family:'IM Fell English',serif;font-size:clamp(32px,4vw,56px);font-weight:400;color:#fff;line-height:1.1}
+.page-title span{color:var(--gold-lt);font-style:italic}
+.page-subtitle{font-family:'IM Fell English',serif;font-style:italic;font-size:18px;color:rgba(255,255,255,0.45);margin-top:.6rem}
+
+/* BODY */
+.page-body{max-width:780px;margin:0 auto;padding:4rem 2rem 6rem}
+
+/* INTRO */
+.intro-text{font-size:16px;color:var(--muted);line-height:1.85;margin-bottom:2.5rem}
+.intro-text p{margin-bottom:1rem}
+.intro-text p:last-child{margin-bottom:0}
+
+/* STEPS */
+.steps{display:flex;flex-direction:column;gap:0;margin-bottom:3rem}
+.step{display:flex;gap:1.5rem;align-items:flex-start;padding:1.5rem 0;border-bottom:1px solid var(--parch-mid)}
+.step:last-child{border-bottom:none}
+.step-num{
+  width:40px;height:40px;background:var(--navy);color:var(--gold-lt);
+  font-family:'IM Fell English',serif;font-size:20px;
+  display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;
+}
+.step-body{}
+.step-title{font-family:'IM Fell English',serif;font-size:19px;color:var(--navy);margin-bottom:.3rem}
+.step-desc{font-size:14px;color:var(--muted);line-height:1.7}
+.step-desc a{color:var(--navy);font-weight:700;text-decoration:none;border-bottom:1px solid transparent;transition:border-color .2s}
+.step-desc a:hover{border-bottom-color:var(--gold)}
+
+/* DOWNLOAD CARD */
+.download-card{
+  background:var(--navy);padding:2.5rem;
+  display:flex;align-items:center;justify-content:space-between;
+  gap:1.5rem;flex-wrap:wrap;margin-bottom:3rem;
+  border-top:3px solid var(--gold);
+}
+.download-card-info{}
+.download-card-label{font-size:10px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:.4rem}
+.download-card-title{font-family:'IM Fell English',serif;font-size:22px;color:#fff;margin-bottom:.3rem}
+.download-card-meta{font-size:13px;color:rgba(255,255,255,0.4);font-style:italic}
+.btn-download{
+  display:inline-flex;align-items:center;gap:10px;
+  background:var(--gold);color:var(--navy-deep);
+  padding:14px 28px;font-size:11px;font-weight:700;
+  letter-spacing:0.13em;text-transform:uppercase;
+  text-decoration:none;transition:background .2s,transform .2s;
+  flex-shrink:0;
+}
+.btn-download:hover{background:var(--gold-lt);transform:translateY(-2px)}
+.btn-download-icon{font-size:16px}
+
+/* EMAIL CARD */
+.email-card{
+  background:#fff;border:1px solid var(--parch-mid);border-left:4px solid var(--gold);
+  padding:1.8rem 2rem;margin-bottom:3rem;
+}
+.email-card-title{font-family:'IM Fell English',serif;font-size:20px;color:var(--navy);margin-bottom:.8rem}
+.email-card-body{font-size:15px;color:var(--muted);line-height:1.8}
+.email-card-body strong{color:var(--text)}
+.email-addr{
+  display:inline-flex;align-items:center;gap:8px;
+  margin-top:1rem;padding:10px 18px;background:var(--parch);
+  border:1px solid var(--parch-mid);
+  font-size:15px;font-weight:700;color:var(--navy);
+  text-decoration:none;transition:border-color .2s,background .2s;
+}
+.email-addr:hover{border-color:var(--gold);background:#fff}
+
+/* NOTES */
+.note-box{background:var(--parch-mid);border-left:3px solid var(--gold-dk);padding:1.2rem 1.5rem;font-size:14px;color:var(--muted);line-height:1.75;font-style:italic}
+.note-box strong{font-style:normal;color:var(--text)}
+
+footer{background:var(--navy-deep);border-top:2px solid var(--gold);padding:2rem}
+.footer-inner{max-width:1280px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+.footer-copy{font-size:11px;color:rgba(255,255,255,0.2)}
+.footer-links{display:flex;gap:20px;flex-wrap:wrap}
+.footer-links a{font-size:12px;color:rgba(255,255,255,0.35);text-decoration:none;transition:color .2s}
+.footer-links a:hover{color:var(--gold)}
+
+@media(max-width:768px){.topbar{display:none}.nav-menu{display:none}.download-card{flex-direction:column}}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <span>38 South Mill Street, Nyack, NY 10960 &nbsp;&middot;&nbsp; <a href="tel:8453531155">845-353-1155</a></span>
+  <div class="topbar-links">
+    <a href="https://www.youtube.com/channel/UCAd-5xu1S1rHwHoadO2LSAQ" target="_blank">&#9654; Watch Live</a>
+    <a href="https://form.jotform.com/202454512119144" target="_blank">Candle Box</a>
+    <a href="donate.html">Donate</a>
+  </div>
+</div>
+
+<nav id="nav">
+  <div class="nav-inner">
+    <a class="nav-brand" href="index.html">
+      <img src="icon.png" alt="Holy Virgin Protection Church">
+      <div>
+        <span class="nav-brand-name">Holy Virgin Protection Church</span>
+        <span class="nav-brand-sub">Russian Orthodox &middot; Nyack, NY</span>
+      </div>
+    </a>
+    <ul class="nav-menu">
+      <li><a href="schedule.html">Schedule</a></li>
+      <li>
+        <a href="#" class="active">About <span class="caret">&#9660;</span></a>
+        <div class="dropdown">
+          <a href="bookstore1.html">Bookstore</a>
+          <a href="directions.html">Driving Directions</a>
+          <a href="feast_day1.html">Church Feast Day</a>
+          <div class="dropdown-hr"></div>
+          <div class="has-sub">
+            <a href="#">History &#9658;</a>
+            <div class="sub-dropdown">
+              <a href="parishhistory.html">Parish History</a>
+              <a href="photos.html">Photo Gallery</a>
+              <a href="churchinterioandgrounds.html">Church &amp; Grounds</a>
+              <a href="obituaries.html">Obituaries</a>
+            </div>
+          </div>
+          <div class="has-sub">
+            <a href="#" class="active">Resources &#9658;</a>
+            <div class="sub-dropdown">
+              <a href="about_orthodoxy.html">About Orthodoxy</a>
+              <a href="bylaws.html">ROCOR By-Laws (Ustav)</a>
+              <a href="application.html" class="active">Application</a>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li>
+        <a href="#">Contact <span class="caret">&#9660;</span></a>
+        <div class="dropdown">
+          <a href="administration.html">Administration</a>
+          <a href="contact2.html">Contact Us</a>
+          <a href="mailing1.html">Join Our Mailing List</a>
+        </div>
+      </li>
+      <li><a href="http://hall.holyvirginprotectionchurch.org" target="_blank">Hall Rental</a></li>
+      <li><a href="http://school.holyvirginprotectionchurch.org" target="_blank">Parish School</a></li>
+      <li><a href="donate.html" class="nav-donate">Donate</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <p class="breadcrumb"><a href="index.html">Home</a> &nbsp;/&nbsp; <a href="#">About</a> &nbsp;/&nbsp; <a href="#">Resources</a> &nbsp;/&nbsp; Application</p>
+    <h1 class="page-title">Application for <span>Membership</span></h1>
+    <p class="page-subtitle">Join the Parish of Holy Virgin Protection Russian Orthodox Church</p>
+  </div>
+</div>
+
+<div class="page-body">
+
+  <div class="intro-text">
+    <p>We welcome all Orthodox Christians who wish to become members of our parish. Membership in the parish is open to all baptized Orthodox Christians of both sexes who have reached the age of 21, who make their confession and receive Holy Communion not less than once a year, and who desire to participate in the spiritual and material life of the community.</p>
+    <p>To apply, simply download the membership application form, complete it, and email the completed form to the Parish Rector.</p>
+  </div>
+
+  <!-- HOW TO APPLY STEPS -->
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-body">
+        <p class="step-title">Download the Application</p>
+        <p class="step-desc">Download the PDF application form using the button below. You can fill it out on your computer or print it and complete it by hand.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-body">
+        <p class="step-title">Complete All Sections</p>
+        <p class="step-desc">Fill in your personal information, family information, sacramental history, and contact details. Read the declaration at the bottom carefully before signing.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-body">
+        <p class="step-title">Email to Father Elias Gorsky</p>
+        <p class="step-desc">Email your completed application to the Parish Rector, <strong>Very Reverend Elias Gorsky</strong>, at <a href="mailto:frilya@egcon.com">frilya@egcon.com</a>. You may also bring a printed copy to the church office.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="step-body">
+        <p class="step-title">Parish Council Review</p>
+        <p class="step-desc">Your application will be presented for acceptance at a meeting of the Parish Council and approved by the Rector's signature. You will be notified once your membership has been confirmed.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- DOWNLOAD -->
+  <div class="download-card">
+    <div class="download-card-info">
+      <p class="download-card-label">Official Parish Document</p>
+      <p class="download-card-title">Church Parish Membership Application</p>
+      <p class="download-card-meta">PDF &nbsp;&middot;&nbsp; Holy Virgin Protection Russian Orthodox Church &nbsp;&middot;&nbsp; ROCOR</p>
+    </div>
+    <!--
+      PUNCHLIST: Once the PDF is hosted on the web server, update the href below
+      to the full URL, e.g. href="https://www.holyvirginprotectionchurch.org/files/HVPC_Membership_Application.pdf"
+      For now it links to the local PDF file.
+    -->
+    <a class="btn-download" href="HVPC_Membership_Application.pdf" download="HVPC_Membership_Application.pdf">
+      <span class="btn-download-icon">&#8659;</span>
+      Download Application
+    </a>
+  </div>
+
+  <!-- EMAIL -->
+  <div class="email-card">
+    <p class="email-card-title">Submit Your Completed Application</p>
+    <div class="email-card-body">
+      <p>Email your completed application to the Parish Rector:</p>
+      <p><strong>Very Reverend Elias Gorsky</strong> &mdash; Archpriest &amp; Rector<br>Holy Virgin Protection Russian Orthodox Church, Nyack, NY</p>
+      <a class="email-addr" href="mailto:frilya@egcon.com?subject=Parish Membership Application">
+        &#9993;&nbsp; frilya@egcon.com
+      </a>
+    </div>
+  </div>
+
+  <!-- NOTES -->
+  <div class="note-box">
+    <strong>Parish Dues.</strong> The parish dues are <strong>$50 per month</strong> for working persons. Retired persons and students should specify the monthly amount they are able to contribute. Dues support the life of the parish and the maintenance of our clergy and church.<br><br>
+    <strong>Questions?</strong> Please call the Rector&rsquo;s Office at <a href="tel:8456185308" style="color:var(--text);font-weight:700">845-618-5308</a> or visit us after any Sunday Liturgy.
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <p class="footer-copy">&copy; 2026 Holy Virgin Protection Russian Orthodox Church &middot; Nyack, NY</p>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="schedule.html">Schedule</a>
+      <a href="bylaws.html">ROCOR By-Laws</a>
+      <a href="contact2.html">Contact</a>
+      <a href="donate.html">Donate</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

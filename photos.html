@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Photo Gallery — Holy Virgin Protection Church</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+:root{
+  --navy:#1B2240;--navy-deep:#0F1428;--navy-mid:#242D52;
+  --gold:#C9A84C;--gold-lt:#E2C97A;--gold-dk:#8A6E30;
+  --crimson:#8B1520;--parch:#F5F0E4;--parch-mid:#EDE6D4;
+  --cream:#FAF8F3;--text:#2C2416;--muted:#6B5F4A;
+  --border:rgba(201,168,76,0.25);
+}
+body{font-family:'Lato',sans-serif;background:var(--parch);color:var(--text);font-size:16px;line-height:1.7;overflow-x:hidden}
+
+.topbar{background:var(--navy-deep);border-bottom:1px solid var(--border);padding:6px 2rem;display:flex;justify-content:space-between;align-items:center;font-size:12px;color:rgba(255,255,255,0.45)}
+.topbar a{color:var(--gold);text-decoration:none;font-weight:700}
+.topbar a:hover{color:var(--gold-lt)}
+.topbar-links{display:flex;gap:20px}
+
+#nav{position:sticky;top:0;z-index:999;background:var(--navy);border-bottom:2px solid var(--gold)}
+.nav-inner{max-width:1280px;margin:0 auto;display:flex;align-items:stretch;justify-content:space-between}
+.nav-brand{display:flex;align-items:center;gap:14px;text-decoration:none;padding:10px 0;flex-shrink:0}
+.nav-brand img{width:44px;height:auto;filter:drop-shadow(0 0 6px rgba(201,168,76,0.4))}
+.nav-brand-name{font-family:'IM Fell English',serif;font-size:14px;color:var(--gold-lt);display:block}
+.nav-brand-sub{font-size:10px;color:rgba(255,255,255,0.4);letter-spacing:0.12em;text-transform:uppercase}
+.nav-menu{display:flex;list-style:none;align-items:stretch}
+.nav-menu>li{position:relative}
+.nav-menu>li>a{display:flex;align-items:center;padding:0 14px;height:100%;min-height:58px;color:rgba(255,255,255,0.75);text-decoration:none;font-size:12px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;transition:color .2s;border-bottom:2px solid transparent;margin-bottom:-2px;white-space:nowrap;gap:4px}
+.nav-menu>li>a:hover,.nav-menu>li:hover>a,.nav-menu>li>a.active{color:var(--gold-lt);border-bottom-color:var(--gold)}
+.caret{font-size:9px;opacity:0.6}
+.dropdown{display:none;position:absolute;top:100%;left:0;background:var(--navy-deep);border:1px solid var(--border);border-top:2px solid var(--gold);min-width:220px;padding:8px 0;z-index:100;box-shadow:0 8px 32px rgba(0,0,0,0.5)}
+.nav-menu>li:hover .dropdown{display:block}
+.dropdown a{display:block;padding:9px 20px;color:rgba(255,255,255,0.65);text-decoration:none;font-size:12px;transition:color .15s,background .15s}
+.dropdown a:hover,.dropdown a.active{color:var(--gold-lt);background:rgba(201,168,76,0.07)}
+.dropdown-hr{height:1px;background:var(--border);margin:6px 0}
+.has-sub{position:relative}
+.sub-dropdown{display:none;position:absolute;left:100%;top:0;background:var(--navy-deep);border:1px solid var(--border);border-top:2px solid var(--gold);min-width:200px;padding:8px 0;box-shadow:0 8px 32px rgba(0,0,0,0.5)}
+.has-sub:hover .sub-dropdown{display:block}
+.nav-donate{background:var(--crimson)!important;color:#fff!important;padding:16px 20px!important}
+.nav-donate:hover{background:#a01828!important;border-bottom-color:transparent!important}
+
+.page-hero{background:var(--navy);border-bottom:2px solid var(--gold);padding:3.5rem 2rem 3rem}
+.page-hero-inner{max-width:1280px;margin:0 auto}
+.breadcrumb{font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-bottom:1rem}
+.breadcrumb a{color:var(--gold);text-decoration:none}
+.breadcrumb a:hover{color:var(--gold-lt)}
+.page-title{font-family:'IM Fell English',serif;font-size:clamp(32px,4vw,56px);font-weight:400;color:#fff;line-height:1.1}
+.page-title span{color:var(--gold-lt);font-style:italic}
+.page-subtitle{font-family:'IM Fell English',serif;font-style:italic;font-size:18px;color:rgba(255,255,255,0.45);margin-top:.6rem}
+
+/* PUNCHLIST */
+.punchlist{
+  max-width:1280px;margin:2rem auto;padding:0 2rem;
+}
+.punchlist-inner{
+  background:#fff;border:2px dashed var(--gold);
+  padding:1.5rem 1.8rem;
+}
+.punchlist-tag{font-size:10px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold-dk);margin-bottom:.5rem}
+.punchlist-title{font-family:'IM Fell English',serif;font-size:18px;color:var(--navy);margin-bottom:.5rem}
+.punchlist-body{font-size:13px;color:var(--muted);line-height:1.7}
+.punchlist-body code{background:var(--parch-mid);padding:2px 6px;font-family:monospace;font-size:12px;color:var(--navy)}
+.punchlist-body ol{margin:8px 0 0 18px}
+.punchlist-body li{margin-bottom:4px}
+
+/* ALBUMS */
+.page-body{max-width:1280px;margin:0 auto;padding:2rem 2rem 4rem}
+
+.sec-tag{font-size:10px;font-weight:700;letter-spacing:0.24em;text-transform:uppercase;color:var(--gold-dk);margin-bottom:.8rem;display:flex;align-items:center;gap:12px}
+.sec-tag::before{content:'';width:24px;height:1px;background:var(--gold);flex-shrink:0}
+.sec-title{font-family:'IM Fell English',serif;font-size:clamp(24px,3vw,38px);font-weight:400;color:var(--navy);line-height:1.15;margin-bottom:2rem}
+
+/* ALBUM TABS */
+.album-tabs{display:flex;gap:0;border-bottom:2px solid var(--parch-mid);margin-bottom:2.5rem;overflow-x:auto}
+.album-tab{
+  padding:12px 22px;font-size:12px;font-weight:700;letter-spacing:0.1em;
+  text-transform:uppercase;color:var(--muted);cursor:pointer;
+  border-bottom:2px solid transparent;margin-bottom:-2px;
+  transition:color .2s,border-color .2s;white-space:nowrap;
+  background:none;border-top:none;border-left:none;border-right:none;
+  font-family:'Lato',sans-serif;
+}
+.album-tab:hover{color:var(--navy)}
+.album-tab.active{color:var(--navy);border-bottom-color:var(--gold)}
+
+/* ALBUM PANELS */
+.album-panel{display:none}
+.album-panel.active{display:block}
+
+/* GOOGLE PHOTOS EMBED */
+.gp-embed-wrap{
+  background:#fff;border:1px solid var(--parch-mid);
+  overflow:hidden;margin-bottom:1.5rem;
+}
+.gp-embed-wrap iframe{
+  width:100%;height:600px;border:none;display:block;
+}
+.gp-embed-placeholder{
+  height:500px;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;gap:16px;
+  background:var(--parch-mid);
+}
+.gp-embed-placeholder-icon{font-size:48px;opacity:0.25}
+.gp-embed-placeholder-text{
+  font-family:'IM Fell English',serif;font-style:italic;
+  font-size:20px;color:var(--muted);text-align:center;
+  max-width:400px;line-height:1.5;
+}
+.gp-embed-placeholder-sub{
+  font-size:12px;color:rgba(107,95,74,0.55);
+  letter-spacing:0.06em;text-align:center;
+}
+.gp-open-btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:11px 24px;font-size:11px;font-weight:700;
+  letter-spacing:0.12em;text-transform:uppercase;
+  text-decoration:none;background:var(--navy);color:#fff;
+  transition:background .2s;
+}
+.gp-open-btn:hover{background:var(--navy-mid)}
+
+/* EXISTING PHOTO GRID — using current site images as preview */
+.photo-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(220px,1fr));
+  gap:4px;
+  margin-bottom:1.5rem;
+}
+.photo-item{
+  position:relative;overflow:hidden;
+  padding-bottom:75%;background:var(--parch-mid);cursor:pointer;
+}
+.photo-item img{
+  position:absolute;inset:0;width:100%;height:100%;
+  object-fit:cover;transition:transform .35s;
+}
+.photo-item:hover img{transform:scale(1.06)}
+.photo-item-overlay{
+  position:absolute;inset:0;background:rgba(27,34,64,0);
+  transition:background .3s;display:flex;align-items:flex-end;padding:.8rem;
+}
+.photo-item:hover .photo-item-overlay{background:rgba(27,34,64,0.45)}
+.photo-item-label{
+  font-size:11px;font-weight:700;letter-spacing:0.1em;
+  text-transform:uppercase;color:#fff;opacity:0;
+  transition:opacity .3s;
+}
+.photo-item:hover .photo-item-label{opacity:1}
+
+/* PLACEHOLDER GRID ITEM */
+.photo-placeholder-item{
+  position:relative;padding-bottom:75%;background:rgba(0,0,0,0.04);
+  border:1px dashed rgba(138,110,48,0.25);
+}
+.photo-placeholder-item-inner{
+  position:absolute;inset:0;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;gap:6px;
+}
+.photo-placeholder-item-inner span{font-size:11px;color:rgba(107,95,74,0.4);letter-spacing:0.08em}
+
+/* LIGHTBOX */
+.lightbox{
+  display:none;position:fixed;inset:0;z-index:9999;
+  background:rgba(10,14,30,0.95);align-items:center;justify-content:center;
+}
+.lightbox.open{display:flex}
+.lightbox-img{max-width:90vw;max-height:85vh;object-fit:contain;display:block}
+.lightbox-close{
+  position:absolute;top:20px;right:24px;
+  font-size:28px;color:rgba(255,255,255,0.6);cursor:pointer;
+  background:none;border:none;transition:color .2s;line-height:1;
+}
+.lightbox-close:hover{color:#fff}
+.lightbox-caption{
+  position:absolute;bottom:20px;left:0;right:0;
+  text-align:center;font-family:'IM Fell English',serif;
+  font-style:italic;font-size:15px;color:rgba(255,255,255,0.5);
+}
+
+footer{background:var(--navy-deep);border-top:2px solid var(--gold);padding:2rem}
+.footer-inner{max-width:1280px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+.footer-copy{font-size:11px;color:rgba(255,255,255,0.2)}
+.footer-links{display:flex;gap:20px;flex-wrap:wrap}
+.footer-links a{font-size:12px;color:rgba(255,255,255,0.35);text-decoration:none;transition:color .2s}
+.footer-links a:hover{color:var(--gold)}
+
+@media(max-width:768px){.topbar{display:none}.nav-menu{display:none}.photo-grid{grid-template-columns:repeat(2,1fr)}}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <span>38 South Mill Street, Nyack, NY 10960 &nbsp;&middot;&nbsp; <a href="tel:8453531155">845-353-1155</a></span>
+  <div class="topbar-links">
+    <a href="https://www.youtube.com/channel/UCAd-5xu1S1rHwHoadO2LSAQ" target="_blank">&#9654; Watch Live</a>
+    <a href="https://form.jotform.com/202454512119144" target="_blank">Candle Box</a>
+    <a href="donate.html">Donate</a>
+  </div>
+</div>
+
+<nav id="nav">
+  <div class="nav-inner">
+    <a class="nav-brand" href="index.html">
+      <img src="icon.png" alt="Holy Virgin Protection Church">
+      <div>
+        <span class="nav-brand-name">Holy Virgin Protection Church</span>
+        <span class="nav-brand-sub">Russian Orthodox &middot; Nyack, NY</span>
+      </div>
+    </a>
+    <ul class="nav-menu">
+      <li><a href="schedule.html">Schedule</a></li>
+      <li>
+        <a href="#" class="active">About <span class="caret">&#9660;</span></a>
+        <div class="dropdown">
+          <a href="bookstore1.html">Bookstore</a>
+          <a href="directions.html">Driving Directions</a>
+          <a href="feast_day1.html">Church Feast Day</a>
+          <div class="dropdown-hr"></div>
+          <div class="has-sub">
+            <a href="#" class="active">History &#9658;</a>
+            <div class="sub-dropdown">
+              <a href="parishhistory.html">Parish History</a>
+              <a href="photos.html" class="active">Photo Gallery</a>
+              <a href="churchinterioandgrounds.html">Church &amp; Grounds</a>
+              <a href="obituaries.html">Obituaries</a>
+            </div>
+          </div>
+          <div class="has-sub">
+            <a href="#">Resources &#9658;</a>
+            <div class="sub-dropdown">
+              <a href="about_orthodoxy.html">About Orthodoxy</a>
+              <a href="bylaws.html">ROCOR By-Laws (Ustav)</a>
+              <a href="application.html">Application</a>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li>
+        <a href="#">Contact <span class="caret">&#9660;</span></a>
+        <div class="dropdown">
+          <a href="administration.html">Administration</a>
+          <a href="contact2.html">Contact Us</a>
+          <a href="mailing1.html">Join Our Mailing List</a>
+        </div>
+      </li>
+      <li><a href="http://hall.holyvirginprotectionchurch.org" target="_blank">Hall Rental</a></li>
+      <li><a href="http://school.holyvirginprotectionchurch.org" target="_blank">Parish School</a></li>
+      <li><a href="donate.html" class="nav-donate">Donate</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <p class="breadcrumb"><a href="index.html">Home</a> &nbsp;/&nbsp; <a href="#">About</a> &nbsp;/&nbsp; <a href="#">History</a> &nbsp;/&nbsp; Photo Gallery</p>
+    <h1 class="page-title">Photo <span>Gallery</span></h1>
+    <p class="page-subtitle">Parish life, feast days, church &amp; grounds</p>
+  </div>
+</div>
+
+<!-- PUNCHLIST NOTICE -->
+<div class="punchlist">
+  <div class="punchlist-inner">
+    <p class="punchlist-tag">&#9888;&nbsp; Punchlist Item &mdash; Google Photos Setup Required</p>
+    <p class="punchlist-title">Connect Google Photos albums before launch</p>
+    <p class="punchlist-body">
+      To activate this gallery:
+      <ol>
+        <li>Create a Google account for the parish (or use an existing one)</li>
+        <li>Upload photos into <strong>Google Photos</strong>, organized into albums (e.g. "Church &amp; Grounds", "Feast Days", "Parish Life")</li>
+        <li>Open each album &rarr; click Share &rarr; <strong>Get shareable link</strong> &rarr; copy the album URL</li>
+        <li>Replace the <code>GOOGLE_PHOTOS_ALBUM_URL</code> placeholders below in this HTML file with the actual album URLs</li>
+        <li>Delete this notice box</li>
+      </ol>
+      <br>The embed iframes are already wired up — just paste in the URLs and everything works automatically.
+    </p>
+  </div>
+</div>
+
+<div class="page-body">
+
+  <p class="sec-tag">Browse by Album</p>
+  <h2 class="sec-title">Parish Photo Gallery</h2>
+
+  <!-- ALBUM TABS -->
+  <div class="album-tabs">
+    <button class="album-tab active" onclick="switchTab('church')">Church &amp; Grounds</button>
+    <button class="album-tab" onclick="switchTab('feastdays')">Feast Days &amp; Services</button>
+    <button class="album-tab" onclick="switchTab('parish')">Parish Life</button>
+    <button class="album-tab" onclick="switchTab('historical')">Historical</button>
+  </div>
+
+  <!-- TAB: CHURCH & GROUNDS -->
+  <div class="album-panel active" id="tab-church">
+    <div class="gp-embed-wrap">
+      <!--
+        PUNCHLIST: Replace the placeholder below with a Google Photos embed.
+        To get the embed code:
+        1. Open the album in Google Photos
+        2. Click the 3-dot menu → Share → Get link
+        3. The embed iframe src format is:
+           https://photos.google.com/share/[ALBUM_ID]/embed
+        Replace GOOGLE_PHOTOS_ALBUM_URL below with the full album share URL
+      -->
+      <div class="gp-embed-placeholder">
+        <span class="gp-embed-placeholder-icon">&#128247;</span>
+        <p class="gp-embed-placeholder-text">Church &amp; Grounds album will appear here</p>
+        <p class="gp-embed-placeholder-sub">Connect Google Photos album &mdash; see punchlist above</p>
+      </div>
+    </div>
+
+    <!-- PREVIEW: existing photos from current site as a temporary grid -->
+    <p style="font-size:12px;color:var(--muted);font-style:italic;margin-bottom:1rem">
+      Preview using existing site images &mdash; replace with Google Photos album above
+    </p>
+    <div class="photo-grid">
+      <div class="photo-item" onclick="openLightbox(this)">
+        <img src="https://www.holyvirginprotectionchurch.org/images/nyack%20parish/nyackparish006_1.jpg" alt="Church exterior">
+        <div class="photo-item-overlay"><span class="photo-item-label">Church Exterior</span></div>
+      </div>
+      <div class="photo-item" onclick="openLightbox(this)">
+        <img src="https://www.holyvirginprotectionchurch.org/cache/images/img-451-137x140-137x140.jpg" alt="Saint Eve Icon">
+        <div class="photo-item-overlay"><span class="photo-item-label">Saint Eve &mdash; Nave Fresco</span></div>
+      </div>
+      <div class="photo-item" onclick="openLightbox(this)">
+        <img src="https://www.holyvirginprotectionchurch.org/cache/images/img-494-140x138-140x138.jpg" alt="Saint John the Baptist">
+        <div class="photo-item-overlay"><span class="photo-item-label">St. John the Baptist</span></div>
+      </div>
+      <div class="photo-item" onclick="openLightbox(this)">
+        <img src="https://www.holyvirginprotectionchurch.org/cache/images/img-502-140x121-140x121.jpg" alt="King David">
+        <div class="photo-item-overlay"><span class="photo-item-label">King David</span></div>
+      </div>
+      <div class="photo-item" onclick="openLightbox(this)">
+        <img src="https://www.holyvirginprotectionchurch.org/cache/images/img-486-138x140-138x140.jpg" alt="Saint Simeon">
+        <div class="photo-item-overlay"><span class="photo-item-label">Saint Simeon</span></div>
+      </div>
+      <div class="photo-item" onclick="openLightbox(this)">
+        <img src="https://www.holyvirginprotectionchurch.org/cache/images/img-510-138x140-138x140.jpg" alt="Archangel Gabriel">
+        <div class="photo-item-overlay"><span class="photo-item-label">Archangel Gabriel</span></div>
+      </div>
+      <!-- Placeholder slots -->
+      <div class="photo-placeholder-item"><div class="photo-placeholder-item-inner"><span>&#128247;</span><span>Add photo</span></div></div>
+      <div class="photo-placeholder-item"><div class="photo-placeholder-item-inner"><span>&#128247;</span><span>Add photo</span></div></div>
+      <div class="photo-placeholder-item"><div class="photo-placeholder-item-inner"><span>&#128247;</span><span>Add photo</span></div></div>
+    </div>
+  </div>
+
+  <!-- TAB: FEAST DAYS -->
+  <div class="album-panel" id="tab-feastdays">
+    <div class="gp-embed-wrap">
+      <div class="gp-embed-placeholder">
+        <span class="gp-embed-placeholder-icon">&#128247;</span>
+        <p class="gp-embed-placeholder-text">Feast Days &amp; Services album will appear here</p>
+        <p class="gp-embed-placeholder-sub">Connect Google Photos album &mdash; see punchlist above</p>
+      </div>
+    </div>
+    <div class="photo-grid">
+      <div class="photo-placeholder-item"><div class="photo-placeholder-item-inner"><span>&#128247;</span><span>Feast Day photos</span></div></div>
+      <div class="photo-placeholder-item"><div class="photo-placeholder-item-inner"><span>&#128247;</span><span>Feast Day photos</span></div></div>
+      <div class="photo-placeholder-item"><div class="photo-placeholder-item-inner"><span>&#128247;</span><span>Feast Day photos</span></div></div>
+      <div class="photo-placeholder-item"><div class="photo-placeholder-item-inner"><span>&#128247;</span><span>Feast Day photos</span></div></div>
+      <div class="photo-placeholder-item"><div class="photo-placeholder-item-inner"><span>&#128247;</span><span>Feast Day photos</span></div></div>
+      <div class="photo-placeholder-item"><div class="photo-placeholder-item-inner"><span>&#128247;</span><span>Feast Day photos</span></div></div>
+    </div>
+  </div>
+
+  <!-- TAB: PARISH LIFE -->
+  <div class="album-panel" id="tab-parish">
+    <div class="gp-embed-wrap">
+      <div class="gp-embed-placeholder">
+        <span class="gp-embed-placeholder-icon">&#128247;</span>
+        <p class="gp-embed-placeholder-text">Parish Life album will appear here</p>
+        <p class="gp-embed-placeholder-sub">Connect Google Photos album &mdash; see punchlist above</p>
+      </div>
+    </div>
+    <div class="photo-grid">
+      <div class="photo-placeholder-item"><div class="photo-placeholder-item-inner"><span>&#128247;</span><span>Parish life photos</span></div></div>
+      <div class="photo-placeholder-item"><div class="photo-placeholder-item-inner"><span>&#128247;</span><span>Parish life photos</span></div></div>
+      <div class="photo-placeholder-item"><div class="photo-placeholder-item-inner"><span>&#128247;</span><span>Parish life photos</span></div></div>
+      <div class="photo-placeholder-item"><div class="photo-placeholder-item-inner"><span>&#128247;</span><span>Parish life photos</span></div></div>
+    </div>
+  </div>
+
+  <!-- TAB: HISTORICAL -->
+  <div class="album-panel" id="tab-historical">
+    <div class="gp-embed-wrap">
+      <div class="gp-embed-placeholder">
+        <span class="gp-embed-placeholder-icon">&#128247;</span>
+        <p class="gp-embed-placeholder-text">Historical photos album will appear here</p>
+        <p class="gp-embed-placeholder-sub">Connect Google Photos album &mdash; see punchlist above</p>
+      </div>
+    </div>
+    <p style="font-size:14px;color:var(--muted);font-style:italic;line-height:1.7">
+      Historical photographs of the parish, Tolstoy Farm, and the early Russian community in Nyack. If you have old photographs you&rsquo;d like to donate to the parish archive, please <a href="contact2.html" style="color:var(--navy)">contact the office</a>.
+    </p>
+  </div>
+
+</div>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+  <img class="lightbox-img" id="lightbox-img" src="" alt="">
+  <p class="lightbox-caption" id="lightbox-caption"></p>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <p class="footer-copy">&copy; 2026 Holy Virgin Protection Russian Orthodox Church &middot; Nyack, NY</p>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="parishhistory.html">Parish History</a>
+      <a href="churchinterioandgrounds.html">Church &amp; Grounds</a>
+      <a href="contact2.html">Contact</a>
+      <a href="donate.html">Donate</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+// TAB SWITCHING
+function switchTab(name){
+  document.querySelectorAll('.album-tab').forEach(t=>t.classList.remove('active'));
+  document.querySelectorAll('.album-panel').forEach(p=>p.classList.remove('active'));
+  event.target.classList.add('active');
+  document.getElementById('tab-'+name).classList.add('active');
+}
+
+// LIGHTBOX
+function openLightbox(el){
+  const img = el.querySelector('img');
+  const label = el.querySelector('.photo-item-label');
+  document.getElementById('lightbox-img').src = img.src;
+  document.getElementById('lightbox-img').alt = img.alt;
+  document.getElementById('lightbox-caption').textContent = label ? label.textContent : '';
+  document.getElementById('lightbox').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closeLightbox(){
+  document.getElementById('lightbox').classList.remove('open');
+  document.getElementById('lightbox-img').src='';
+  document.body.style.overflow='';
+}
+document.addEventListener('keydown',e=>{ if(e.key==='Escape') closeLightbox(); });
+</script>
+</body>
+</html>

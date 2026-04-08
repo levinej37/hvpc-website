@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Church Feast Day — Holy Virgin Protection Church</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+:root{
+  --navy:#1B2240;--navy-deep:#0F1428;--navy-mid:#242D52;
+  --gold:#C9A84C;--gold-lt:#E2C97A;--gold-dk:#8A6E30;
+  --crimson:#8B1520;--parch:#F5F0E4;--parch-mid:#EDE6D4;
+  --cream:#FAF8F3;--text:#2C2416;--muted:#6B5F4A;
+  --border:rgba(201,168,76,0.25);
+}
+body{font-family:'Lato',sans-serif;background:var(--parch);color:var(--text);font-size:16px;line-height:1.7;overflow-x:hidden}
+
+.topbar{background:var(--navy-deep);border-bottom:1px solid var(--border);padding:6px 2rem;display:flex;justify-content:space-between;align-items:center;font-size:12px;color:rgba(255,255,255,0.45)}
+.topbar a{color:var(--gold);text-decoration:none;font-weight:700}
+.topbar a:hover{color:var(--gold-lt)}
+.topbar-links{display:flex;gap:20px}
+
+#nav{position:sticky;top:0;z-index:999;background:var(--navy);border-bottom:2px solid var(--gold)}
+.nav-inner{max-width:1280px;margin:0 auto;display:flex;align-items:stretch;justify-content:space-between}
+.nav-brand{display:flex;align-items:center;gap:14px;text-decoration:none;padding:10px 0;flex-shrink:0}
+.nav-brand img{width:44px;height:auto;filter:drop-shadow(0 0 6px rgba(201,168,76,0.4))}
+.nav-brand-name{font-family:'IM Fell English',serif;font-size:14px;color:var(--gold-lt);display:block}
+.nav-brand-sub{font-size:10px;color:rgba(255,255,255,0.4);letter-spacing:0.12em;text-transform:uppercase}
+.nav-menu{display:flex;list-style:none;align-items:stretch}
+.nav-menu>li{position:relative}
+.nav-menu>li>a{display:flex;align-items:center;padding:0 14px;height:100%;min-height:58px;color:rgba(255,255,255,0.75);text-decoration:none;font-size:12px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;transition:color .2s;border-bottom:2px solid transparent;margin-bottom:-2px;white-space:nowrap;gap:4px}
+.nav-menu>li>a:hover,.nav-menu>li:hover>a,.nav-menu>li>a.active{color:var(--gold-lt);border-bottom-color:var(--gold)}
+.caret{font-size:9px;opacity:0.6}
+.dropdown{display:none;position:absolute;top:100%;left:0;background:var(--navy-deep);border:1px solid var(--border);border-top:2px solid var(--gold);min-width:220px;padding:8px 0;z-index:100;box-shadow:0 8px 32px rgba(0,0,0,0.5)}
+.nav-menu>li:hover .dropdown{display:block}
+.dropdown a{display:block;padding:9px 20px;color:rgba(255,255,255,0.65);text-decoration:none;font-size:12px;transition:color .15s,background .15s}
+.dropdown a:hover,.dropdown a.active{color:var(--gold-lt);background:rgba(201,168,76,0.07)}
+.dropdown-hr{height:1px;background:var(--border);margin:6px 0}
+.has-sub{position:relative}
+.sub-dropdown{display:none;position:absolute;left:100%;top:0;background:var(--navy-deep);border:1px solid var(--border);border-top:2px solid var(--gold);min-width:200px;padding:8px 0;box-shadow:0 8px 32px rgba(0,0,0,0.5)}
+.has-sub:hover .sub-dropdown{display:block}
+.nav-donate{background:var(--crimson)!important;color:#fff!important;padding:16px 20px!important}
+.nav-donate:hover{background:#a01828!important;border-bottom-color:transparent!important}
+
+/* PAGE HERO */
+.page-hero{
+  background:var(--navy);border-bottom:2px solid var(--gold);
+  padding:5rem 2rem 4rem;text-align:center;position:relative;overflow:hidden;
+}
+.page-hero::before{
+  content:'';position:absolute;inset:0;
+  background-image:repeating-linear-gradient(0deg,var(--gold) 0,var(--gold) 1px,transparent 0,transparent 60px),repeating-linear-gradient(90deg,var(--gold) 0,var(--gold) 1px,transparent 0,transparent 60px);
+  opacity:0.03;
+}
+.page-hero-inner{max-width:760px;margin:0 auto;position:relative;z-index:1}
+.breadcrumb{font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-bottom:1.5rem}
+.breadcrumb a{color:var(--gold);text-decoration:none}
+.breadcrumb a:hover{color:var(--gold-lt)}
+.feast-date-badge{
+  display:inline-block;
+  font-size:10px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;
+  color:var(--gold);border:1px solid var(--border);
+  padding:7px 18px;margin-bottom:1.5rem;
+}
+.page-title{font-family:'IM Fell English',serif;font-size:clamp(30px,5vw,62px);font-weight:400;color:#fff;line-height:1.1;margin-bottom:.6rem}
+.page-title span{color:var(--gold-lt);display:block;font-style:italic}
+.page-subtitle{font-family:'IM Fell English',serif;font-style:italic;font-size:18px;color:rgba(255,255,255,0.45);margin-top:.6rem}
+
+/* BODY */
+.page-body{max-width:1280px;margin:0 auto;padding:4rem 2rem;display:grid;grid-template-columns:1fr 340px;gap:4rem;align-items:start}
+
+/* ARTICLE */
+.article-body{font-size:16.5px;color:var(--text);line-height:1.9}
+.article-body p{margin-bottom:1.5rem}
+.article-body p:last-child{margin-bottom:0}
+
+.dialogue{
+  background:#fff;
+  border-left:4px solid var(--gold);
+  padding:1.4rem 1.8rem;
+  margin:2rem 0;
+  font-family:'IM Fell English',serif;
+  font-style:italic;
+  font-size:18px;
+  color:var(--text);
+  line-height:1.65;
+}
+.dialogue-line{display:block;margin-bottom:.5rem}
+.dialogue-line:last-child{margin-bottom:0}
+.dialogue-speaker{
+  font-style:normal;font-size:11px;font-weight:700;
+  letter-spacing:0.14em;text-transform:uppercase;
+  color:var(--gold-dk);display:block;margin-bottom:3px;
+  font-family:'Lato',sans-serif;
+}
+
+.tropar{
+  background:var(--navy);
+  padding:2rem 2.2rem;
+  margin:2.5rem 0;
+  border-top:2px solid var(--gold);
+}
+.tropar-label{font-size:10px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem}
+.tropar-text{
+  font-family:'IM Fell English',serif;font-style:italic;
+  font-size:18px;color:rgba(255,255,255,0.85);
+  line-height:1.75;
+}
+
+.section-divider{
+  display:flex;align-items:center;gap:16px;
+  margin:2.5rem 0;color:var(--gold);opacity:0.4;font-size:18px;letter-spacing:8px;
+}
+.section-divider::before,.section-divider::after{content:'';flex:1;height:1px;background:var(--gold);opacity:0.3}
+
+/* SIDEBAR */
+.sidebar-card{background:#fff;border:1px solid var(--parch-mid);margin-bottom:1.5rem;overflow:hidden}
+.sidebar-card-head{background:var(--navy);padding:12px 18px;font-family:'IM Fell English',serif;font-size:16px;color:var(--gold-lt)}
+.sidebar-card-body{padding:1.2rem 1.5rem}
+
+.feast-fact{padding:.9rem 0;border-bottom:1px solid var(--parch-mid);display:flex;flex-direction:column;gap:3px}
+.feast-fact:last-child{border-bottom:none}
+.feast-fact-label{font-size:10px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold-dk)}
+.feast-fact-val{font-family:'IM Fell English',serif;font-size:16px;color:var(--navy);line-height:1.35}
+
+.icon-display{text-align:center;padding:1.5rem}
+.icon-display img{width:100%;max-width:240px;display:block;margin:0 auto}
+.icon-caption{font-size:12px;color:var(--muted);font-style:italic;margin-top:.8rem;line-height:1.5}
+
+.btn{display:inline-flex;align-items:center;gap:8px;padding:11px 22px;font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;transition:all .2s}
+.btn-navy{background:var(--navy);color:#fff;display:block;text-align:center}
+.btn-navy:hover{background:var(--navy-mid)}
+
+footer{background:var(--navy-deep);border-top:2px solid var(--gold);padding:2rem}
+.footer-inner{max-width:1280px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+.footer-copy{font-size:11px;color:rgba(255,255,255,0.2)}
+.footer-links{display:flex;gap:20px;flex-wrap:wrap}
+.footer-links a{font-size:12px;color:rgba(255,255,255,0.35);text-decoration:none;transition:color .2s}
+.footer-links a:hover{color:var(--gold)}
+
+.fade{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
+.fade.in{opacity:1;transform:translateY(0)}
+.d1{transition-delay:.1s}.d2{transition-delay:.2s}
+
+@media(max-width:900px){.page-body{grid-template-columns:1fr}.topbar{display:none}.nav-menu{display:none}}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <span>38 South Mill Street, Nyack, NY 10960 &nbsp;&middot;&nbsp; <a href="tel:8453531155">845-353-1155</a></span>
+  <div class="topbar-links">
+    <a href="https://www.youtube.com/channel/UCAd-5xu1S1rHwHoadO2LSAQ" target="_blank">&#9654; Watch Live</a>
+    <a href="https://form.jotform.com/202454512119144" target="_blank">Candle Box</a>
+    <a href="donate.html">Donate</a>
+  </div>
+</div>
+
+<nav id="nav">
+  <div class="nav-inner">
+    <a class="nav-brand" href="index.html">
+      <img src="icon.png" alt="Holy Virgin Protection Church">
+      <div>
+        <span class="nav-brand-name">Holy Virgin Protection Church</span>
+        <span class="nav-brand-sub">Russian Orthodox &middot; Nyack, NY</span>
+      </div>
+    </a>
+    <ul class="nav-menu">
+      <li><a href="schedule.html">Schedule</a></li>
+      <li>
+        <a href="#" class="active">About <span class="caret">&#9660;</span></a>
+        <div class="dropdown">
+          <a href="bookstore1.html">Bookstore</a>
+          <a href="directions.html">Driving Directions</a>
+          <a href="feast_day1.html" class="active">Church Feast Day</a>
+          <div class="dropdown-hr"></div>
+          <div class="has-sub">
+            <a href="#">History &#9658;</a>
+            <div class="sub-dropdown">
+              <a href="parishhistory.html">Parish History</a>
+              <a href="photos.html">Photo Gallery</a>
+              <a href="churchinterioandgrounds.html">Church &amp; Grounds</a>
+              <a href="obituaries.html">Obituaries</a>
+            </div>
+          </div>
+          <div class="has-sub">
+            <a href="#">Resources &#9658;</a>
+            <div class="sub-dropdown">
+              <a href="about_orthodoxy.html">About Orthodoxy</a>
+              <a href="bylaws.html">ROCOR By-Laws (Ustav)</a>
+              <a href="application.html">Application</a>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li>
+        <a href="#">Contact <span class="caret">&#9660;</span></a>
+        <div class="dropdown">
+          <a href="administration.html">Administration</a>
+          <a href="contact2.html">Contact Us</a>
+          <a href="mailing1.html">Join Our Mailing List</a>
+        </div>
+      </li>
+      <li><a href="http://hall.holyvirginprotectionchurch.org" target="_blank">Hall Rental</a></li>
+      <li><a href="http://school.holyvirginprotectionchurch.org" target="_blank">Parish School</a></li>
+      <li><a href="donate.html" class="nav-donate">Donate</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <p class="breadcrumb"><a href="index.html">Home</a> &nbsp;/&nbsp; <a href="#">About</a> &nbsp;/&nbsp; Church Feast Day</p>
+    <div class="feast-date-badge">Celebrated October 14th (N.S.)</div>
+    <h1 class="page-title">
+      The Protection of the<br><span>Most-Holy Theotokos</span>
+    </h1>
+    <p class="page-subtitle">The Patronal Feast of Holy Virgin Protection Church</p>
+  </div>
+</div>
+
+<div class="page-body">
+  <main>
+
+    <div class="article-body fade">
+      <p>This Feast commemorates an event that happened at Constantinople in the 10th Century. In the year 911, during the reign of Emperor Leo the Wise, a large army of Saracens was preparing to attack the city and conquer it. The pious people of Constantinople reacted to the threat by turning to prayer. They thronged to the <strong>Church of Blachernae</strong> &mdash; where was preserved the Robe and Veil of the Mother of God &mdash; and there raised their voices to Christ the Lord, and to His Mother, the All-Holy Theotokos, pleading for mercy and help against the foe.</p>
+
+      <p>As the soldiers raised their arms in battle, the church was filled with hymns and prayers. Among the believers was <strong>St. Andrew, a Fool-for-Christ</strong>, and his disciple, <strong>St. Epiphanius</strong>. Suddenly they saw a vision of the Virgin Mary surrounded by a choir of angels, prophets and apostles.</p>
+
+      <div class="dialogue">
+        <span class="dialogue-line">
+          <span class="dialogue-speaker">St. Andrew</span>
+          &ldquo;Do you see, brother, the Queen of all praying for the peace of the world?&rdquo;
+        </span>
+        <span class="dialogue-line">
+          <span class="dialogue-speaker">St. Epiphanius</span>
+          &ldquo;Indeed I see, father. I see and I fear.&rdquo;
+        </span>
+      </div>
+
+      <p>The inhabitants of the city heard of this vision of the two men, and were filled with joy and hope that this was a sign of deliverance. They thanked God and sang hymns to the One who interceded for them. All night they prayed in the church, while outside, the Christian army fought against the invaders. The tide of battle turned against the enemy and the defenders of Constantinople emerged with a decisive victory.</p>
+
+      <p>Saints Andrew and Epiphanius told everyone of their vision in the church, seeing the Holy Virgin with outstretched arms, holding a veil over the city as a sign of protection, and imploring God&rsquo;s mercy upon the people.</p>
+
+      <div class="section-divider">&#10022; &#10022; &#10022;</div>
+
+      <p>Since that time the <strong>Feast of the Protection</strong> has come to be celebrated by the Church. In the Feast of the Protection of the Most-Holy Theotokos, we entreat of the Queen of Heaven to protect and help us.</p>
+
+      <div class="tropar">
+        <p class="tropar-label">Troparion of the Feast</p>
+        <p class="tropar-text">
+          &ldquo;Remember us in your prayers, O Lady, Virgin Theotokos, that we not perish for the increase of our sins; protect us from all evil and cruel misfortune. For we put our hope on you, and honoring the Feast of your Protection, we magnify you!&rdquo;
+        </p>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- SIDEBAR -->
+  <aside class="fade d2">
+
+    <div class="sidebar-card">
+      <div class="sidebar-card-head">Feast Day Details</div>
+      <div class="sidebar-card-body">
+        <div class="feast-fact">
+          <span class="feast-fact-label">Date Celebrated</span>
+          <span class="feast-fact-val">October 14th<br><small style="font-family:'Lato',sans-serif;font-size:12px;color:var(--muted)">New Style (Gregorian Calendar)</small></span>
+        </div>
+        <div class="feast-fact">
+          <span class="feast-fact-label">Also Known As</span>
+          <span class="feast-fact-val">The Protection of the Theotokos<br>Pokrov (Покров)</span>
+        </div>
+        <div class="feast-fact">
+          <span class="feast-fact-label">Historical Date</span>
+          <span class="feast-fact-val">Year 911 A.D.<br><small style="font-family:'Lato',sans-serif;font-size:12px;color:var(--muted)">Reign of Emperor Leo the Wise</small></span>
+        </div>
+        <div class="feast-fact">
+          <span class="feast-fact-label">Location</span>
+          <span class="feast-fact-val">Church of Blachernae<br>Constantinople</span>
+        </div>
+        <div class="feast-fact">
+          <span class="feast-fact-label">Vision Witnessed By</span>
+          <span class="feast-fact-val">St. Andrew, Fool-for-Christ<br>&amp; St. Epiphanius, his disciple</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="sidebar-card">
+      <div class="sidebar-card-head">Our Parish Icon</div>
+      <div class="icon-display">
+        <img src="icon.png" alt="Icon of the Protection of the Most-Holy Theotokos">
+        <p class="icon-caption">The Holy Virgin Protection &mdash; patronal icon of our parish, depicting the Theotokos with outstretched veil protecting the faithful</p>
+      </div>
+    </div>
+
+    <div class="sidebar-card">
+      <div class="sidebar-card-head">Service Schedule</div>
+      <div class="sidebar-card-body">
+        <p style="font-size:14px;color:var(--muted);margin-bottom:1rem;font-style:italic;line-height:1.6">Services for our Patronal Feast Day follow the general schedule for weekday feasts. Check the schedule page for exact times.</p>
+        <a class="btn btn-navy" href="schedule.html">View Full Schedule</a>
+      </div>
+    </div>
+
+  </aside>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <p class="footer-copy">&copy; 2026 Holy Virgin Protection Russian Orthodox Church &middot; Nyack, NY</p>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="schedule.html">Schedule</a>
+      <a href="about_orthodoxy.html">About Orthodoxy</a>
+      <a href="contact2.html">Contact</a>
+      <a href="donate.html">Donate</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+const obs=new IntersectionObserver(e=>{e.forEach(el=>{if(el.isIntersecting){el.target.classList.add('in');obs.unobserve(el.target)}})},{threshold:.1});
+document.querySelectorAll('.fade').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>

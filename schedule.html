@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Service Schedule — Holy Virgin Protection Church</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+:root{
+  --navy:#1B2240;--navy-deep:#0F1428;--navy-mid:#242D52;
+  --gold:#C9A84C;--gold-lt:#E2C97A;--gold-dk:#8A6E30;
+  --crimson:#8B1520;--parch:#F5F0E4;--parch-mid:#EDE6D4;
+  --cream:#FAF8F3;--text:#2C2416;--muted:#6B5F4A;
+  --border:rgba(201,168,76,0.25);
+}
+body{font-family:'Lato',sans-serif;background:var(--parch);color:var(--text);font-size:16px;line-height:1.7;overflow-x:hidden}
+
+/* TOP BAR */
+.topbar{background:var(--navy-deep);border-bottom:1px solid var(--border);padding:6px 2rem;display:flex;justify-content:space-between;align-items:center;font-size:12px;color:rgba(255,255,255,0.45);letter-spacing:0.04em}
+.topbar a{color:var(--gold);text-decoration:none;font-weight:700}
+.topbar a:hover{color:var(--gold-lt)}
+.topbar-links{display:flex;gap:20px}
+
+/* NAV */
+#nav{position:sticky;top:0;z-index:999;background:var(--navy);border-bottom:2px solid var(--gold)}
+.nav-inner{max-width:1280px;margin:0 auto;display:flex;align-items:stretch;justify-content:space-between}
+.nav-brand{display:flex;align-items:center;gap:14px;text-decoration:none;padding:10px 0;flex-shrink:0}
+.nav-brand img{width:44px;height:auto;filter:drop-shadow(0 0 6px rgba(201,168,76,0.4))}
+.nav-brand-name{font-family:'IM Fell English',serif;font-size:14px;color:var(--gold-lt);display:block;letter-spacing:0.03em}
+.nav-brand-sub{font-size:10px;color:rgba(255,255,255,0.4);letter-spacing:0.12em;text-transform:uppercase}
+.nav-menu{display:flex;list-style:none;align-items:stretch}
+.nav-menu>li{position:relative}
+.nav-menu>li>a{display:flex;align-items:center;padding:0 14px;height:100%;min-height:58px;color:rgba(255,255,255,0.75);text-decoration:none;font-size:12px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;transition:color .2s;border-bottom:2px solid transparent;margin-bottom:-2px;white-space:nowrap;gap:4px}
+.nav-menu>li>a:hover,.nav-menu>li:hover>a,.nav-menu>li>a.active{color:var(--gold-lt);border-bottom-color:var(--gold)}
+.caret{font-size:9px;opacity:0.6}
+.dropdown{display:none;position:absolute;top:100%;left:0;background:var(--navy-deep);border:1px solid var(--border);border-top:2px solid var(--gold);min-width:220px;padding:8px 0;z-index:100;box-shadow:0 8px 32px rgba(0,0,0,0.5)}
+.nav-menu>li:hover .dropdown{display:block}
+.dropdown a{display:block;padding:9px 20px;color:rgba(255,255,255,0.65);text-decoration:none;font-size:12px;letter-spacing:0.06em;transition:color .15s,background .15s}
+.dropdown a:hover{color:var(--gold-lt);background:rgba(201,168,76,0.07)}
+.dropdown-hr{height:1px;background:var(--border);margin:6px 0}
+.has-sub{position:relative}
+.sub-dropdown{display:none;position:absolute;left:100%;top:0;background:var(--navy-deep);border:1px solid var(--border);border-top:2px solid var(--gold);min-width:200px;padding:8px 0;box-shadow:0 8px 32px rgba(0,0,0,0.5)}
+.has-sub:hover .sub-dropdown{display:block}
+.nav-donate{background:var(--crimson)!important;color:#fff!important;padding:16px 20px!important}
+.nav-donate:hover{background:#a01828!important;border-bottom-color:transparent!important}
+
+/* PAGE HERO */
+.page-hero{background:var(--navy);border-bottom:2px solid var(--gold);padding:3.5rem 2rem 3rem}
+.page-hero-inner{max-width:1280px;margin:0 auto}
+.breadcrumb{font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-bottom:1rem}
+.breadcrumb a{color:var(--gold);text-decoration:none}
+.breadcrumb a:hover{color:var(--gold-lt)}
+.page-title{font-family:'IM Fell English',serif;font-size:clamp(32px,4vw,56px);font-weight:400;color:#fff;line-height:1.1}
+.page-title span{color:var(--gold-lt);font-style:italic}
+.page-subtitle{font-family:'IM Fell English',serif;font-style:italic;font-size:18px;color:rgba(255,255,255,0.45);margin-top:.6rem}
+
+/* MAIN LAYOUT */
+.page-body{max-width:1280px;margin:0 auto;padding:4rem 2rem;display:grid;grid-template-columns:1fr 340px;gap:4rem;align-items:start}
+
+/* SCHEDULE TABLE */
+.schedule-section{margin-bottom:3.5rem}
+.sec-tag{font-size:10px;font-weight:700;letter-spacing:0.24em;text-transform:uppercase;color:var(--gold-dk);margin-bottom:.8rem;display:flex;align-items:center;gap:12px}
+.sec-tag::before{content:'';width:24px;height:1px;background:var(--gold);flex-shrink:0}
+.sec-title{font-family:'IM Fell English',serif;font-size:clamp(24px,3vw,36px);font-weight:400;color:var(--navy);line-height:1.15;margin-bottom:1.8rem}
+
+.service-table{width:100%;border-collapse:collapse}
+.service-row{border-bottom:1px solid var(--parch-mid)}
+.service-row:last-child{border-bottom:none}
+.service-day{
+  font-family:'IM Fell English',serif;font-size:20px;color:var(--navy);
+  padding:1.4rem 1.5rem 1.4rem 0;vertical-align:top;
+  width:200px;font-weight:400;
+}
+.service-day-sub{font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold-dk);display:block;margin-top:2px;font-family:'Lato',sans-serif}
+.service-details{padding:1.4rem 0;vertical-align:top}
+.service-time{font-family:'IM Fell English',serif;font-size:22px;color:var(--crimson);font-weight:400;display:block;margin-bottom:4px}
+.service-name{font-size:15px;color:var(--muted);font-style:italic}
+.service-note{font-size:12px;color:rgba(107,95,74,0.65);margin-top:4px;font-style:italic}
+
+.note-box{background:#fff;border-left:3px solid var(--gold);padding:1.2rem 1.5rem;margin-top:2rem;font-size:14px;color:var(--muted);line-height:1.7}
+.note-box strong{color:var(--navy);font-size:13px;letter-spacing:0.08em;text-transform:uppercase;display:block;margin-bottom:.4rem}
+
+/* PDF SECTION */
+.pdf-section{margin-top:3rem}
+.pdf-card{background:#fff;border:1px solid var(--parch-mid);padding:1.5rem 1.8rem;margin-bottom:1rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;transition:border-color .2s,box-shadow .2s}
+.pdf-card:hover{border-color:var(--gold);box-shadow:0 4px 20px rgba(0,0,0,0.06)}
+.pdf-icon{font-size:28px;flex-shrink:0}
+.pdf-info{}
+.pdf-title{font-family:'IM Fell English',serif;font-size:18px;color:var(--navy);margin-bottom:3px}
+.pdf-meta{font-size:12px;color:var(--muted);letter-spacing:0.04em}
+.pdf-btns{display:flex;gap:8px;flex-shrink:0}
+.btn{display:inline-flex;align-items:center;gap:6px;padding:10px 20px;font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;transition:all .2s}
+.btn-navy{background:var(--navy);color:#fff}
+.btn-navy:hover{background:var(--navy-mid);transform:translateY(-1px)}
+.btn-ghost{background:transparent;color:var(--navy);border:1px solid rgba(27,34,64,0.25)}
+.btn-ghost:hover{background:var(--navy);color:#fff;border-color:var(--navy)}
+
+/* PDF VIEWER */
+.pdf-viewer{margin-top:1.5rem;background:#fff;border:1px solid var(--parch-mid)}
+.pdf-viewer-header{background:var(--navy);padding:12px 18px;display:flex;align-items:center;justify-content:space-between}
+.pdf-viewer-title{font-size:12px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold-lt)}
+.pdf-viewer-close{background:none;border:none;color:rgba(255,255,255,0.5);cursor:pointer;font-size:18px;padding:0 4px;transition:color .2s}
+.pdf-viewer-close:hover{color:#fff}
+.pdf-viewer iframe{width:100%;height:700px;border:none;display:block}
+.pdf-viewer{display:none}
+.pdf-viewer.open{display:block}
+
+/* SIDEBAR */
+.sidebar{}
+.sidebar-card{background:#fff;border:1px solid var(--parch-mid);margin-bottom:1.5rem;overflow:hidden}
+.sidebar-card-head{background:var(--navy);padding:12px 18px;font-family:'IM Fell English',serif;font-size:16px;color:var(--gold-lt)}
+.sidebar-card-body{padding:1.2rem 1.5rem}
+.sidebar-row{display:flex;justify-content:space-between;align-items:baseline;padding:8px 0;border-bottom:1px solid var(--parch-mid);font-size:14px}
+.sidebar-row:last-child{border-bottom:none}
+.sidebar-row-label{color:var(--muted);font-style:italic}
+.sidebar-row-val{font-family:'IM Fell English',serif;font-size:16px;color:var(--navy);font-weight:400}
+.sidebar-note{font-size:12px;color:var(--muted);padding-top:.8rem;font-style:italic;line-height:1.6}
+
+.sidebar-stream{background:var(--navy);padding:1.5rem;text-align:center}
+.sidebar-stream p{font-size:13px;color:rgba(255,255,255,0.5);font-style:italic;margin-bottom:1rem;line-height:1.6}
+.btn-gold{background:var(--gold);color:var(--navy-deep)}
+.btn-gold:hover{background:var(--gold-lt);transform:translateY(-1px)}
+
+/* FOOTER */
+footer{background:var(--navy-deep);border-top:2px solid var(--gold);padding:2rem}
+.footer-inner{max-width:1280px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+.footer-copy{font-size:11px;color:rgba(255,255,255,0.2);letter-spacing:0.08em}
+.footer-links{display:flex;gap:20px;flex-wrap:wrap}
+.footer-links a{font-size:12px;color:rgba(255,255,255,0.35);text-decoration:none;transition:color .2s}
+.footer-links a:hover{color:var(--gold)}
+
+@media(max-width:900px){.page-body{grid-template-columns:1fr}.topbar{display:none}.nav-menu{display:none}.pdf-card{flex-direction:column;align-items:flex-start}}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <span>38 South Mill Street, Nyack, NY 10960 &nbsp;&middot;&nbsp; <a href="tel:8453531155">845-353-1155</a></span>
+  <div class="topbar-links">
+    <a href="https://www.youtube.com/channel/UCAd-5xu1S1rHwHoadO2LSAQ" target="_blank">&#9654; Watch Live</a>
+    <a href="https://form.jotform.com/202454512119144" target="_blank">Candle Box</a>
+    <a href="donate.html">Donate</a>
+  </div>
+</div>
+
+<nav id="nav">
+  <div class="nav-inner">
+    <a class="nav-brand" href="index.html">
+      <img src="icon.png" alt="Holy Virgin Protection Church Icon">
+      <div>
+        <span class="nav-brand-name">Holy Virgin Protection Church</span>
+        <span class="nav-brand-sub">Russian Orthodox &middot; Nyack, NY</span>
+      </div>
+    </a>
+    <ul class="nav-menu">
+      <li><a href="schedule.html" class="active">Schedule</a></li>
+      <li>
+        <a href="#">About <span class="caret">&#9660;</span></a>
+        <div class="dropdown">
+          <a href="bookstore1.html">Bookstore</a>
+          <a href="omophor.html">Newsletter &mdash; Omophor</a>
+          <a href="directions.html">Driving Directions</a>
+          <a href="feast_day1.html">Church Feast Day</a>
+          <div class="dropdown-hr"></div>
+          <div class="has-sub">
+            <a href="#">History &#9658;</a>
+            <div class="sub-dropdown">
+              <a href="parishhistory.html">Parish History</a>
+              <a href="photos.html">Photo Gallery</a>
+              <a href="churchinterioandgrounds.html">Church &amp; Grounds</a>
+              <a href="obituaries.html">Obituaries</a>
+            </div>
+          </div>
+          <div class="has-sub">
+            <a href="#">Resources &#9658;</a>
+            <div class="sub-dropdown">
+              <a href="about_orthodoxy.html">About Orthodoxy</a>
+              <a href="bylaws.html">ROCOR By-Laws (Ustav)</a>
+              <a href="application.html">Application</a>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li>
+        <a href="#">Contact <span class="caret">&#9660;</span></a>
+        <div class="dropdown">
+          <a href="administration.html">Administration</a>
+          <a href="contact2.html">Contact Us</a>
+          <a href="mailing1.html">Join Our Mailing List</a>
+        </div>
+      </li>
+      <li><a href="http://hall.holyvirginprotectionchurch.org" target="_blank">Hall Rental</a></li>
+      <li><a href="http://school.holyvirginprotectionchurch.org" target="_blank">Parish School</a></li>
+      <li><a href="donate.html" class="nav-donate">Donate</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <p class="breadcrumb"><a href="index.html">Home</a> &nbsp;/&nbsp; Schedule</p>
+    <h1 class="page-title">Service <span>Schedule</span></h1>
+    <p class="page-subtitle">All services are also livestreamed &mdash; see the home page for the link</p>
+  </div>
+</div>
+
+<!-- BODY -->
+<div class="page-body">
+  <main>
+
+    <!-- GENERAL SCHEDULE -->
+    <div class="schedule-section">
+      <p class="sec-tag">General Schedule</p>
+      <h2 class="sec-title">Regular Services</h2>
+      <p style="font-size:14px;color:var(--muted);margin-bottom:1.8rem;font-style:italic">General times are subject to change &mdash; always confirm with the printed schedule below.</p>
+
+      <table class="service-table">
+        <tr class="service-row">
+          <td class="service-day">
+            Sunday
+            <span class="service-day-sub">Weekly</span>
+          </td>
+          <td class="service-details">
+            <span class="service-time">9:30 AM</span>
+            <span class="service-name">Hours followed by Divine Liturgy</span>
+            <span class="service-note">Time subject to change per the printed schedule</span>
+          </td>
+        </tr>
+        <tr class="service-row">
+          <td class="service-day">
+            Saturday
+            <span class="service-day-sub">Weekly</span>
+          </td>
+          <td class="service-details">
+            <span class="service-time">6:00 PM</span>
+            <span class="service-name">Vigil</span>
+            <span class="service-note">Time subject to change per the printed schedule</span>
+          </td>
+        </tr>
+        <tr class="service-row">
+          <td class="service-day">
+            Weekday Feasts
+            <span class="service-day-sub">Eve of feast</span>
+          </td>
+          <td class="service-details">
+            <span class="service-time">6:00 PM</span>
+            <span class="service-name">Vigil &mdash; the evening of the feast day</span>
+            <span class="service-note">Time subject to change per the printed schedule</span>
+          </td>
+        </tr>
+        <tr class="service-row">
+          <td class="service-day">
+            Weekday Feasts
+            <span class="service-day-sub">Day of feast</span>
+          </td>
+          <td class="service-details">
+            <span class="service-time">9:30 AM</span>
+            <span class="service-name">Hours followed by Divine Liturgy</span>
+            <span class="service-note">Time subject to change per the printed schedule</span>
+          </td>
+        </tr>
+      </table>
+
+      <div class="note-box">
+        <strong>Confession</strong>
+        Confessions are heard before each service. Please arrive early if you wish to receive the sacrament.
+      </div>
+      <div class="note-box" style="margin-top:1rem;border-left-color:var(--crimson)">
+        <strong>&#9654; Livestream</strong>
+        All services are livestreamed on our <a href="https://www.youtube.com/channel/UCAd-5xu1S1rHwHoadO2LSAQ" target="_blank" style="color:var(--crimson)">YouTube channel</a>. Services are also archived for viewing after the fact.
+      </div>
+    </div>
+
+    <!-- PRINTED SCHEDULES / PDFs -->
+    <div class="pdf-section">
+      <p class="sec-tag">Printed Schedules</p>
+      <h2 class="sec-title">Download or View</h2>
+      <p style="font-size:14px;color:var(--muted);margin-bottom:1.8rem;font-style:italic">Bilingual schedules in Russian &amp; English &mdash; scroll to page 2 for the English version.</p>
+
+      <!-- PDF 1 -->
+      <div class="pdf-card">
+        <span class="pdf-icon">&#128196;</span>
+        <div class="pdf-info">
+          <p class="pdf-title">March &ndash; April 2026</p>
+          <p class="pdf-meta">Russian / English &nbsp;&middot;&nbsp; Scroll to page 2 for English</p>
+        </div>
+        <div class="pdf-btns">
+          <button class="btn btn-ghost" onclick="togglePDF('pdf1','https://holyvirginprotectionchurch.org/files/Schedule/Raspis20260304.pdf')">View</button>
+          <a class="btn btn-navy" href="https://holyvirginprotectionchurch.org/files/Schedule/Raspis20260304.pdf" target="_blank" download>Download</a>
+        </div>
+      </div>
+      <div class="pdf-viewer" id="pdf1">
+        <div class="pdf-viewer-header">
+          <span class="pdf-viewer-title">March &ndash; April 2026 Schedule</span>
+          <button class="pdf-viewer-close" onclick="togglePDF('pdf1','')">&#10005;</button>
+        </div>
+        <iframe id="pdf1-frame" src="" title="March April Schedule"></iframe>
+      </div>
+
+      <!-- PDF 2 -->
+      <div class="pdf-card">
+        <span class="pdf-icon">&#128196;</span>
+        <div class="pdf-info">
+          <p class="pdf-title">April &ndash; May &ndash; June 2026</p>
+          <p class="pdf-meta">Russian / English &nbsp;&middot;&nbsp; Scroll to page 2 for English</p>
+        </div>
+        <div class="pdf-btns">
+          <button class="btn btn-ghost" onclick="togglePDF('pdf2','https://holyvirginprotectionchurch.org/files/Schedule/Raspis2026040506.pdf')">View</button>
+          <a class="btn btn-navy" href="https://holyvirginprotectionchurch.org/files/Schedule/Raspis2026040506.pdf" target="_blank" download>Download</a>
+        </div>
+      </div>
+      <div class="pdf-viewer" id="pdf2">
+        <div class="pdf-viewer-header">
+          <span class="pdf-viewer-title">April &ndash; June 2026 Schedule</span>
+          <button class="pdf-viewer-close" onclick="togglePDF('pdf2','')">&#10005;</button>
+        </div>
+        <iframe id="pdf2-frame" src="" title="April May June Schedule"></iframe>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sidebar-card">
+      <div class="sidebar-card-head">Quick Reference</div>
+      <div class="sidebar-card-body">
+        <div class="sidebar-row">
+          <span class="sidebar-row-label">Sunday Liturgy</span>
+          <span class="sidebar-row-val">9:30 AM</span>
+        </div>
+        <div class="sidebar-row">
+          <span class="sidebar-row-label">Saturday Vigil</span>
+          <span class="sidebar-row-val">6:00 PM</span>
+        </div>
+        <div class="sidebar-row">
+          <span class="sidebar-row-label">Feast Day Vigil</span>
+          <span class="sidebar-row-val">6:00 PM</span>
+        </div>
+        <div class="sidebar-row">
+          <span class="sidebar-row-label">Feast Day Liturgy</span>
+          <span class="sidebar-row-val">9:30 AM</span>
+        </div>
+        <div class="sidebar-row">
+          <span class="sidebar-row-label">Confession</span>
+          <span class="sidebar-row-val">Before services</span>
+        </div>
+        <p class="sidebar-note">Times are general and subject to change. Always confirm with the printed schedule PDF above.</p>
+      </div>
+    </div>
+
+    <div class="sidebar-stream">
+      <p>Can&rsquo;t make it in person? All services are livestreamed and archived on our YouTube channel.</p>
+      <a class="btn btn-gold" href="https://www.youtube.com/channel/UCAd-5xu1S1rHwHoadO2LSAQ" target="_blank" style="display:block;text-align:center">&#9654;&nbsp; Watch on YouTube</a>
+    </div>
+
+    <div class="sidebar-card" style="margin-top:1.5rem">
+      <div class="sidebar-card-head">Location</div>
+      <div class="sidebar-card-body">
+        <p style="font-family:'IM Fell English',serif;font-size:17px;color:var(--navy);line-height:1.5;margin-bottom:.8rem">38 South Mill Street<br>Nyack, NY 10960</p>
+        <a class="btn btn-navy" href="directions.html" style="display:block;text-align:center;padding:10px">Get Directions</a>
+      </div>
+    </div>
+  </aside>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <p class="footer-copy">&copy; 2026 Holy Virgin Protection Russian Orthodox Church &middot; Nyack, NY</p>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="administration.html">Administration</a>
+      <a href="directions.html">Directions</a>
+      <a href="contact2.html">Contact</a>
+      <a href="donate.html">Donate</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+function togglePDF(id, url){
+  const viewer = document.getElementById(id);
+  const frame = document.getElementById(id+'-frame');
+  if(viewer.classList.contains('open')){
+    viewer.classList.remove('open');
+    frame.src='';
+  } else {
+    // close any other open viewers first
+    document.querySelectorAll('.pdf-viewer.open').forEach(v=>{
+      v.classList.remove('open');
+      v.querySelector('iframe').src='';
+    });
+    frame.src = url;
+    viewer.classList.add('open');
+    setTimeout(()=>viewer.scrollIntoView({behavior:'smooth',block:'start'}),100);
+  }
+}
+</script>
+</body>
+</html>

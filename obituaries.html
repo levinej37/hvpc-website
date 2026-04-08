@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Obituaries — Holy Virgin Protection Church</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+:root{
+  --navy:#1B2240;--navy-deep:#0F1428;--navy-mid:#242D52;
+  --gold:#C9A84C;--gold-lt:#E2C97A;--gold-dk:#8A6E30;
+  --crimson:#8B1520;--parch:#F5F0E4;--parch-mid:#EDE6D4;
+  --cream:#FAF8F3;--text:#2C2416;--muted:#6B5F4A;
+  --border:rgba(201,168,76,0.25);
+}
+body{font-family:'Lato',sans-serif;background:var(--parch);color:var(--text);font-size:16px;line-height:1.7;overflow-x:hidden}
+
+.topbar{background:var(--navy-deep);border-bottom:1px solid var(--border);padding:6px 2rem;display:flex;justify-content:space-between;align-items:center;font-size:12px;color:rgba(255,255,255,0.45)}
+.topbar a{color:var(--gold);text-decoration:none;font-weight:700}
+.topbar a:hover{color:var(--gold-lt)}
+.topbar-links{display:flex;gap:20px}
+
+#nav{position:sticky;top:0;z-index:999;background:var(--navy);border-bottom:2px solid var(--gold)}
+.nav-inner{max-width:1280px;margin:0 auto;display:flex;align-items:stretch;justify-content:space-between}
+.nav-brand{display:flex;align-items:center;gap:14px;text-decoration:none;padding:10px 0;flex-shrink:0}
+.nav-brand img{width:44px;height:auto;filter:drop-shadow(0 0 6px rgba(201,168,76,0.4))}
+.nav-brand-name{font-family:'IM Fell English',serif;font-size:14px;color:var(--gold-lt);display:block}
+.nav-brand-sub{font-size:10px;color:rgba(255,255,255,0.4);letter-spacing:0.12em;text-transform:uppercase}
+.nav-menu{display:flex;list-style:none;align-items:stretch}
+.nav-menu>li{position:relative}
+.nav-menu>li>a{display:flex;align-items:center;padding:0 14px;height:100%;min-height:58px;color:rgba(255,255,255,0.75);text-decoration:none;font-size:12px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;transition:color .2s;border-bottom:2px solid transparent;margin-bottom:-2px;white-space:nowrap;gap:4px}
+.nav-menu>li>a:hover,.nav-menu>li:hover>a,.nav-menu>li>a.active{color:var(--gold-lt);border-bottom-color:var(--gold)}
+.caret{font-size:9px;opacity:0.6}
+.dropdown{display:none;position:absolute;top:100%;left:0;background:var(--navy-deep);border:1px solid var(--border);border-top:2px solid var(--gold);min-width:220px;padding:8px 0;z-index:100;box-shadow:0 8px 32px rgba(0,0,0,0.5)}
+.nav-menu>li:hover .dropdown{display:block}
+.dropdown a{display:block;padding:9px 20px;color:rgba(255,255,255,0.65);text-decoration:none;font-size:12px;transition:color .15s,background .15s}
+.dropdown a:hover,.dropdown a.active{color:var(--gold-lt);background:rgba(201,168,76,0.07)}
+.dropdown-hr{height:1px;background:var(--border);margin:6px 0}
+.has-sub{position:relative}
+.sub-dropdown{display:none;position:absolute;left:100%;top:0;background:var(--navy-deep);border:1px solid var(--border);border-top:2px solid var(--gold);min-width:200px;padding:8px 0;box-shadow:0 8px 32px rgba(0,0,0,0.5)}
+.has-sub:hover .sub-dropdown{display:block}
+.nav-donate{background:var(--crimson)!important;color:#fff!important;padding:16px 20px!important}
+.nav-donate:hover{background:#a01828!important;border-bottom-color:transparent!important}
+
+/* HERO */
+.page-hero{background:var(--navy);border-bottom:2px solid var(--gold);padding:3.5rem 2rem 3rem}
+.page-hero-inner{max-width:1280px;margin:0 auto}
+.breadcrumb{font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-bottom:1rem}
+.breadcrumb a{color:var(--gold);text-decoration:none}
+.breadcrumb a:hover{color:var(--gold-lt)}
+.page-title{font-family:'IM Fell English',serif;font-size:clamp(32px,4vw,56px);font-weight:400;color:#fff;line-height:1.1}
+.page-title span{color:var(--gold-lt);font-style:italic}
+.page-subtitle{font-family:'IM Fell English',serif;font-style:italic;font-size:18px;color:rgba(255,255,255,0.45);margin-top:.6rem}
+
+/* BODY */
+.page-body{max-width:1280px;margin:0 auto;padding:3rem 2rem 5rem;display:grid;grid-template-columns:1fr 300px;gap:4rem;align-items:start}
+
+/* PRAYER */
+.prayer-band{background:var(--navy);border-top:2px solid var(--gold);border-bottom:2px solid var(--gold);padding:1.8rem 2rem;text-align:center;margin-bottom:0}
+.prayer-text{font-family:'IM Fell English',serif;font-style:italic;font-size:18px;color:rgba(255,255,255,0.7);line-height:1.7;max-width:700px;margin:0 auto}
+.prayer-text strong{color:var(--gold-lt);font-style:normal}
+
+/* SEARCH & FILTERS */
+.controls{background:#fff;border:1px solid var(--parch-mid);padding:1.2rem 1.5rem;margin-bottom:1.5rem;display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+.search-input{
+  flex:1;min-width:180px;
+  padding:9px 14px;border:1px solid var(--parch-mid);
+  font-family:'Lato',sans-serif;font-size:14px;color:var(--text);
+  background:var(--parch);outline:none;
+  transition:border-color .2s;
+}
+.search-input:focus{border-color:var(--gold)}
+.search-input::placeholder{color:var(--muted);font-style:italic}
+.filter-select{
+  padding:9px 14px;border:1px solid var(--parch-mid);
+  font-family:'Lato',sans-serif;font-size:13px;color:var(--text);
+  background:var(--parch);outline:none;cursor:pointer;
+  transition:border-color .2s;
+}
+.filter-select:focus{border-color:var(--gold)}
+.results-count{font-size:12px;color:var(--muted);font-style:italic;white-space:nowrap}
+
+/* TABS */
+.tabs{display:flex;gap:0;border-bottom:2px solid var(--parch-mid);margin-bottom:1.5rem}
+.tab{
+  padding:11px 20px;font-size:11px;font-weight:700;letter-spacing:0.12em;
+  text-transform:uppercase;color:var(--muted);cursor:pointer;
+  border-bottom:2px solid transparent;margin-bottom:-2px;
+  background:none;border-top:none;border-left:none;border-right:none;
+  font-family:'Lato',sans-serif;transition:color .2s,border-color .2s;
+}
+.tab:hover{color:var(--navy)}
+.tab.active{color:var(--navy);border-bottom-color:var(--gold)}
+
+/* PARISHIONER TABLE */
+.panel{display:none}
+.panel.active{display:block}
+
+.obit-year-group{margin-bottom:2rem}
+.obit-year-header{
+  font-family:'IM Fell English',serif;font-size:22px;color:var(--navy);
+  padding:.5rem 0;border-bottom:1px solid var(--gold);
+  margin-bottom:.8rem;display:flex;align-items:baseline;gap:12px;
+}
+.obit-year-header span{font-size:12px;color:var(--muted);font-family:'Lato',sans-serif;font-style:normal}
+
+.obit-table{width:100%;border-collapse:collapse}
+.obit-row{border-bottom:1px solid var(--parch-mid);transition:background .15s}
+.obit-row:hover{background:rgba(201,168,76,0.05)}
+.obit-row.hidden{display:none}
+.obit-date{
+  font-size:13px;color:var(--muted);padding:.65rem 1rem .65rem 0;
+  width:100px;white-space:nowrap;vertical-align:middle;
+}
+.obit-name{
+  font-family:'IM Fell English',serif;font-size:17px;color:var(--navy);
+  padding:.65rem 0;vertical-align:middle;
+}
+.obit-name .clergy-prefix{font-size:13px;color:var(--crimson);font-family:'Lato',sans-serif;font-weight:700;letter-spacing:0.06em;margin-right:4px}
+
+/* ALPHA LIST — undated parishioners */
+.alpha-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:2px}
+.alpha-card{background:#fff;padding:.9rem 1.1rem;border-left:2px solid var(--parch-mid);transition:border-color .15s}
+.alpha-card:hover{border-left-color:var(--gold)}
+.alpha-card.hidden{display:none}
+.alpha-name{font-family:'IM Fell English',serif;font-size:16px;color:var(--navy)}
+
+/* CLERGY SECTION */
+.clergy-table-wrap{background:#fff;border:1px solid var(--parch-mid);overflow:hidden}
+.clergy-table-head{background:var(--navy);padding:12px 18px;font-family:'IM Fell English',serif;font-size:16px;color:var(--gold-lt)}
+.clergy-obit-table{width:100%;border-collapse:collapse;padding:0 1rem}
+.clergy-obit-row{border-bottom:1px solid var(--parch-mid)}
+.clergy-obit-row:last-child{border-bottom:none}
+.clergy-obit-year{font-size:11px;font-weight:700;letter-spacing:0.12em;color:var(--gold-dk);padding:.7rem 1.2rem;width:50px}
+.clergy-obit-date{font-size:13px;color:var(--muted);padding:.7rem .8rem;width:80px}
+.clergy-obit-name{font-family:'IM Fell English',serif;font-size:16px;color:var(--navy);padding:.7rem 0}
+
+/* SIDEBAR */
+.sidebar-card{background:#fff;border:1px solid var(--parch-mid);margin-bottom:1.5rem;overflow:hidden}
+.sidebar-card-head{background:var(--navy);padding:12px 18px;font-family:'IM Fell English',serif;font-size:16px;color:var(--gold-lt)}
+.sidebar-card-body{padding:1.2rem 1.5rem;font-size:14px;color:var(--muted);line-height:1.75}
+.sidebar-card-body p{margin-bottom:.8rem}
+.sidebar-card-body p:last-child{margin-bottom:0}
+.sidebar-stat{display:flex;justify-content:space-between;align-items:baseline;padding:.5rem 0;border-bottom:1px solid var(--parch-mid)}
+.sidebar-stat:last-child{border-bottom:none}
+.sidebar-stat-label{font-size:13px;color:var(--muted)}
+.sidebar-stat-val{font-family:'IM Fell English',serif;font-size:20px;color:var(--navy)}
+
+.no-results{padding:2rem;text-align:center;font-family:'IM Fell English',serif;font-style:italic;font-size:18px;color:var(--muted);display:none}
+
+footer{background:var(--navy-deep);border-top:2px solid var(--gold);padding:2rem}
+.footer-inner{max-width:1280px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+.footer-copy{font-size:11px;color:rgba(255,255,255,0.2)}
+.footer-links{display:flex;gap:20px;flex-wrap:wrap}
+.footer-links a{font-size:12px;color:rgba(255,255,255,0.35);text-decoration:none;transition:color .2s}
+.footer-links a:hover{color:var(--gold)}
+
+@media(max-width:900px){.page-body{grid-template-columns:1fr}.topbar{display:none}.nav-menu{display:none}.alpha-grid{grid-template-columns:repeat(2,1fr)}}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <span>38 South Mill Street, Nyack, NY 10960 &nbsp;&middot;&nbsp; <a href="tel:8453531155">845-353-1155</a></span>
+  <div class="topbar-links">
+    <a href="https://www.youtube.com/channel/UCAd-5xu1S1rHwHoadO2LSAQ" target="_blank">&#9654; Watch Live</a>
+    <a href="https://form.jotform.com/202454512119144" target="_blank">Candle Box</a>
+    <a href="donate.html">Donate</a>
+  </div>
+</div>
+
+<nav id="nav">
+  <div class="nav-inner">
+    <a class="nav-brand" href="index.html">
+      <img src="icon.png" alt="Holy Virgin Protection Church">
+      <div>
+        <span class="nav-brand-name">Holy Virgin Protection Church</span>
+        <span class="nav-brand-sub">Russian Orthodox &middot; Nyack, NY</span>
+      </div>
+    </a>
+    <ul class="nav-menu">
+      <li><a href="schedule.html">Schedule</a></li>
+      <li>
+        <a href="#" class="active">About <span class="caret">&#9660;</span></a>
+        <div class="dropdown">
+          <a href="bookstore1.html">Bookstore</a>
+          <a href="directions.html">Driving Directions</a>
+          <a href="feast_day1.html">Church Feast Day</a>
+          <div class="dropdown-hr"></div>
+          <div class="has-sub">
+            <a href="#" class="active">History &#9658;</a>
+            <div class="sub-dropdown">
+              <a href="parishhistory.html">Parish History</a>
+              <a href="photos.html">Photo Gallery</a>
+              <a href="churchinterioandgrounds.html">Church &amp; Grounds</a>
+              <a href="obituaries.html" class="active">Obituaries</a>
+            </div>
+          </div>
+          <div class="has-sub">
+            <a href="#">Resources &#9658;</a>
+            <div class="sub-dropdown">
+              <a href="about_orthodoxy.html">About Orthodoxy</a>
+              <a href="bylaws.html">ROCOR By-Laws (Ustav)</a>
+              <a href="application.html">Application</a>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li>
+        <a href="#">Contact <span class="caret">&#9660;</span></a>
+        <div class="dropdown">
+          <a href="administration.html">Administration</a>
+          <a href="contact2.html">Contact Us</a>
+          <a href="mailing1.html">Join Our Mailing List</a>
+        </div>
+      </li>
+      <li><a href="http://hall.holyvirginprotectionchurch.org" target="_blank">Hall Rental</a></li>
+      <li><a href="http://school.holyvirginprotectionchurch.org" target="_blank">Parish School</a></li>
+      <li><a href="donate.html" class="nav-donate">Donate</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <p class="breadcrumb"><a href="index.html">Home</a> &nbsp;/&nbsp; <a href="#">About</a> &nbsp;/&nbsp; <a href="#">History</a> &nbsp;/&nbsp; Obituaries</p>
+    <h1 class="page-title">Parishioner <span>Obituaries</span></h1>
+    <p class="page-subtitle">Memory Eternal &mdash; Holy Virgin Protection Church, Nyack, NY</p>
+  </div>
+</div>
+
+<div class="prayer-band">
+  <p class="prayer-text"><strong>Memory Eternal!</strong> &mdash; Grant rest, O Lord, to the souls of Thy departed servants, and in Thy goodness and love for mankind, forgive every sin they have committed in thought, word, or deed, making them to dwell where the righteous repose.</p>
+</div>
+
+<div class="page-body">
+  <main>
+
+    <div class="tabs">
+      <button class="tab active" onclick="switchTab('dated')">By Year of Repose</button>
+      <button class="tab" onclick="switchTab('undated')">All Parishioners</button>
+      <button class="tab" onclick="switchTab('clergy')">Clergy Commemorations</button>
+    </div>
+
+    <!-- SEARCH (shared across dated + undated tabs) -->
+    <div class="controls" id="search-controls">
+      <input class="search-input" type="text" id="search" placeholder="Search by name&hellip;" oninput="filterAll()">
+      <select class="filter-select" id="year-filter" onchange="filterAll()">
+        <option value="">All Years</option>
+      </select>
+      <span class="results-count" id="results-count"></span>
+    </div>
+
+    <!-- TAB: DATED ENTRIES -->
+    <div class="panel active" id="panel-dated">
+      <div id="dated-list"></div>
+      <p class="no-results" id="no-results-dated">No results found.</p>
+    </div>
+
+    <!-- TAB: UNDATED / ALPHA LIST -->
+    <div class="panel" id="panel-undated">
+      <p style="font-size:14px;color:var(--muted);font-style:italic;margin-bottom:1.5rem">These parishioners are commemorated in our Proskomedia but the exact date of repose was not recorded.</p>
+      <div class="alpha-grid" id="alpha-list"></div>
+      <p class="no-results" id="no-results-undated">No results found.</p>
+    </div>
+
+    <!-- TAB: CLERGY KILLED IN RUSSIA -->
+    <div class="panel" id="panel-clergy">
+      <p style="font-size:15px;color:var(--muted);font-style:italic;margin-bottom:1.5rem;line-height:1.75">The following clergy are commemorated at Proskomedia — killed in Russia in service to the Church.</p>
+      <div class="clergy-table-wrap">
+        <div class="clergy-table-head">Proskomedia Commemoration of Clergy Killed in Russia</div>
+        <table class="clergy-obit-table">
+          <tbody id="clergy-list"></tbody>
+        </table>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- SIDEBAR -->
+  <aside>
+    <div class="sidebar-card">
+      <div class="sidebar-card-head">Parish Record</div>
+      <div class="sidebar-card-body">
+        <div class="sidebar-stat"><span class="sidebar-stat-label">Dated entries</span><span class="sidebar-stat-val" id="stat-dated">—</span></div>
+        <div class="sidebar-stat"><span class="sidebar-stat-label">Undated entries</span><span class="sidebar-stat-val" id="stat-undated">—</span></div>
+        <div class="sidebar-stat"><span class="sidebar-stat-label">Clergy commemorated</span><span class="sidebar-stat-val" id="stat-clergy">—</span></div>
+        <div class="sidebar-stat"><span class="sidebar-stat-label">Years recorded</span><span class="sidebar-stat-val">1960 &ndash; 2015</span></div>
+      </div>
+    </div>
+    <div class="sidebar-card">
+      <div class="sidebar-card-head">Adding a Name</div>
+      <div class="sidebar-card-body">
+        <p>To add a departed parishioner to our commemorations list, please contact the parish office.</p>
+        <p>All departed faithful are remembered at the Proskomedia during every Divine Liturgy.</p>
+        <p><a href="contact2.html" style="color:var(--navy);font-weight:700">Contact the office &rarr;</a></p>
+      </div>
+    </div>
+    <div class="sidebar-card">
+      <div class="sidebar-card-head">Novo Diveevo Cemetery</div>
+      <div class="sidebar-card-body">
+        <p>Many of the early leaders of the Russian community in Rockland County rest at the Novo Diveevo Cemetery in Spring Valley, New York — one of the largest Russian Orthodox cemeteries in the United States.</p>
+      </div>
+    </div>
+  </aside>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <p class="footer-copy">&copy; 2026 Holy Virgin Protection Russian Orthodox Church &middot; Nyack, NY</p>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="parishhistory.html">Parish History</a>
+      <a href="contact2.html">Contact</a>
+      <a href="donate.html">Donate</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+// ── DATA
+const DATED = [
+  {y:1960,d:'2-Apr',first:'Raphael',last:'Lopoukhine'},
+  {y:1962,d:'15-Jan',first:'Ludmilla',last:'Rostovtsov'},
+  {y:1966,d:'5-Oct',first:'Alexei',last:'Lopuchin'},
+  {y:1967,d:'',first:'Alexandra',last:'Tolstoy'},
+  {y:1971,d:'5-Nov',first:'Archpriest Serafim',last:'Slobodskoy',clergy:true},
+  {y:1973,d:'3-Apr',first:'Nikolai',last:'Kolin'},
+  {y:1973,d:'3-Apr',first:'Tamara',last:'Kolin'},
+  {y:1973,d:'29-Oct',first:'John',last:'Dagaev'},
+  {y:1973,d:'31-Oct',first:'Alexai',last:'Nikitenko'},
+  {y:1973,d:'9-Dec',first:'Archim. Afanasy',last:'Tsepoura',clergy:true},
+  {y:1973,d:'',first:'Ilya',last:'Tolstoy'},
+  {y:1974,d:'6-Jan',first:'Anna',last:'Ishuk'},
+  {y:1974,d:'13-Mar',first:'Michael',last:'Buteskou'},
+  {y:1974,d:'24-Mar',first:'Anna',last:'Petrov'},
+  {y:1974,d:'5-May',first:'John',last:'Komendantov'},
+  {y:1974,d:'21-Aug',first:'Peter',last:'Koucheria'},
+  {y:1974,d:'1-Sep',first:'John',last:'Liubchenko'},
+  {y:1974,d:'27-Oct',first:'Lubov',last:'Stahovitch'},
+  {y:1975,d:'30-Jan',first:'Longinus',last:'Youshkevitch'},
+  {y:1975,d:'1-Mar',first:'Agafia',last:'Grey'},
+  {y:1975,d:'8-Apr',first:'Leo',last:'Okshevsky'},
+  {y:1975,d:'1-Aug',first:'Boris',last:'Gorsky'},
+  {y:1975,d:'18-Sep',first:'Vladimir',last:'Tretiakov'},
+  {y:1975,d:'10-Oct',first:'Tatiana',last:'Nomikosova'},
+  {y:1975,d:'12-Oct',first:'Helen',last:'Petrov'},
+  {y:1975,d:'14-Oct',first:'Peter',last:'Marion'},
+  {y:1975,d:'15-Oct',first:'Sofia',last:'Lopoukhine'},
+  {y:1975,d:'21-Dec',first:'John',last:'Emsky'},
+  {y:1976,d:'1-Feb',first:'Anna',last:'Pihtovnikov'},
+  {y:1976,d:'26-Feb',first:'Lydia',last:'Tavolg'},
+  {y:1976,d:'28-Feb',first:'Michael',last:'Lipinsky'},
+  {y:1976,d:'5-Mar',first:'Leonty',last:'Korobovsky'},
+  {y:1976,d:'8-Apr',first:'Vassily',last:'Boublik'},
+  {y:1976,d:'26-Apr',first:'Alexei',last:'Voskresensky'},
+  {y:1976,d:'23-Jun',first:'Mark',last:'Namchini'},
+  {y:1976,d:'6-Dec',first:'Maria',last:'Iakovlev'},
+  {y:1977,d:'29-Sep',first:'Catherine',last:'Orlov'},
+  {y:1977,d:'',first:'Maxima',last:'Karpenia'},
+  {y:1977,d:'',first:'Elizabeth',last:'Karpenia'},
+  {y:1978,d:'5-Aug',first:'Vladimir',last:'Yuhnevitch'},
+  {y:1978,d:'1-Dec',first:'Constantin',last:'Borovsky'},
+  {y:1979,d:'30-May',first:'John',last:'Vursta'},
+  {y:1979,d:'6-Jun',first:'Mihailina',last:'Babushkin'},
+  {y:1979,d:'9-Jun',first:'Marianna',last:'Milkovskaya'},
+  {y:1979,d:'1-Oct',first:'Eugene',last:'Kitsenko'},
+  {y:1979,d:'14-Oct',first:'Anastasia',last:'Valitzky'},
+  {y:1979,d:'21-Nov',first:'Matushka Alexandra',last:'Gorsky',clergy:true},
+  {y:1979,d:'29-Nov',first:'Nina',last:'Firfarov'},
+  {y:1980,d:'11-Mar',first:'Olga',last:'Kristofovitch'},
+  {y:1980,d:'10-Apr',first:'Simeon',last:'Dournev'},
+  {y:1980,d:'15-Jun',first:'Dimitri',last:'Andrievich'},
+  {y:1980,d:'12-Sep',first:'Olga',last:'Gerlah'},
+  {y:1980,d:'19-Oct',first:'Timothy',last:'Tourevitch'},
+  {y:1981,d:'8-Mar',first:'George',last:'Alexandrovsky'},
+  {y:1981,d:'12-Mar',first:'Valentina',last:'Grekov'},
+  {y:1981,d:'10-May',first:'Vassily',last:'Iouriev'},
+  {y:1981,d:'8-Aug',first:'Serge',last:'Durilin'},
+  {y:1981,d:'18-Aug',first:'Vassily',last:'Kozhourar'},
+  {y:1981,d:'28-Aug',first:'Alexandra',last:'Koulik'},
+  {y:1981,d:'25-Oct',first:'Lydia',last:'Iouriev'},
+  {y:1981,d:'7-Nov',first:'Peter',last:'Martinov'},
+  {y:1982,d:'11-Feb',first:'George',last:'Meyendorff'},
+  {y:1982,d:'10-Jun',first:'Thekla',last:'Lopuchin'},
+  {y:1982,d:'23-Jun',first:'Nikolai',last:'Umrichin'},
+  {y:1982,d:'30-Jun',first:'Infant Peter',last:'Gorsky'},
+  {y:1982,d:'27-Jul',first:'Anna',last:'Larin'},
+  {y:1982,d:'1-Oct',first:'Claudia',last:'Bolshakov'},
+  {y:1982,d:'6-Oct',first:'Maria',last:'Balkounov'},
+  {y:1982,d:'15-Oct',first:'Anna',last:'Goloubev'},
+  {y:1982,d:'1-Nov',first:'Anastasia',last:'Afanasenko'},
+  {y:1982,d:'1-Dec',first:'Valeriana',last:'Tilititshejew'},
+  {y:1982,d:'23-Dec',first:'Helen',last:'Zhukovsky'},
+  {y:1983,d:'30-Apr',first:'Alexandra',last:'Mionchinsky'},
+  {y:1983,d:'19-May',first:'Nina',last:'Gorsky'},
+  {y:1983,d:'7-Jul',first:'Larissa',last:'Bouteskou'},
+  {y:1983,d:'30-Jul',first:'Valentina',last:'Glinin'},
+  {y:1983,d:'23-Aug',first:'Vassilisa',last:'Vursta'},
+  {y:1984,d:'7-Mar',first:'Nikolai',last:'Romanovsky'},
+  {y:1984,d:'16-Mar',first:'Natalia',last:'Umrichin'},
+  {y:1984,d:'19-Mar',first:'Evgeny',last:'Stupnikov'},
+  {y:1984,d:'22-Mar',first:'Serafim',last:'Federal'},
+  {y:1984,d:'1-May',first:'Theodora',last:'Tarasenko'},
+  {y:1984,d:'12-May',first:'Elizabeth',last:'Fanitskaya'},
+  {y:1984,d:'21-May',first:'Irina',last:'Gerzhabek'},
+  {y:1984,d:'22-May',first:'Maria',last:'Dobzhanskaya'},
+  {y:1984,d:'1-Jun',first:'Barbara',last:'Demmer'},
+  {y:1984,d:'10-Sep',first:'Elizabeth',last:'Brannon'},
+  {y:1984,d:'4-Oct',first:'Eudoxia',last:'Tchekalov'},
+  {y:1985,d:'13-Feb',first:'Matushka Irina',last:'Katchevskaya',clergy:true},
+  {y:1985,d:'19-Mar',first:'Natalia',last:'Voskresenskaya'},
+  {y:1985,d:'23-Mar',first:'Nikolai',last:'Doroshin'},
+  {y:1985,d:'30-Apr',first:'Elizabeth',last:'Rodzianko'},
+  {y:1986,d:'6-Jan',first:'Alexandra',last:'Stupnikov'},
+  {y:1986,d:'15-Jan',first:'Elizabeth',last:'Veter'},
+  {y:1986,d:'19-Jan',first:'Alexandra',last:'Sagatzky'},
+  {y:1986,d:'1-Feb',first:'Justinia',last:'Boutin'},
+  {y:1986,d:'1-Feb',first:'Antonina',last:'Kuprin'},
+  {y:1986,d:'14-Mar',first:'Taisia',last:'Blonsky'},
+  {y:1986,d:'19-Mar',first:'Alexandra',last:'Stepanchenko'},
+  {y:1986,d:'30-Jun',first:'Nikolai',last:'Kotchergin'},
+  {y:1986,d:'22-Jul',first:'Anna',last:'Martinov'},
+  {y:1986,d:'4-Aug',first:'Constantin',last:'Savchenko'},
+  {y:1986,d:'7-Oct',first:'Natalia',last:'Miontchinskaya'},
+  {y:1986,d:'1-Dec',first:'George',last:'Shahovskoy'},
+  {y:1986,d:'',first:'Daria',last:'Bertoulan'},
+  {y:1986,d:'',first:'Natalia',last:'Pivovonsky'},
+  {y:1986,d:'',first:'Archim. Victorin',last:'',clergy:true},
+  {y:1987,d:'24-Mar',first:'Susannah',last:'Sakevitch'},
+  {y:1987,d:'19-Apr',first:'Artemi',last:'Zhukovsky'},
+  {y:1987,d:'21-Apr',first:'Michael',last:'Kourdioukov'},
+  {y:1987,d:'30-Oct',first:'Eya',last:'(Mother of Inna Rodzianko)'},
+  {y:1987,d:'22-Nov',first:'Alexei',last:'Ritov'},
+  {y:1987,d:'24-Dec',first:'George',last:'Babushkin'},
+  {y:1988,d:'23-Jan',first:'Pelagia',last:'Afanasenko'},
+  {y:1988,d:'4-Feb',first:'Boris',last:'Gerlah'},
+  {y:1988,d:'6-Feb',first:'Vladimir',last:'Tolstoy'},
+  {y:1988,d:'1-May',first:'Valeria',last:'Hetchinoff'},
+  {y:1988,d:'17-May',first:'Constantina',last:'Maksutov'},
+  {y:1988,d:'1-Nov',first:'Evgeny',last:'Semianko'},
+  {y:1989,d:'19-Feb',first:'Victor',last:'Sharov'},
+  {y:1989,d:'19-Feb',first:'Claudia',last:'Tretiakov'},
+  {y:1989,d:'1-Jun',first:'Eugenia',last:'Hetchinoff'},
+  {y:1989,d:'19-Jun',first:'Peter',last:'Kozoulin'},
+  {y:1989,d:'1-Oct',first:'Peter',last:'Goloubev'},
+  {y:1990,d:'4-May',first:'Maria',last:'(Moura Zaporoshan\'s mother)'},
+  {y:1990,d:'3-Jun',first:'Alexander',last:'Sarandinaki'},
+  {y:1991,d:'28-Jan',first:'Ilarion',last:'Afanasenko'},
+  {y:1991,d:'5-Feb',first:'Vladimir',last:'Novikov'},
+  {y:1991,d:'8-Feb',first:'Eudoxia',last:'Leonidov'},
+  {y:1991,d:'14-Feb',first:'Michael',last:'Velichko'},
+  {y:1991,d:'16-Feb',first:'Nadezhda',last:'Borovsky'},
+  {y:1991,d:'21-Feb',first:'George (Yuri)',last:'Ismestieff'},
+  {y:1991,d:'25-Mar',first:'Tatiana',last:'Zhdan'},
+  {y:1991,d:'27-Mar',first:'Anastasia',last:'Shirokaya'},
+  {y:1991,d:'1-May',first:'Dimitri',last:'Slobodskoy'},
+  {y:1991,d:'24-Jun',first:'Constantina',last:'Lvov'},
+  {y:1991,d:'26-Jun',first:'Xenia',last:'Semenova'},
+  {y:1991,d:'28-Jun',first:'Boris',last:'Haustov'},
+  {y:1991,d:'8-Jul',first:'Sofia',last:'Gam'},
+  {y:1991,d:'24-Oct',first:'Sergey',last:'Buleyev'},
+  {y:1991,d:'16-Dec',first:'George',last:'Eysymontt'},
+  {y:1992,d:'13-Jan',first:'Subdeacon Nikolai',last:'Mostiko',clergy:true},
+  {y:1992,d:'28-Feb',first:'Valentina',last:'Andrievich'},
+  {y:1992,d:'1-May',first:'Zinaida',last:'Nikitin'},
+  {y:1992,d:'1-Oct',first:'Antonina',last:'Komendantov'},
+  {y:1992,d:'12-Oct',first:'Anatoly',last:'Burakov'},
+  {y:1992,d:'25-Nov',first:'Nikolai',last:'Marr'},
+  {y:1992,d:'1-Dec',first:'Valentina',last:'Zhdan'},
+  {y:1992,d:'25-Dec',first:'Olga',last:'Doroshin'},
+  {y:1993,d:'3-Sep',first:'Xenia',last:'Pivovonsky'},
+  {y:1994,d:'4-Aug',first:'Simeon',last:'Kibrik'},
+  {y:1994,d:'30-Dec',first:'Galina',last:'Sheetz'},
+  {y:1995,d:'17-May',first:'Nikolai',last:'Papkov'},
+  {y:1995,d:'16-Dec',first:'Eudoxia',last:'Rogozik'},
+  {y:1996,d:'18-Jan',first:'Clara',last:'Kourdioukov'},
+  {y:1996,d:'22-Apr',first:'Helen',last:'Sharov'},
+  {y:1996,d:'17-May',first:'Helen',last:'(Aunt of M. Pivovonsky)'},
+  {y:1996,d:'22-May',first:'Serge',last:'Tretiakov'},
+  {y:1996,d:'1-Jul',first:'Dimitri',last:'Kitsenko'},
+  {y:1996,d:'19-Oct',first:'Michael',last:'Roubets'},
+  {y:1996,d:'28-Oct',first:'Vsevolod',last:'Krivsov'},
+  {y:1996,d:'11-Nov',first:'Natalia',last:'King (Lugowsky daughter)'},
+  {y:1996,d:'16-Nov',first:'Vladimir',last:'Rudolf'},
+  {y:1997,d:'6-Feb',first:'Reader Leo',last:'Chemodakov',clergy:true},
+  {y:1997,d:'16-Mar',first:'Theodore',last:'Chaiko'},
+  {y:1997,d:'20-Jun',first:'Maria (Erika)',last:'Burakov'},
+  {y:1997,d:'15-Sep',first:'Matushka Anna',last:'Tchertkoff',clergy:true},
+  {y:1997,d:'1-Oct',first:'Catherine',last:'Serdsev'},
+  {y:1998,d:'10-Apr',first:'Tatiana',last:'Marr'},
+  {y:1998,d:'12-Jun',first:'Anna',last:'Petrov'},
+  {y:1998,d:'2-Jul',first:'Maria',last:'Leslie'},
+  {y:1998,d:'24-Oct',first:'Galina',last:'Kaneletz'},
+  {y:1999,d:'4-Mar',first:'Archpriest Serge',last:'Chertkoff',clergy:true},
+  {y:1999,d:'5-Jul',first:'Zinaida',last:'Yavorovskaya'},
+  {y:1999,d:'26-Sep',first:'Olga',last:'Tolstoy'},
+  {y:2000,d:'4-Jan',first:'Martha',last:'Shatilov'},
+  {y:2000,d:'12-Jan',first:'Irina',last:'Namchini'},
+  {y:2000,d:'17-Jan',first:'Michael',last:'Kluge'},
+  {y:2000,d:'29-Sep',first:'Sophia',last:'Koulomzin'},
+  {y:2000,d:'11-Dec',first:'Dimitri',last:'Ivachenko'},
+  {y:2000,d:'18-Dec',first:'Irina',last:'Namchini'},
+  {y:2001,d:'13-Mar',first:'Neonila',last:'Zeltman'},
+  {y:2001,d:'20-Apr',first:'Peter',last:'Penkrat'},
+  {y:2001,d:'10-Aug',first:'Marina',last:'Kollar'},
+  {y:2002,d:'31-Mar',first:'Ludmilla',last:'Durilin'},
+  {y:2002,d:'18-Apr',first:'Lydia',last:'Novikov'},
+  {y:2002,d:'20-Apr',first:'Serge',last:'Durilin'},
+  {y:2003,d:'24-Jan',first:'Nikita',last:'Koulomzin'},
+  {y:2003,d:'6-Apr',first:'Vera',last:'Samoilovitch'},
+  {y:2003,d:'1-Aug',first:'Matrona',last:'Leonidov'},
+  {y:2003,d:'26-Sep',first:'George',last:'Ponomarev'},
+  {y:2003,d:'1-Oct',first:'Matushka Helen',last:'Slobodskoy',clergy:true},
+  {y:2003,d:'10-Oct',first:'Edward',last:'Clark'},
+  {y:2003,d:'1-Dec',first:'Alexei',last:'Serdsev'},
+  {y:2004,d:'6-Feb',first:'Michael',last:'Ossorguine'},
+  {y:2004,d:'28-Mar',first:'Matushka Zoia',last:'Tchervinskaya',clergy:true},
+  {y:2005,d:'1-Feb',first:'Claudia',last:'Martinov'},
+  {y:2006,d:'19-May',first:'George',last:'Lisounenko'},
+  {y:2006,d:'7-Dec',first:'Natalia',last:'Kaminskaya'},
+  {y:2007,d:'20-Jul',first:'Michael',last:'Buleyev'},
+  {y:2007,d:'26-Oct',first:'Xenia',last:'Chaiko'},
+  {y:2007,d:'24-Nov',first:'Galina',last:'Umrichin'},
+  {y:2007,d:'26-Nov',first:'Galina',last:'Lopuchin'},
+  {y:2008,d:'11-Feb',first:'Igor',last:'Lopuhovich'},
+  {y:2008,d:'31-May',first:'Lydia',last:'Miloradovich'},
+  {y:2008,d:'9-Nov',first:'Alexandra',last:'Teplova'},
+  {y:2009,d:'13-Feb',first:'Serge',last:'Tilitchejew'},
+  {y:2009,d:'24-Feb',first:'Maria',last:'Kozulin'},
+  {y:2009,d:'11-Oct',first:'John',last:'Krilov'},
+  {y:2010,d:'15-Jan',first:'Helen',last:'Penkrat'},
+  {y:2010,d:'6-Sep',first:'Constantine',last:'Balkunov'},
+  {y:2011,d:'24-Jan',first:'Eya',last:'Haustov'},
+  {y:2011,d:'2-23',first:'John',last:'Pizarro'},
+  {y:2011,d:'3-31',first:'Nina',last:'Gonchar'},
+  {y:2011,d:'5-17',first:'Irina',last:'Strelchevskaya'},
+  {y:2012,d:'2-23',first:'Alexander',last:'Yakovenko'},
+  {y:2013,d:'3-16',first:'Tatiana',last:'Hetchinoff'},
+  {y:2013,d:'7-10',first:'Lydia',last:'Tilitchejew'},
+  {y:2014,d:'2-10',first:'Nikolai',last:'Lopuchin'},
+  {y:2014,d:'8-15',first:'Galina',last:'Zhuravleva'},
+  {y:2014,d:'9-20',first:'Leonty',last:'Gonchar'},
+  {y:2014,d:'12-1',first:'Ariadna',last:'Rabcevics'},
+  {y:2014,d:'12-12',first:'Elena',last:'Gaidarenko'},
+  {y:2015,d:'3-9',first:'Anna',last:'Lisounenko'},
+];
+
+const UNDATED = [
+  'John Afanasenko','Nikolai Alexandrov','George Beloborodai','Alexandra Bikov',
+  'Vladimir Bush-Sharigin','Antonina Chekhov','Natalia DeBode','Catherine DeMonian',
+  'Serge DeMonian','Helen Dronin','Nikifora Drouzhinsky','Dimitri Ermolaev',
+  'Paul Fanitsky','Serge Favorsky','Leonid Filimonov','Leo Golosov','Oleg Golosov',
+  'Nikolai Hiriakov','Anna Ishuk','Nikita Ishuk','Xenia Ishuk','Vassilisa Kalinaev',
+  'Vassily Kalinaev','Alex Karnavtsev-Krestovski','Maria Karnavtsev-Krestovski',
+  'Vsevolod Karnavtsev-Krestovski','Vassily Kashavtsev','Boris Kastorsky',
+  'Alexandra Kazantsev','Lydia Kazantsev','John Kisenko','Tamara Kolin','Tatiana Konious',
+  'Serge Koucherov','Eugene Koupinsky','Alexandra Kouprin','Boris Kresby','Ilya Krilov',
+  'Theodora Krilov','Theodora Laiko','George Lamzaky','Nina Lamzaky','John Leonov',
+  'Juliana Linko','Raphael Lopoukhine','Kesara Makedonov','Anna Matseralnik',
+  'Emilian Matseralnik','Maria Meyendorff','Xenia Minitska','Alexander Mondich',
+  'Natalia Morozov','Nikita Mouraviev','Nikolai Namikosov','Dimitri Nelidov',
+  'Nina Nikolaevitch','Michael Novikov','Anna Osipov','Olga Oustinov','Theodore Palkin',
+  'Alex Penkrat','Vassily Petrenko','Serge Poliakov','Vassily Poushkin',
+  'Michael Prokopenko','Joseph Ragozik','Maxim Rikov','Evgeny Rimarenko',
+  'Michael Rodzianko','Maria Sabourova','Igor Sakevitch','Theodora Samoilov',
+  'Ludmilla Saposhkov','Vassily Saposhkov','Nikolai Sheetz','Nina Simonenko',
+  'Daria Skok','Nikolai Skok','Nikolai Smirnov','Serge Tchekersky','Alexandra Tchernoff',
+  'Alexandra Tchervinskaya','John Tchetverikov','Eudoxia Tonkonogov','Vera Treyman',
+  'Paul Umrichin','Peter Vasiliev','John Vershelovich','Nina Veter',
+  'Alexandra Voinahovsky','Irina Volkonskaya','Paul Voronov','Agrippa Yiarigin',
+  'George Yourenev','Michael Zaroutsky','Nina Zaroutsky','Andrei Zhdan','Peter Zoumberg'
+];
+
+const CLERGY_COMM = [
+  {y:1990,d:'9-Sep',name:'Archpriest Alexander Men'},
+  {y:1990,d:'26-Dec',name:'Igumen Lazar Solnishko'},
+  {y:1991,d:'2-Feb',name:'Igumen Serafim Shlikov'},
+  {y:1993,d:'18-Apr',name:'Hieromonk Vassily Roslianok'},
+  {y:1993,d:'18-Apr',name:'Monk Trofim Tatarnikov'},
+  {y:1993,d:'18-Apr',name:'Monk Ferapont'},
+  {y:1993,d:'31-Dec',name:'Hieromonk Nestor Savchuk'},
+  {y:1996,d:'14-Feb',name:'Priest Anatoly Chistousov'},
+  {y:1997,d:'12-Sep',name:'Priest Manuel Bournatsev'},
+  {y:1997,d:'14-Sep',name:'Archpriest Alexander Zharkov'},
+  {y:1997,d:'23-Sep',name:'Priest Georgi Ziablitsev'},
+  {y:1998,d:'Jan',name:'Hieromonk Dimitri Rastegaev (Old Rite)'},
+  {y:1999,d:'16-Jul',name:'Archpriest Boris Ponomarev'},
+  {y:'?',d:'',name:'Archpriest Petr Souhonosov'},
+  {y:2000,d:'23-Aug',name:'Hieromonk Simeon Anosov'},
+  {y:2001,d:'8-Jan',name:'Hieromonk Alexander Koulakov'},
+  {y:2001,d:'21-Mar',name:'Hieromonk Gregory Iakovlev'},
+  {y:2001,d:'13-May',name:'Priest Igor Rosin'},
+  {y:2002,d:'14-Oct',name:'Igumen Jonah Ephimov'},
+  {y:2003,d:'8-Aug',name:'Hieromonk Nil Savlenko'},
+  {y:2003,d:'2-Nov',name:'Hieromonk Isaih Iakovlev'},
+  {y:2003,d:'25-Dec',name:'Hieromonk Alexander Tiertishni'},
+  {y:2005,d:'1-Jul',name:'Priest Vladimir Ivousov'},
+  {y:2005,d:'5-Jul',name:'Priest Evgeny Adigamov'},
+  {y:2005,d:'26-Jul',name:'Archimandrite German Hapougin'},
+  {y:2006,d:'2-Dec',name:'Priest Andrew Nikolaev'},
+  {y:2007,d:'6-Jan',name:'Priest Oleg Stoupichki'},
+  {y:2007,d:'22-Aug',name:'Igumen Avenir Smolin'},
+  {y:2008,d:'9-Mar',name:'Priest Alexei Gorin'},
+  {y:2009,d:'3-Jan',name:'Hieromonk Ephrem Gatsenko'},
+  {y:2009,d:'19-Nov',name:'Priest Daniel Sisoviev'},
+];
+
+// ── RENDER DATED LIST
+function buildDated() {
+  const years = [...new Set(DATED.map(e => e.y))].sort((a,b)=>a-b);
+  const sel = document.getElementById('year-filter');
+  years.forEach(y => {
+    const o = document.createElement('option');
+    o.value = y; o.textContent = y;
+    sel.appendChild(o);
+  });
+
+  const container = document.getElementById('dated-list');
+  const groups = {};
+  DATED.forEach(e => {
+    if(!groups[e.y]) groups[e.y] = [];
+    groups[e.y].push(e);
+  });
+
+  Object.keys(groups).sort((a,b)=>a-b).forEach(y => {
+    const div = document.createElement('div');
+    div.className = 'obit-year-group';
+    div.dataset.year = y;
+    div.innerHTML = `<div class="obit-year-header">${y} <span>${groups[y].length} entered into rest</span></div>
+      <table class="obit-table"><tbody>
+      ${groups[y].map(e => `<tr class="obit-row" data-search="${(e.first+' '+e.last).toLowerCase()}" data-year="${y}">
+        <td class="obit-date">${e.d || '&mdash;'}</td>
+        <td class="obit-name">${e.clergy ? `<span class="clergy-prefix">&#10010;</span>` : ''}${e.first}${e.last ? ' ' + e.last : ''}</td>
+      </tr>`).join('')}
+      </tbody></table>`;
+    container.appendChild(div);
+  });
+
+  document.getElementById('stat-dated').textContent = DATED.length;
+}
+
+// ── RENDER UNDATED
+function buildUndated() {
+  const container = document.getElementById('alpha-list');
+  UNDATED.sort().forEach(name => {
+    const div = document.createElement('div');
+    div.className = 'alpha-card';
+    div.dataset.search = name.toLowerCase();
+    div.innerHTML = `<p class="alpha-name">${name}</p>`;
+    container.appendChild(div);
+  });
+  document.getElementById('stat-undated').textContent = UNDATED.length;
+}
+
+// ── RENDER CLERGY
+function buildClergy() {
+  const tbody = document.getElementById('clergy-list');
+  tbody.innerHTML = CLERGY_COMM.map(e => `
+    <tr class="clergy-obit-row">
+      <td class="clergy-obit-year">${e.y}</td>
+      <td class="clergy-obit-date">${e.d}</td>
+      <td class="clergy-obit-name">${e.name}</td>
+    </tr>`).join('');
+  document.getElementById('stat-clergy').textContent = CLERGY_COMM.length;
+}
+
+// ── FILTER
+function filterAll() {
+  const q = document.getElementById('search').value.toLowerCase().trim();
+  const yr = document.getElementById('year-filter').value;
+  const activeTab = document.querySelector('.panel.active').id;
+
+  if(activeTab === 'panel-dated') {
+    let visible = 0;
+    document.querySelectorAll('#dated-list .obit-row').forEach(row => {
+      const match = (!q || row.dataset.search.includes(q)) && (!yr || row.dataset.year === yr);
+      row.classList.toggle('hidden', !match);
+      if(match) visible++;
+    });
+    // Hide empty year groups
+    document.querySelectorAll('.obit-year-group').forEach(g => {
+      const anyVisible = [...g.querySelectorAll('.obit-row')].some(r => !r.classList.contains('hidden'));
+      g.style.display = anyVisible ? '' : 'none';
+    });
+    document.getElementById('no-results-dated').style.display = visible === 0 ? 'block' : 'none';
+    document.getElementById('results-count').textContent = q || yr ? `${visible} result${visible !== 1 ? 's' : ''}` : '';
+  }
+
+  if(activeTab === 'panel-undated') {
+    let visible = 0;
+    document.querySelectorAll('#alpha-list .alpha-card').forEach(card => {
+      const match = !q || card.dataset.search.includes(q);
+      card.classList.toggle('hidden', !match);
+      if(match) visible++;
+    });
+    document.getElementById('no-results-undated').style.display = visible === 0 ? 'block' : 'none';
+    document.getElementById('results-count').textContent = q ? `${visible} result${visible !== 1 ? 's' : ''}` : '';
+  }
+}
+
+// ── TAB SWITCH
+function switchTab(name) {
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+  event.target.classList.add('active');
+  document.getElementById('panel-'+name).classList.add('active');
+  const showControls = name !== 'clergy';
+  document.getElementById('search-controls').style.display = showControls ? 'flex' : 'none';
+  document.getElementById('year-filter').style.display = name === 'dated' ? '' : 'none';
+  // reset search
+  document.getElementById('search').value = '';
+  document.getElementById('year-filter').value = '';
+  document.getElementById('results-count').textContent = '';
+  filterAll();
+}
+
+// ── INIT
+buildDated();
+buildUndated();
+buildClergy();
+document.getElementById('year-filter').style.display = '';
+</script>
+</body>
+</html>
