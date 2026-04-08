@@ -25,13 +25,13 @@ body{font-family:'Lato',sans-serif;background:var(--parch);color:var(--text);fon
 
 #nav{position:sticky;top:0;z-index:999;background:var(--navy);border-bottom:2px solid var(--gold)}
 .nav-inner{max-width:1280px;margin:0 auto;display:flex;align-items:stretch;justify-content:space-between}
-.nav-brand{display:flex;align-items:center;gap:14px;text-decoration:none;padding:10px 0;flex-shrink:0}
-.nav-brand img{width:44px;height:auto;filter:drop-shadow(0 0 6px rgba(201,168,76,0.4))}
-.nav-brand-name{font-family:'IM Fell English',serif;font-size:14px;color:var(--gold-lt);display:block}
+.nav-brand{display:flex;align-items:center;gap:16px;text-decoration:none;padding:8px 0;flex-shrink:0}
+.nav-brand img{width:72px;height:auto;filter:drop-shadow(0 0 8px rgba(201,168,76,0.5))}
+.nav-brand-name{font-family:'IM Fell English',serif;font-size:17px;color:var(--gold-lt);display:block;letter-spacing:0.01em}
 .nav-brand-sub{font-size:10px;color:rgba(255,255,255,0.4);letter-spacing:0.12em;text-transform:uppercase}
 .nav-menu{display:flex;list-style:none;align-items:stretch}
 .nav-menu>li{position:relative}
-.nav-menu>li>a{display:flex;align-items:center;padding:0 14px;height:100%;min-height:58px;color:rgba(255,255,255,0.75);text-decoration:none;font-size:12px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;transition:color .2s;border-bottom:2px solid transparent;margin-bottom:-2px;white-space:nowrap;gap:4px}
+.nav-menu>li>a{display:flex;align-items:center;padding:0 14px;height:100%;min-height:68px;color:rgba(255,255,255,0.75);text-decoration:none;font-size:12px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;transition:color .2s;border-bottom:2px solid transparent;margin-bottom:-2px;white-space:nowrap;gap:4px}
 .nav-menu>li>a:hover,.nav-menu>li:hover>a,.nav-menu>li>a.active{color:var(--gold-lt);border-bottom-color:var(--gold)}
 .caret{font-size:9px;opacity:0.6}
 .dropdown{display:none;position:absolute;top:100%;left:0;background:var(--navy-deep);border:1px solid var(--border);border-top:2px solid var(--gold);min-width:220px;padding:8px 0;z-index:100;box-shadow:0 8px 32px rgba(0,0,0,0.5)}
@@ -45,73 +45,51 @@ body{font-family:'Lato',sans-serif;background:var(--parch);color:var(--text);fon
 .nav-donate{background:var(--crimson)!important;color:#fff!important;padding:16px 20px!important}
 .nav-donate:hover{background:#a01828!important;border-bottom-color:transparent!important}
 
-/* PAGE HERO */
 .page-hero{background:var(--navy);border-bottom:2px solid var(--gold);padding:3.5rem 2rem 3rem}
 .page-hero-inner{max-width:1280px;margin:0 auto}
 .breadcrumb{font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-bottom:1rem}
 .breadcrumb a{color:var(--gold);text-decoration:none}
-.breadcrumb a:hover{color:var(--gold-lt)}
 .page-title{font-family:'IM Fell English',serif;font-size:clamp(32px,4vw,56px);font-weight:400;color:#fff;line-height:1.1}
 .page-title span{color:var(--gold-lt);font-style:italic}
 .page-subtitle{font-family:'IM Fell English',serif;font-style:italic;font-size:18px;color:rgba(255,255,255,0.45);margin-top:.6rem}
 
-/* BODY */
-.page-body{max-width:1280px;margin:0 auto;padding:4rem 2rem}
+.page-body{max-width:1280px;margin:0 auto;padding:4rem 2rem 6rem}
 
-/* SECTION LABELS */
 .sec-tag{font-size:10px;font-weight:700;letter-spacing:0.24em;text-transform:uppercase;color:var(--gold-dk);margin-bottom:.8rem;display:flex;align-items:center;gap:12px}
 .sec-tag::before{content:'';width:24px;height:1px;background:var(--gold);flex-shrink:0}
 .sec-title{font-family:'IM Fell English',serif;font-size:clamp(26px,3vw,40px);font-weight:400;color:var(--navy);line-height:1.15;margin-bottom:2rem}
 .sec-title em{font-style:italic;color:var(--crimson)}
 
-/* STAFF GRID */
 .staff-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;margin-bottom:5rem}
 .staff-card{background:#fff;padding:2rem 1.5rem;text-align:center;border-top:2px solid transparent;transition:border-color .2s,transform .2s,box-shadow .2s}
 .staff-card:hover{border-top-color:var(--gold);transform:translateY(-3px);box-shadow:0 10px 30px rgba(0,0,0,0.07)}
-.staff-photo{width:110px;height:134px;object-fit:cover;object-position:top center;display:block;margin:0 auto 1.2rem;filter:grayscale(10%) sepia(5%);transition:filter .3s}
-.staff-card:hover .staff-photo{filter:none}
-.staff-ph{width:110px;height:134px;background:var(--parch-mid);display:flex;align-items:center;justify-content:center;margin:0 auto 1.2rem}
+.staff-photo{width:110px;height:134px;object-fit:cover;object-position:top center;display:block;margin:0 auto 1.2rem;transition:filter .3s}
+.staff-ph{width:110px;height:134px;background:var(--parch-mid);display:flex;align-items:center;justify-content:center;margin:0 auto 1.2rem;font-size:36px;color:var(--border)}
 .staff-name{font-family:'IM Fell English',serif;font-size:18px;color:var(--navy);line-height:1.25;margin-bottom:.3rem}
 .staff-role{font-size:9px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold-dk);margin-bottom:.8rem}
 .staff-info{font-size:13px;color:var(--muted);line-height:1.65}
-.staff-info a{color:var(--navy);text-decoration:none;border-bottom:1px solid transparent;transition:border-color .2s}
-.staff-info a:hover{border-bottom-color:var(--gold)}
+.staff-info a{color:var(--navy);text-decoration:none}
+.staff-info a:hover{text-decoration:underline}
 
-/* DIVIDER */
 .section-divider{height:1px;background:var(--border);margin:0 0 4rem}
 
-/* ROCOR SECTION */
 .rocor-section{display:grid;grid-template-columns:280px 1fr;gap:4rem;align-items:start;margin-bottom:5rem}
-.rocor-icon-wrap{position:relative}
 .rocor-icon-wrap img{width:100%;display:block;border:4px solid var(--gold);box-shadow:0 8px 32px rgba(0,0,0,0.2)}
 .rocor-icon-caption{background:var(--navy);padding:10px 14px;font-family:'IM Fell English',serif;font-style:italic;font-size:13px;color:rgba(255,255,255,0.55);text-align:center;line-height:1.5}
-.rocor-text{}
-.rocor-body{font-size:15.5px;color:var(--muted);line-height:1.85;margin-bottom:1.2rem}
+.rocor-body{font-size:15px;color:var(--muted);line-height:1.85;margin-bottom:1.2rem}
 .rocor-links-grid{display:flex;flex-direction:column;gap:8px;margin-top:1.8rem}
-.rocor-link{
-  display:flex;align-items:center;gap:12px;
-  padding:12px 16px;background:#fff;
-  border:1px solid var(--parch-mid);border-left:3px solid var(--gold);
-  text-decoration:none;transition:border-left-color .2s,box-shadow .2s;
-}
+.rocor-link{display:flex;align-items:center;gap:12px;padding:12px 16px;background:#fff;border:1px solid var(--parch-mid);border-left:3px solid var(--gold);text-decoration:none;transition:border-left-color .2s,box-shadow .2s}
 .rocor-link:hover{border-left-color:var(--navy);box-shadow:0 4px 16px rgba(0,0,0,0.06)}
-.rocor-link-icon{font-size:14px;color:var(--gold)}
-.rocor-link-text{}
+.rocor-link-icon{font-size:14px;color:var(--gold);flex-shrink:0}
 .rocor-link-title{font-family:'IM Fell English',serif;font-size:16px;color:var(--navy);display:block}
-.rocor-link-url{font-size:11px;color:var(--muted);letter-spacing:0.04em}
+.rocor-link-url{font-size:11px;color:var(--muted)}
 
-/* FOOTER */
 footer{background:var(--navy-deep);border-top:2px solid var(--gold);padding:2rem}
 .footer-inner{max-width:1280px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
 .footer-copy{font-size:11px;color:rgba(255,255,255,0.2)}
 .footer-links{display:flex;gap:20px;flex-wrap:wrap}
 .footer-links a{font-size:12px;color:rgba(255,255,255,0.35);text-decoration:none;transition:color .2s}
 .footer-links a:hover{color:var(--gold)}
-
-/* FADE */
-.fade{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
-.fade.in{opacity:1;transform:translateY(0)}
-.d1{transition-delay:.08s}.d2{transition-delay:.16s}.d3{transition-delay:.24s}.d4{transition-delay:.32s}
 
 @media(max-width:1024px){.staff-grid{grid-template-columns:repeat(2,1fr)}.rocor-section{grid-template-columns:1fr}}
 @media(max-width:768px){.topbar{display:none}.nav-menu{display:none}.staff-grid{grid-template-columns:repeat(2,1fr)}}
@@ -140,10 +118,9 @@ footer{background:var(--navy-deep);border-top:2px solid var(--gold);padding:2rem
     <ul class="nav-menu">
       <li><a href="/hvpc-website/schedule.html">Schedule</a></li>
       <li>
-        <a href="#">About <span class="caret">&#9660;</span></a>
+        <a href="#" class="active">About <span class="caret">&#9660;</span></a>
         <div class="dropdown">
           <a href="/hvpc-website/bookstore1.html">Bookstore</a>
-          <a href="omophor.html">Newsletter &mdash; Omophor</a>
           <a href="/hvpc-website/directions.html">Driving Directions</a>
           <a href="/hvpc-website/feast_day1.html">Church Feast Day</a>
           <div class="dropdown-hr"></div>
@@ -181,144 +158,85 @@ footer{background:var(--navy-deep);border-top:2px solid var(--gold);padding:2rem
   </div>
 </nav>
 
-<!-- PAGE HERO -->
 <div class="page-hero">
   <div class="page-hero-inner">
     <p class="breadcrumb"><a href="/hvpc-website/index.html">Home</a> &nbsp;/&nbsp; <a href="#">Contact</a> &nbsp;/&nbsp; Administration</p>
     <h1 class="page-title">Parish <span>Administration</span></h1>
-    <p class="page-subtitle">Clergy, leadership, and parish contacts</p>
+    <p class="page-subtitle">Clergy &amp; parish leadership of Holy Virgin Protection Church</p>
   </div>
 </div>
 
 <div class="page-body">
 
-  <!-- STAFF -->
-  <p class="sec-tag fade">Our Team</p>
-  <h2 class="sec-title fade">Clergy &amp; <em>Parish Leadership</em></h2>
+  <p class="sec-tag">Our Team</p>
+  <h2 class="sec-title">Clergy &amp; <em>Parish Leadership</em></h2>
 
   <div class="staff-grid">
 
-    <div class="staff-card fade d1">
-      <img class="staff-photo"
-        src="https://www.holyvirginprotectionchurch.org/images/metNicholas/9metropolitannicholas_1.jpg"
-        alt="Metropolitan Nicholas" onerror="this.style.display='none'">
+    <div class="staff-card">
+      <img class="staff-photo" src="https://www.holyvirginprotectionchurch.org/images/metNicholas/9metropolitannicholas_1.jpg" alt="Metropolitan Nicholas" onerror="this.style.display='none'">
       <p class="staff-name">Metropolitan Nicholas</p>
       <p class="staff-role">President of the Synod of Bishops &middot; ROCOR</p>
-      <p class="staff-info">
-        75 E 93rd Street<br>New York, NY 10128<br><br>
+      <p class="staff-info">75 E 93rd Street<br>New York, NY 10128<br><br>
         <a href="tel:2125341601">212-534-1601</a><br>
         212-534-1798 (fax)
       </p>
     </div>
 
-    <div class="staff-card fade d2">
-      <img class="staff-photo"
-        src="https://www.holyvirginprotectionchurch.org/images/gorsky/faces003.jpg"
-        alt="Very Reverend Elias Gorsky" onerror="this.style.display='none'">
+    <div class="staff-card">
+      <img class="staff-photo" src="https://www.holyvirginprotectionchurch.org/images/gorsky/faces003.jpg" alt="V. Rev. Elias Gorsky" onerror="this.style.display='none'">
       <p class="staff-name">V. Rev. Elias Gorsky</p>
-      <p class="staff-role">Archpriest &middot; Rector</p>
+      <p class="staff-role">Archpriest &amp; Rector</p>
       <p class="staff-info">
-        7 Calvert Drive<br>Washingtonville, NY 10992<br><br>
-        <a href="tel:8456185308">845-618-5308</a> (office)<br>
-        <a href="tel:8452750605">845-275-0605</a> (home)<br>
-        845-497-7963 (fax)<br><br>
-        <a href="/cdn-cgi/l/email-protection#3b5d495257425a7b5e5c58545515585456"><span class="__cf_email__" data-cfemail="6503170c091c04250002060a0b4b060a08">[email&#160;protected]</span></a>
+        <a href="tel:8456185308">845-618-5308</a><br>
+        <a href="mailto:frilya@egcon.com">frilya@egcon.com</a>
       </p>
     </div>
 
-    <div class="staff-card fade d3">
-      <img class="staff-photo"
-        src="https://www.holyvirginprotectionchurch.org/images/FrAndrewPodymovOrd1.jpg"
-        alt="Priest Andrew Podymow" onerror="this.style.display='none'">
+    <div class="staff-card">
+      <img class="staff-photo" src="https://www.holyvirginprotectionchurch.org/images/FrAndrewPodymovOrd1.jpg" alt="Fr. Andrew Podymow" onerror="this.style.display='none'">
       <p class="staff-name">Fr. Andrew Podymow</p>
       <p class="staff-role">Priest</p>
-      <p class="staff-info">
-        47 Poplar Street<br>Nanuet, NY 10954<br><br>
-        <a href="tel:8455072444">845-507-2444</a>
-      </p>
+      <p class="staff-info">&nbsp;</p>
     </div>
 
-    <div class="staff-card fade d4">
-      <img class="staff-photo"
-        src="https://www.holyvirginprotectionchurch.org/images/Ilyin24203.jpg"
-        alt="Deacon Nicholas Ilyin" onerror="this.style.display='none'">
+    <div class="staff-card">
+      <img class="staff-photo" src="https://www.holyvirginprotectionchurch.org/images/Ilyin24203.jpg" alt="Dn. Nicholas Ilyin" onerror="this.style.display='none'">
       <p class="staff-name">Dn. Nicholas Ilyin</p>
       <p class="staff-role">Deacon</p>
-      <p class="staff-info">
-        22 Foxhill Lane<br>Ringwood, NJ 07456<br><br>
-        <a href="tel:2015635852">201-563-5852</a><br><br>
-        <a href="/cdn-cgi/l/email-protection#315f58525a1f585d48585f71565c50585d1f525e5c"><span class="__cf_email__" data-cfemail="432d2a20286d2a2f3a2a2d03242e222a2f6d202c2e">[email&#160;protected]</span></a>
-      </p>
+      <p class="staff-info">&nbsp;</p>
     </div>
 
-    <div class="staff-card fade d1">
-      <img class="staff-photo"
-        src="https://www.holyvirginprotectionchurch.org/images/starostasergey/starostasergey.jpg"
-        alt="Sergey Rylov" onerror="this.style.display='none'">
-      <p class="staff-name">Sergey V. Rylov</p>
-      <p class="staff-role">Starosta &middot; Warden</p>
-      <p class="staff-info">
-        <a href="tel:9149453115">914-945-3115</a><br>
-        914-949-4401<br><br>
-        <a href="/cdn-cgi/l/email-protection#ef9c8a9d888a96c19d96838099af88828e8683c18c8082"><span class="__cf_email__" data-cfemail="91e2f4e3f6f4e8bfe3e8fdfee7d1f6fcf0f8fdbff2fefc">[email&#160;protected]</span></a>
-      </p>
+    <div class="staff-card">
+      <div class="staff-ph">&#9728;</div>
+      <p class="staff-name">Sergey Rylov</p>
+      <p class="staff-role">Church Warden (Starosta)</p>
+      <p class="staff-info">&nbsp;</p>
     </div>
 
-    <div class="staff-card fade d2">
-      <div class="staff-ph">
-        <svg width="36" height="36" viewBox="0 0 36 36" fill="none"><circle cx="18" cy="13" r="6.5" stroke="rgba(138,110,48,.4)" stroke-width="1.5"/><path d="M4 34c0-7.732 6.268-14 14-14s14 6.268 14 14" stroke="rgba(138,110,48,.4)" stroke-width="1.5"/></svg>
-      </div>
-      <p class="staff-name">John Vanya Paschenko</p>
-      <p class="staff-role">Property Manager</p>
-      <p class="staff-info">
-        <a href="tel:8455485002">845-548-5002</a><br><br>
-        <a href="/cdn-cgi/l/email-protection#593329292f2a3a192038313636773a3634"><span class="__cf_email__" data-cfemail="a3c9d3d3d5d0c0e3dac2cbcccc8dc0ccce">[email&#160;protected]</span></a>
-      </p>
-    </div>
-
-    <div class="staff-card fade d3">
-      <img class="staff-photo"
-        src="https://www.holyvirginprotectionchurch.org/images/gloria-clark/gloria-clark.jpg"
-        alt="Gloria Clark" onerror="this.style.display='none'">
+    <div class="staff-card">
+      <div class="staff-ph">&#9728;</div>
       <p class="staff-name">Gloria Clark</p>
-      <p class="staff-role">Elder Sister</p>
-      <p class="staff-info">
-        12 Leicester Road<br>Briarcliff Manor, NY 10510<br><br>
-        <a href="tel:9144328932">914-432-8932</a><br>
-        <a href="tel:9145228075">914-522-8075</a> (cell)<br><br>
-        <a href="/cdn-cgi/l/email-protection#f3949f9c819a92909f928198c2cac4c3b39b9c879e929a9fdd909c9e"><span class="__cf_email__" data-cfemail="7a1d161508131b19161b08114b434d4a3a12150e171b131654191517">[email&#160;protected]</span></a>
-      </p>
+      <p class="staff-role">Secretary</p>
+      <p class="staff-info">&nbsp;</p>
     </div>
 
-    <div class="staff-card fade d4">
-      <div class="staff-ph">
-        <svg width="36" height="36" viewBox="0 0 36 36" fill="none"><circle cx="18" cy="13" r="6.5" stroke="rgba(138,110,48,.4)" stroke-width="1.5"/><path d="M4 34c0-7.732 6.268-14 14-14s14 6.268 14 14rina Garfinkel</p>
-      <p class="staff-role">Treasurer</p>
-      <p class="staff-info">
-        <a href="mailto:itglsg@holyvirginprotectionchurch.org">itglsg@holyvirginprotectionchurch.org</a>
-      </p>
-    </div>
-
-    <div class="staff-card fade d2">
-      <div class="staff-ph">
-        <svg width="36" height="36" viewBox="0 0 36 36" fill="none"><circle cx="18" cy="13" r="6.5" stroke="rgba(138,110,48,.4)" stroke-width="1.5"/><path d="M4 34c0-7.732 6.268-14 14-14s14 6.268 14 14" stroke="rgba(138,110,48,.4)" stroke-width="1.5"/></svg>
-      </div>
+    <div class="staff-card">
+      <div class="staff-ph">&#9728;</div>
       <p class="staff-name">Irina Gorsky</p>
-      <p class="staff-role">Church Store Manager</p>
+      <p class="staff-role">Bookstore Manager</p>
       <p class="staff-info">
-        <a href="tel:9144140052">914-414-0052</a><br><br>
+        <a href="tel:9144140052">914-414-0052</a><br>
         <a href="mailto:mairag050@gmail.com">mairag050@gmail.com</a>
       </p>
     </div>
 
-    <div class="staff-card fade d3">
-      <img class="staff-photo"
-        src="https://www.holyvirginprotectionchurch.org/images/Kudinov/DSCN1187.jpg"
-        alt="Maxime Kudinoff" onerror="this.style.display='none'">
+    <div class="staff-card">
+      <img class="staff-photo" src="https://www.holyvirginprotectionchurch.org/images/Kudinov/DSCN1187.jpg" alt="Maxime Kudinoff" onerror="this.style.display='none'">
       <p class="staff-name">Maxime Kudinoff</p>
       <p class="staff-role">Hall Rental Manager</p>
       <p class="staff-info">
-        <a href="tel:8453580190">845-358-0190</a><br><br>
+        <a href="tel:8453580190">845-358-0190</a><br>
         <a href="mailto:ksunusha@aol.com">ksunusha@aol.com</a>
       </p>
     </div>
@@ -327,58 +245,39 @@ footer{background:var(--navy-deep);border-top:2px solid var(--gold);padding:2rem
 
   <div class="section-divider"></div>
 
-  <!-- ROCOR -->
-  <p class="sec-tag fade">Our Jurisdiction</p>
-  <h2 class="sec-title fade">ROCOR &mdash; <em>Russian Orthodox Church Outside Russia</em></h2>
+  <p class="sec-tag">Our Jurisdiction</p>
+  <h2 class="sec-title">ROCOR &mdash; <em>Russian Orthodox Church Outside Russia</em></h2>
 
-  <div class="rocor-section fade">
+  <div class="rocor-section">
     <div class="rocor-icon-wrap">
       <img src="/hvpc-website/kursk-root-icon.jpg" alt="The Kursk Root Icon of the Most Holy Theotokos">
-      <div class="rocor-icon-caption">
-        The Kursk Root Icon of the Most Holy Theotokos &mdash; one of the most revered icons of the Russian Orthodox Church
-      </div>
+      <div class="rocor-icon-caption">The Kursk Root Icon of the Most Holy Theotokos &mdash; one of the most revered icons of the Russian Orthodox Church</div>
     </div>
     <div class="rocor-text">
       <p class="rocor-body">The Russian Orthodox Church Outside Russia (also called the Russian Orthodox Church Abroad, ROCA, ROCOR, or the Synod) is a semi-autonomous jurisdiction of the Moscow Patriarchate originally formed in response against the policy of Bolsheviks with respect to religion in the Soviet Union soon after the Russian Revolution.</p>
-      <p class="rocor-body">ROCOR currently has over 400 parishes as well as monasteries for men and women in 40 countries throughout the world, served by nearly 600 priests. In North America, it has approximately 133 parishes in the US and 22 in Canada. There are three ROCOR communities in the United Kingdom and 21 in Australia and New Zealand. There are also roughly 100 communities which owe allegiance to ROCOR in Russia and the other nations of the former Soviet Union.</p>
-      <p class="rocor-body">There are five ROCOR monasteries for men and women in North America, the most important and largest of which is Holy Trinity Monastery (Jordanville, New York), to which is attached ROCOR&rsquo;s seminary, Holy Trinity Orthodox Seminary.</p>
+      <p class="rocor-body">ROCOR currently has over 400 parishes as well as monasteries for men and women in 40 countries throughout the world, served by nearly 600 priests. In North America, it has approximately 133 parishes in the US and 22 in Canada. There are three ROCOR communities in the United Kingdom and 21 in Australia and New Zealand.</p>
+      <p class="rocor-body">There are five ROCOR monasteries for men and women in North America, the most important and largest of which is Holy Trinity Monastery (Jordanville, New York), to which is attached ROCOR's seminary, Holy Trinity Orthodox Seminary.</p>
       <p class="rocor-body">In concert with the Church of Jerusalem, ROCOR also oversees the Russian Ecclesiastical Mission in Jerusalem, which acts as caretaker to three holy sites in Palestine, all of which are monasteries.</p>
-
       <div class="rocor-links-grid">
         <a class="rocor-link" href="http://www.synod.com/synod/indexeng.htm" target="_blank">
           <span class="rocor-link-icon">&#9654;</span>
-          <span class="rocor-link-text">
-            <span class="rocor-link-title">ROCOR Official Site</span>
-            <span class="rocor-link-url">synod.com &mdash; English</span>
-          </span>
+          <span><span class="rocor-link-title">ROCOR Official Site</span><span class="rocor-link-url">synod.com &mdash; English</span></span>
         </a>
         <a class="rocor-link" href="http://www.synod.com/synod/index.html" target="_blank">
           <span class="rocor-link-icon">&#9654;</span>
-          <span class="rocor-link-text">
-            <span class="rocor-link-title">ROCOR Official Site</span>
-            <span class="rocor-link-url">synod.com &mdash; Russian</span>
-          </span>
+          <span><span class="rocor-link-title">ROCOR Official Site</span><span class="rocor-link-url">synod.com &mdash; Russian</span></span>
         </a>
         <a class="rocor-link" href="http://www.jordanville.org" target="_blank">
           <span class="rocor-link-icon">&#9654;</span>
-          <span class="rocor-link-text">
-            <span class="rocor-link-title">Holy Trinity Monastery</span>
-            <span class="rocor-link-url">jordanville.org &mdash; Jordanville, NY</span>
-          </span>
+          <span><span class="rocor-link-title">Holy Trinity Monastery</span><span class="rocor-link-url">jordanville.org &mdash; Jordanville, NY</span></span>
         </a>
         <a class="rocor-link" href="http://www.hts.edu" target="_blank">
           <span class="rocor-link-icon">&#9654;</span>
-          <span class="rocor-link-text">
-            <span class="rocor-link-title">Holy Trinity Orthodox Seminary</span>
-            <span class="rocor-link-url">hts.edu &mdash; Jordanville, NY</span>
-          </span>
+          <span><span class="rocor-link-title">Holy Trinity Orthodox Seminary</span><span class="rocor-link-url">hts.edu &mdash; Jordanville, NY</span></span>
         </a>
         <a class="rocor-link" href="http://www.jerusalem-mission.org/" target="_blank">
           <span class="rocor-link-icon">&#9654;</span>
-          <span class="rocor-link-text">
-            <span class="rocor-link-title">Russian Ecclesiastical Mission in Jerusalem</span>
-            <span class="rocor-link-url">jerusalem-mission.org</span>
-          </span>
+          <span><span class="rocor-link-title">Russian Ecclesiastical Mission in Jerusalem</span><span class="rocor-link-url">jerusalem-mission.org</span></span>
         </a>
       </div>
     </div>
@@ -400,8 +299,10 @@ footer{background:var(--navy-deep);border-top:2px solid var(--gold);padding:2rem
 </footer>
 
 <script>
-const obs=new IntersectionObserver(e=>{e.forEach(el=>{if(el.isIntersecting){el.target.classList.add('in');obs.unobserve(el.target)}})},{threshold:.1});
-document.querySelectorAll('.fade').forEach(el=>obs.observe(el));
+const obs = new IntersectionObserver(e => {
+  e.forEach(el => { el.target.style.opacity='1'; el.target.style.transform='none'; obs.unobserve(el.target); });
+}, { threshold: 0 });
+document.querySelectorAll('.staff-card, .rocor-section, .sec-tag, .sec-title').forEach(el => obs.observe(el));
 </script>
 </body>
 </html>
