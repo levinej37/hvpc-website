@@ -98,7 +98,50 @@ footer{background:var(--navy-deep);border-top:2px solid var(--gold);padding:2rem
 .footer-links a{font-size:12px;color:rgba(255,255,255,0.35);text-decoration:none;transition:color .2s}
 .footer-links a:hover{color:var(--gold)}
 
-@media(max-width:768px){.topbar{display:none}.nav-menu{display:none}}
+@media(max-width:768px){.topbar{display:none}.nav-menu{display:none}.nav-donate{display:none}}
+
+/* ── MOBILE NAV ───────────────────────────── */
+.hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;padding:10px;cursor:pointer;background:none;border:none;z-index:1001;flex-shrink:0}
+.hamburger span{display:block;width:24px;height:2px;background:var(--gold-lt);transition:all .3s;transform-origin:center}
+.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.hamburger.open span:nth-child(2){opacity:0;transform:scaleX(0)}
+.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mobile-nav{
+  display:none;position:fixed;top:0;left:0;right:0;bottom:0;
+  background:var(--navy-deep);z-index:1000;
+  overflow-y:auto;padding:80px 0 2rem;
+  flex-direction:column;
+}
+.mobile-nav.open{display:flex}
+.mobile-nav-item{border-bottom:1px solid var(--border)}
+.mobile-nav-item>a{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:16px 24px;color:rgba(255,255,255,0.8);text-decoration:none;
+  font-size:14px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;
+  transition:color .2s;
+}
+.mobile-nav-item>a:hover{color:var(--gold-lt)}
+.mobile-nav-item>a.active{color:var(--gold-lt)}
+.mobile-nav-caret{font-size:10px;opacity:0.5;transition:transform .2s}
+.mobile-nav-item.expanded .mobile-nav-caret{transform:rotate(180deg)}
+.mobile-sub{display:none;background:rgba(0,0,0,0.2);flex-direction:column}
+.mobile-nav-item.expanded .mobile-sub{display:flex}
+.mobile-sub a{
+  display:block;padding:12px 24px 12px 40px;
+  color:rgba(255,255,255,0.55);text-decoration:none;
+  font-size:13px;font-weight:600;letter-spacing:0.06em;
+  border-bottom:1px solid rgba(255,255,255,0.05);
+  transition:color .2s;
+}
+.mobile-sub a:hover{color:var(--gold-lt)}
+.mobile-sub a.active{color:var(--gold)}
+.mobile-sub-label{
+  display:block;padding:10px 24px 6px 40px;
+  font-size:10px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;
+  color:var(--gold-dk);
+}
+.mobile-nav-donate{background:var(--crimson);margin:1.5rem 1.5rem 0;display:block;text-align:center;padding:14px;color:#fff!important;text-decoration:none;font-size:12px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase}
+@media(max-width:768px){.hamburger{display:flex}}
 </style>
 </head>
 <body>
@@ -162,8 +205,49 @@ footer{background:var(--navy-deep);border-top:2px solid var(--gold);padding:2rem
       <li><a href="http://school.holyvirginprotectionchurch.org" target="_blank">Parish School</a></li>
       <li><a href="/hvpc-website/donate.html" class="nav-donate">Donate</a></li>
     </ul>
+  <button class="hamburger" id="hamburger" onclick="toggleNav()" aria-label="Menu"><span></span><span></span><span></span></button>
   </div>
 </nav>
+
+<!-- MOBILE NAV OVERLAY -->
+<div class="mobile-nav" id="mobile-nav">
+  <div class="mobile-nav-item">
+    <a href="/hvpc-website/schedule.html">Schedule</a>
+  </div>
+  <div class="mobile-nav-item">
+    <a href="#" onclick="toggleMSub(this);return false;">About <span class="mobile-nav-caret">&#9660;</span></a>
+    <div class="mobile-sub">
+      <a href="/hvpc-website/bookstore1.html">Bookstore</a>
+      <a href="/hvpc-website/directions.html">Driving Directions</a>
+      <a href="/hvpc-website/feast_day1.html">Church Feast Day</a>
+      <span class="mobile-sub-label">History</span>
+      <a href="/hvpc-website/parishhistory.html">Parish History</a>
+      <a href="/hvpc-website/photos.html">Photo Gallery</a>
+      <a href="/hvpc-website/churchinterioandgrounds.html">Church &amp; Grounds</a>
+      <a href="/hvpc-website/obituaries.html">Obituaries</a>
+      <span class="mobile-sub-label">Resources</span>
+      <a href="/hvpc-website/about_orthodoxy.html">About Orthodoxy</a>
+      <a href="/hvpc-website/bylaws.html">ROCOR By-Laws</a>
+      <a href="/hvpc-website/application.html">Application</a>
+    </div>
+  </div>
+  <div class="mobile-nav-item">
+    <a href="#" onclick="toggleMSub(this);return false;">Contact <span class="mobile-nav-caret">&#9660;</span></a>
+    <div class="mobile-sub">
+      <a href="/hvpc-website/administration.html">Administration</a>
+      <a href="/hvpc-website/contact2.html">Contact Us</a>
+      <a href="/hvpc-website/mailing1.html">Join Our Mailing List</a>
+    </div>
+  </div>
+  <div class="mobile-nav-item">
+    <a href="http://hall.holyvirginprotectionchurch.org" target="_blank">Hall Rental</a>
+  </div>
+  <div class="mobile-nav-item">
+    <a href="http://school.holyvirginprotectionchurch.org" target="_blank">Parish School</a>
+  </div>
+  <a class="mobile-nav-donate" href="/hvpc-website/donate.html">Donate</a>
+</div>
+
 
 <div class="page-hero">
   <div class="page-hero-inner">
@@ -237,5 +321,28 @@ footer{background:var(--navy-deep);border-top:2px solid var(--gold);padding:2rem
   </div>
 </footer>
 
+<script>
+
+function toggleNav(){
+  const h = document.getElementById('hamburger');
+  const n = document.getElementById('mobile-nav');
+  h.classList.toggle('open');
+  n.classList.toggle('open');
+  document.body.style.overflow = n.classList.contains('open') ? 'hidden' : '';
+}
+function toggleMSub(el){
+  const item = el.parentElement;
+  item.classList.toggle('expanded');
+}
+// Close nav on link click
+document.querySelectorAll('.mobile-sub a, .mobile-nav-item>a[href*=".html"], .mobile-nav-donate').forEach(a=>{
+  a.addEventListener('click', ()=>{
+    document.getElementById('hamburger').classList.remove('open');
+    document.getElementById('mobile-nav').classList.remove('open');
+    document.body.style.overflow='';
+  });
+});
+
+</script>
 </body>
 </html>
